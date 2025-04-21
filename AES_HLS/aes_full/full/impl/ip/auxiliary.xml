@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="AES_Full" xd:componentRef="AES_Full" xd:initiationInterval="x" xd:clockPeriod="10" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CRTLS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="mode_cipher" xd:originalName="mode_cipher" xd:direction="in" xd:interfaceRef="s_axi_CRTLS" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="mode_inverse_cipher" xd:originalName="mode_inverse_cipher" xd:direction="in" xd:interfaceRef="s_axi_CRTLS" xd:busTypeRef="axilite" xd:offset="0x18" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(data_in)" xd:originalName="data_in" xd:direction="in" xd:interfaceRef="s_axi_CRTLS" xd:busTypeRef="axilite" xd:offset="0x20" xd:dataWidth="16"/>
+  <xd:arg xd:name="*(expandedKey)" xd:originalName="expandedKey" xd:direction="in" xd:interfaceRef="s_axi_CRTLS" xd:busTypeRef="axilite" xd:offset="0x100" xd:dataWidth="256"/>
+  <xd:arg xd:name="Nr" xd:originalName="Nr" xd:direction="in" xd:interfaceRef="s_axi_CRTLS" xd:busTypeRef="axilite" xd:offset="0x30" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(data_out)" xd:originalName="data_out" xd:direction="out" xd:interfaceRef="s_axi_CRTLS" xd:busTypeRef="axilite" xd:offset="0x40" xd:dataWidth="16"/>
+  <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="8042" xd:FF="2186" xd:BRAM="0" xd:DSP="0"/>
+</xd:acceleratorMap>

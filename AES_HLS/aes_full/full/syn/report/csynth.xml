@@ -1,0 +1,1407 @@
+<profile>
+    <ReportVersion>
+        <Version>2021.2</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>zynq</ProductFamily>
+        <Part>xc7z020-clg400-1</Part>
+        <TopModelName>AES_Full</TopModelName>
+        <TargetClockPeriod>10.00</TargetClockPeriod>
+        <ClockUncertainty>2.70</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>undef</Best-caseLatency>
+            <Average-caseLatency>undef</Average-caseLatency>
+            <Worst-caseLatency>undef</Worst-caseLatency>
+            <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+            <Interval-min>undef</Interval-min>
+            <Interval-max>undef</Interval-max>
+        </SummaryOfOverallLatency>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <BRAM_18K>9</BRAM_18K>
+            <FF>2186</FF>
+            <LUT>8042</LUT>
+            <URAM>0</URAM>
+            <DSP>0</DSP>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>280</BRAM_18K>
+            <DSP>220</DSP>
+            <FF>106400</FF>
+            <LUT>53200</LUT>
+            <URAM>0</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>s_axi_CRTLS_AWVALID</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_AWREADY</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_AWADDR</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>9</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_WVALID</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_WREADY</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_WDATA</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_WSTRB</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_ARVALID</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_ARREADY</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_ARADDR</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>9</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_RVALID</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_RREADY</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_RDATA</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_RRESP</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_BVALID</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_BREADY</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CRTLS_BRESP</name>
+            <Object>CRTLS</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_local_block</name>
+            <Object>AES_Full</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>AES_Full</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst_n</name>
+            <Object>AES_Full</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>interrupt</name>
+            <Object>AES_Full</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="4">
+            <ModuleName>AES_Full</ModuleName>
+            <InstancesList>
+                <Instance>
+                    <InstName>grp_AES_Full_Pipeline_L_copy_fu_122</InstName>
+                    <ModuleName>AES_Full_Pipeline_L_copy</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>122</ID>
+                    <BindInstances>add_ln170_fu_89_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_AddRoundKey_fu_130</InstName>
+                    <ModuleName>AddRoundKey</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>130</ID>
+                    <BindInstances>add_ln148_fu_452_p2 add_ln148_1_fu_462_p2 add_ln148_2_fu_472_p2 add_ln148_3_fu_482_p2 add_ln148_4_fu_492_p2 add_ln148_5_fu_502_p2 add_ln148_6_fu_512_p2 add_ln148_7_fu_522_p2 add_ln148_8_fu_532_p2 add_ln148_9_fu_547_p2 add_ln148_10_fu_557_p2 add_ln148_11_fu_572_p2 add_ln148_12_fu_582_p2 add_ln148_13_fu_598_p2 add_ln148_14_fu_608_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_AES_Full_Pipeline_L_rounds_fu_139</InstName>
+                    <ModuleName>AES_Full_Pipeline_L_rounds</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>139</ID>
+                    <InstancesList>
+                        <Instance>
+                            <InstName>grp_SubBytes_fu_80</InstName>
+                            <ModuleName>SubBytes</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>80</ID>
+                            <BindInstances>s_box_U</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_ShiftRows_fu_88</InstName>
+                            <ModuleName>ShiftRows</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>88</ID>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_MixColumns_fu_94</InstName>
+                            <ModuleName>MixColumns</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>94</ID>
+                            <BindInstances>mul02_U mul03_U</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_AddRoundKey_fu_104</InstName>
+                            <ModuleName>AddRoundKey</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>104</ID>
+                            <BindInstances>add_ln148_fu_452_p2 add_ln148_1_fu_462_p2 add_ln148_2_fu_472_p2 add_ln148_3_fu_482_p2 add_ln148_4_fu_492_p2 add_ln148_5_fu_502_p2 add_ln148_6_fu_512_p2 add_ln148_7_fu_522_p2 add_ln148_8_fu_532_p2 add_ln148_9_fu_547_p2 add_ln148_10_fu_557_p2 add_ln148_11_fu_572_p2 add_ln148_12_fu_582_p2 add_ln148_13_fu_598_p2 add_ln148_14_fu_608_p2</BindInstances>
+                        </Instance>
+                    </InstancesList>
+                    <BindInstances>i_3_fu_127_p2 grp_AddRoundKey_fu_104_roundKey</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_AES_Full_Pipeline_L_copy_o_fu_154</InstName>
+                    <ModuleName>AES_Full_Pipeline_L_copy_o</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>154</ID>
+                    <BindInstances>add_ln189_fu_89_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_AES_Full_Pipeline_L_copy1_fu_161</InstName>
+                    <ModuleName>AES_Full_Pipeline_L_copy1</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>161</ID>
+                    <BindInstances>add_ln215_fu_89_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_AES_Full_Pipeline_L_rounds2_fu_168</InstName>
+                    <ModuleName>AES_Full_Pipeline_L_rounds2</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>168</ID>
+                    <InstancesList>
+                        <Instance>
+                            <InstName>grp_InvShiftRows_fu_94</InstName>
+                            <ModuleName>InvShiftRows</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>94</ID>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_InvSubBytes_fu_100</InstName>
+                            <ModuleName>InvSubBytes</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>100</ID>
+                            <BindInstances>inverted_s_box_U</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_AddRoundKey_fu_108</InstName>
+                            <ModuleName>AddRoundKey</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>108</ID>
+                            <BindInstances>add_ln148_fu_452_p2 add_ln148_1_fu_462_p2 add_ln148_2_fu_472_p2 add_ln148_3_fu_482_p2 add_ln148_4_fu_492_p2 add_ln148_5_fu_502_p2 add_ln148_6_fu_512_p2 add_ln148_7_fu_522_p2 add_ln148_8_fu_532_p2 add_ln148_9_fu_547_p2 add_ln148_10_fu_557_p2 add_ln148_11_fu_572_p2 add_ln148_12_fu_582_p2 add_ln148_13_fu_598_p2 add_ln148_14_fu_608_p2</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_InvMixColumns_fu_117</InstName>
+                            <ModuleName>InvMixColumns</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>117</ID>
+                            <BindInstances>mul14_U mul11_U mul13_U mul09_U</BindInstances>
+                        </Instance>
+                    </InstancesList>
+                    <BindInstances>i_2_fu_145_p2 sub_ln226_fu_159_p2 grp_AddRoundKey_fu_108_roundKey</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_AES_Full_Pipeline_L_copy_o3_fu_188</InstName>
+                    <ModuleName>AES_Full_Pipeline_L_copy_o3</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>188</ID>
+                    <BindInstances>add_ln233_fu_89_p2</BindInstances>
+                </Instance>
+            </InstancesList>
+            <BindInstances>state_1_U state_U sub_i_fu_198_p2 sub19_i_fu_220_p2</BindInstances>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>AES_Full_Pipeline_L_copy</Name>
+            <Loops>
+                <L_copy/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>4.644</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>18</Best-caseLatency>
+                    <Average-caseLatency>18</Average-caseLatency>
+                    <Worst-caseLatency>18</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.180 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.180 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.180 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <L_copy>
+                        <Name>L_copy</Name>
+                        <TripCount>16</TripCount>
+                        <Latency>16</Latency>
+                        <AbsoluteTimeLatency>0.160 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </L_copy>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>13</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>61</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="L_copy" OPTYPE="add" PRAGMA="" RTLNAME="add_ln170_fu_89_p2" SOURCE="source/AESfunctions.cpp:170" URAM="0" VARIABLE="add_ln170"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>AddRoundKey</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <TargetInitiationInterval>4294967295</TargetInitiationInterval>
+                    <EstimatedClockPeriod>6.566</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>16</Best-caseLatency>
+                    <Average-caseLatency>16</Average-caseLatency>
+                    <Worst-caseLatency>16</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.160 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.160 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.160 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>17</PipelineInitiationInterval>
+                    <PipelineDepth>17</PipelineDepth>
+                    <PipelineType>yes</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>169</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>759</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_fu_452_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_1_fu_462_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_2_fu_472_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_3_fu_482_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_4_fu_492_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_5_fu_502_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_6_fu_512_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_7_fu_522_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_8_fu_532_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_9_fu_547_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_10_fu_557_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_11_fu_572_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_12_fu_582_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_13_fu_598_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_13"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln148_14_fu_608_p2" SOURCE="source/AESfunctions.cpp:148" URAM="0" VARIABLE="add_ln148_14"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>SubBytes</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <TargetInitiationInterval>4294967295</TargetInitiationInterval>
+                    <EstimatedClockPeriod>5.576</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>17</Best-caseLatency>
+                    <Average-caseLatency>17</Average-caseLatency>
+                    <Worst-caseLatency>17</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.170 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.170 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.170 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineDepth>18</PipelineDepth>
+                    <PipelineType>yes</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>1</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>~0</UTIL_BRAM>
+                    <FF>130</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>428</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="s_box_U" SOURCE="" URAM="0" VARIABLE="s_box"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>ShiftRows</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <TargetInitiationInterval>4294967295</TargetInitiationInterval>
+                    <EstimatedClockPeriod>4.644</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>8</Best-caseLatency>
+                    <Average-caseLatency>8</Average-caseLatency>
+                    <Worst-caseLatency>8</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>80.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>80.000 ns</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>80.000 ns</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>9</PipelineInitiationInterval>
+                    <PipelineDepth>9</PipelineDepth>
+                    <PipelineType>yes</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>41</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>248</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+        </Module>
+        <Module>
+            <Name>MixColumns</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <TargetInitiationInterval>4294967295</TargetInitiationInterval>
+                    <EstimatedClockPeriod>6.566</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>17</Best-caseLatency>
+                    <Average-caseLatency>17</Average-caseLatency>
+                    <Worst-caseLatency>17</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.170 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.170 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.170 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineDepth>18</PipelineDepth>
+                    <PipelineType>yes</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>2</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>~0</UTIL_BRAM>
+                    <FF>314</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>933</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="mul02_U" SOURCE="" URAM="0" VARIABLE="mul02"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="mul03_U" SOURCE="" URAM="0" VARIABLE="mul03"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>AES_Full_Pipeline_L_rounds</Name>
+            <Loops>
+                <L_rounds/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>6.566</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>undef</Best-caseLatency>
+                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Worst-caseLatency>undef</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>undef</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <L_rounds>
+                        <Name>L_rounds</Name>
+                        <TripCount>undef</TripCount>
+                        <Latency>undef</Latency>
+                        <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                        <PipelineII>62</PipelineII>
+                        <PipelineDepth>63</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList>
+                            <Instance>grp_SubBytes_fu_80</Instance>
+                            <Instance>grp_ShiftRows_fu_88</Instance>
+                            <Instance>grp_MixColumns_fu_94</Instance>
+                            <Instance>grp_AddRoundKey_fu_104</Instance>
+                        </InstanceList>
+                    </L_rounds>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>3</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>1</UTIL_BRAM>
+                    <FF>745</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>2959</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>5</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="L_rounds" OPTYPE="add" PRAGMA="" RTLNAME="i_3_fu_127_p2" SOURCE="source/AESfunctions.cpp:178" URAM="0" VARIABLE="i_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="L_rounds" OPTYPE="add" PRAGMA="" RTLNAME="grp_AddRoundKey_fu_104_roundKey" SOURCE="source/AESfunctions.cpp:185" URAM="0" VARIABLE="add_ln185"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>AES_Full_Pipeline_L_copy_o</Name>
+            <Loops>
+                <L_copy_o/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>4.644</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>18</Best-caseLatency>
+                    <Average-caseLatency>18</Average-caseLatency>
+                    <Worst-caseLatency>18</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.180 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.180 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.180 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <L_copy_o>
+                        <Name>L_copy_o</Name>
+                        <TripCount>16</TripCount>
+                        <Latency>16</Latency>
+                        <AbsoluteTimeLatency>0.160 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </L_copy_o>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>13</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>61</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="L_copy_o" OPTYPE="add" PRAGMA="" RTLNAME="add_ln189_fu_89_p2" SOURCE="source/AESfunctions.cpp:189" URAM="0" VARIABLE="add_ln189"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>AES_Full_Pipeline_L_copy1</Name>
+            <Loops>
+                <L_copy/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>4.644</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>18</Best-caseLatency>
+                    <Average-caseLatency>18</Average-caseLatency>
+                    <Worst-caseLatency>18</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.180 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.180 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.180 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <L_copy>
+                        <Name>L_copy</Name>
+                        <TripCount>16</TripCount>
+                        <Latency>16</Latency>
+                        <AbsoluteTimeLatency>0.160 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </L_copy>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>13</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>61</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="L_copy" OPTYPE="add" PRAGMA="" RTLNAME="add_ln215_fu_89_p2" SOURCE="source/AESfunctions.cpp:215" URAM="0" VARIABLE="add_ln215"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>InvShiftRows</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <TargetInitiationInterval>4294967295</TargetInitiationInterval>
+                    <EstimatedClockPeriod>4.644</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>8</Best-caseLatency>
+                    <Average-caseLatency>8</Average-caseLatency>
+                    <Worst-caseLatency>8</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>80.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>80.000 ns</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>80.000 ns</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>9</PipelineInitiationInterval>
+                    <PipelineDepth>9</PipelineDepth>
+                    <PipelineType>yes</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>41</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>227</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+        </Module>
+        <Module>
+            <Name>InvSubBytes</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <TargetInitiationInterval>4294967295</TargetInitiationInterval>
+                    <EstimatedClockPeriod>5.576</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>17</Best-caseLatency>
+                    <Average-caseLatency>17</Average-caseLatency>
+                    <Worst-caseLatency>17</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.170 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.170 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.170 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineDepth>18</PipelineDepth>
+                    <PipelineType>yes</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>1</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>~0</UTIL_BRAM>
+                    <FF>130</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>428</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="inverted_s_box_U" SOURCE="" URAM="0" VARIABLE="inverted_s_box"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>InvMixColumns</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <TargetInitiationInterval>4294967295</TargetInitiationInterval>
+                    <EstimatedClockPeriod>6.566</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>17</Best-caseLatency>
+                    <Average-caseLatency>17</Average-caseLatency>
+                    <Worst-caseLatency>17</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.170 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.170 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.170 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineDepth>18</PipelineDepth>
+                    <PipelineType>yes</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>4</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>1</UTIL_BRAM>
+                    <FF>330</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>1059</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="mul14_U" SOURCE="" URAM="0" VARIABLE="mul14"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="mul11_U" SOURCE="" URAM="0" VARIABLE="mul11"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="mul13_U" SOURCE="" URAM="0" VARIABLE="mul13"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="mul09_U" SOURCE="" URAM="0" VARIABLE="mul09"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>AES_Full_Pipeline_L_rounds2</Name>
+            <Loops>
+                <L_rounds/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>6.566</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>undef</Best-caseLatency>
+                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Worst-caseLatency>undef</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>undef</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <L_rounds>
+                        <Name>L_rounds</Name>
+                        <TripCount>undef</TripCount>
+                        <Latency>undef</Latency>
+                        <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                        <PipelineII>62</PipelineII>
+                        <PipelineDepth>63</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList>
+                            <Instance>grp_InvShiftRows_fu_94</Instance>
+                            <Instance>grp_InvSubBytes_fu_100</Instance>
+                            <Instance>grp_AddRoundKey_fu_108</Instance>
+                            <Instance>grp_InvMixColumns_fu_117</Instance>
+                        </InstanceList>
+                    </L_rounds>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>5</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>1</UTIL_BRAM>
+                    <FF>761</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>3077</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>5</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="L_rounds" OPTYPE="add" PRAGMA="" RTLNAME="i_2_fu_145_p2" SOURCE="source/AESfunctions.cpp:222" URAM="0" VARIABLE="i_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="L_rounds" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln226_fu_159_p2" SOURCE="source/AESfunctions.cpp:226" URAM="0" VARIABLE="sub_ln226"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="L_rounds" OPTYPE="add" PRAGMA="" RTLNAME="grp_AddRoundKey_fu_108_roundKey" SOURCE="source/AESfunctions.cpp:226" URAM="0" VARIABLE="add_ln226"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>AES_Full_Pipeline_L_copy_o3</Name>
+            <Loops>
+                <L_copy_o/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>4.644</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>18</Best-caseLatency>
+                    <Average-caseLatency>18</Average-caseLatency>
+                    <Worst-caseLatency>18</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.180 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.180 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.180 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <L_copy_o>
+                        <Name>L_copy_o</Name>
+                        <TripCount>16</TripCount>
+                        <Latency>16</Latency>
+                        <AbsoluteTimeLatency>0.160 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </L_copy_o>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>13</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>61</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="L_copy_o" OPTYPE="add" PRAGMA="" RTLNAME="add_ln233_fu_89_p2" SOURCE="source/AESfunctions.cpp:233" URAM="0" VARIABLE="add_ln233"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>AES_Full</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>undef</Best-caseLatency>
+                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Worst-caseLatency>undef</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>undef</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>9</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>3</UTIL_BRAM>
+                    <FF>2186</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>2</UTIL_FF>
+                    <LUT>8042</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>15</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="state_1_U" SOURCE="source/AESfunctions.cpp:214" URAM="0" VARIABLE="state_1"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="state_U" SOURCE="source/AESfunctions.cpp:169" URAM="0" VARIABLE="state"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="sub_i_fu_198_p2" SOURCE="" URAM="0" VARIABLE="sub_i"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="sub19_i_fu_220_p2" SOURCE="source/AESfunctions.cpp:220" URAM="0" VARIABLE="sub19_i"/>
+            </BindNodes>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands>
+        <config_export output="C:/Users/kuh4bd/Documents/FPGALab/Project_UART"/>
+    </UserConfigCommands>
+    <Args>
+        <Arg ArgName="mode_cipher" index="0" direction="in" srcType="bool" srcSize="1">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_CRTLS" name="mode_cipher" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="mode_inverse_cipher" index="1" direction="in" srcType="bool" srcSize="1">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_CRTLS" name="mode_inverse_cipher" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="data_in" index="2" direction="in" srcType="unsigned char*" srcSize="8">
+            <hwRefs>
+                <hwRef type="memory" interface="s_axi_CRTLS" name="data_in" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="expandedKey" index="3" direction="in" srcType="unsigned char*" srcSize="8">
+            <hwRefs>
+                <hwRef type="memory" interface="s_axi_CRTLS" name="expandedKey" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="Nr" index="4" direction="in" srcType="unsigned short" srcSize="16">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_CRTLS" name="Nr" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="data_out" index="5" direction="out" srcType="unsigned char*" srcSize="8">
+            <hwRefs>
+                <hwRef type="memory" interface="s_axi_CRTLS" name="data_out" usage="data" direction="out"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <Interfaces>
+        <Interface InterfaceName="s_axi_CRTLS" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="9" portPrefix="s_axi_CRTLS_" paramPrefix="C_S_AXI_CRTLS_">
+            <ports>
+                <port>s_axi_CRTLS_ARADDR</port>
+                <port>s_axi_CRTLS_ARREADY</port>
+                <port>s_axi_CRTLS_ARVALID</port>
+                <port>s_axi_CRTLS_AWADDR</port>
+                <port>s_axi_CRTLS_AWREADY</port>
+                <port>s_axi_CRTLS_AWVALID</port>
+                <port>s_axi_CRTLS_BREADY</port>
+                <port>s_axi_CRTLS_BRESP</port>
+                <port>s_axi_CRTLS_BVALID</port>
+                <port>s_axi_CRTLS_RDATA</port>
+                <port>s_axi_CRTLS_RREADY</port>
+                <port>s_axi_CRTLS_RRESP</port>
+                <port>s_axi_CRTLS_RVALID</port>
+                <port>s_axi_CRTLS_WDATA</port>
+                <port>s_axi_CRTLS_WREADY</port>
+                <port>s_axi_CRTLS_WSTRB</port>
+                <port>s_axi_CRTLS_WVALID</port>
+            </ports>
+            <memories>
+                <memorie memorieName="data_in" offset="32" range="16"/>
+                <memorie memorieName="data_out" offset="64" range="16"/>
+                <memorie memorieName="expandedKey" offset="256" range="256"/>
+            </memories>
+            <registers>
+                <register offset="0x00" name="CTRL" access="RW" description="Control signals" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="AP_START" access="RW" description="Control signal Register for 'ap_start'."/>
+                        <field offset="1" width="1" name="AP_DONE" access="R" description="Control signal Register for 'ap_done'."/>
+                        <field offset="2" width="1" name="AP_IDLE" access="R" description="Control signal Register for 'ap_idle'."/>
+                        <field offset="3" width="1" name="AP_READY" access="R" description="Control signal Register for 'ap_ready'."/>
+                        <field offset="4" width="3" name="RESERVED_1" access="R" description="Reserved.  0s on read."/>
+                        <field offset="7" width="1" name="AUTO_RESTART" access="RW" description="Control signal Register for 'auto_restart'."/>
+                        <field offset="8" width="1" name="RESERVED_2" access="R" description="Reserved.  0s on read."/>
+                        <field offset="9" width="1" name="RESERVED_3" access="R" description="Reserved.  0s on read."/>
+                        <field offset="10" width="22" name="RESERVED_4" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x04" name="GIER" access="RW" description="Global Interrupt Enable Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="Enable" access="RW" description="Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"/>
+                        <field offset="1" width="31" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x08" name="IP_IER" access="RW" description="IP Interrupt Enable Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="CHAN0_INT_EN" access="RW" description="Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."/>
+                        <field offset="1" width="1" name="CHAN1_INT_EN" access="RW" description="Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."/>
+                        <field offset="2" width="3" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
+                        <field offset="5" width="1" name="CHAN2_INT_EN" access="RW" description="Enable Channel 2 (ap_local_deadlock) Interrupt.  0 = Disabled, 1 = Enabled."/>
+                        <field offset="6" width="26" name="RESERVED_1" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x0c" name="IP_ISR" access="RW" description="IP Interrupt Status Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="CHAN0_INT_ST" access="RTOW" description="Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup"/>
+                        <field offset="1" width="1" name="CHAN1_INT_ST" access="RTOW" description="Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup"/>
+                        <field offset="2" width="3" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
+                        <field offset="5" width="1" name="CHAN2_INT_ST" access="RTOW" description="Channel 2 (ap_local_deadlock) Interrupt Status. 0 = No Channel 2 input interrupt, 1 = Channel 2 input interrup"/>
+                        <field offset="6" width="26" name="RESERVED_1" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x10" name="mode_cipher" access="W" description="Data signal of mode_cipher" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="mode_cipher" access="W" description="Bit 0 to 0 of mode_cipher"/>
+                        <field offset="1" width="31" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x18" name="mode_inverse_cipher" access="W" description="Data signal of mode_inverse_cipher" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="mode_inverse_cipher" access="W" description="Bit 0 to 0 of mode_inverse_cipher"/>
+                        <field offset="1" width="31" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x30" name="Nr" access="W" description="Data signal of Nr" range="32">
+                    <fields>
+                        <field offset="0" width="16" name="Nr" access="W" description="Bit 15 to 0 of Nr"/>
+                        <field offset="16" width="16" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+            </registers>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="mode_cipher"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="24" argName="mode_inverse_cipher"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="32" argName="data_in"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="256" argName="expandedKey"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="48" argName="Nr"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="64" argName="data_out"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_BUSIF">s_axi_CRTLS</busParam>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst_n</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst_n" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_LOW</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst_n">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst_n</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="interrupt" type="interrupt" busTypeName="interrupt" mode="master" dataWidth="1">
+            <busParams>
+                <busParam busParamName="SENSITIVITY">LEVEL_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="interrupt">INTERRUPT</portMap>
+            </portMaps>
+            <ports>
+                <port>interrupt</port>
+            </ports>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="S_AXILITE Interfaces">
+                <table isCollapsed="0">
+                    <keys size="6">Interface, Data Width, Address Width, Offset, Register, Resource Estimate</keys>
+                    <column name="s_axi_CRTLS">32, 9, 16, 0, BRAM=1</column>
+                </table>
+            </item>
+            <item name="S_AXILITE Registers">
+                <table isCollapsed="0">
+                    <keys size="7">Interface, Register, Offset, Width, Access, Description, Bit Fields</keys>
+                    <column name="s_axi_CRTLS">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART</column>
+                    <column name="s_axi_CRTLS">GIER, 0x04, 32, RW, Global Interrupt Enable Register, 0=Enable</column>
+                    <column name="s_axi_CRTLS">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN 5=CHAN2_INT_EN</column>
+                    <column name="s_axi_CRTLS">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST 5=CHAN2_INT_ST</column>
+                    <column name="s_axi_CRTLS">mode_cipher, 0x10, 32, W, Data signal of mode_cipher, </column>
+                    <column name="s_axi_CRTLS">mode_inverse_cipher, 0x18, 32, W, Data signal of mode_inverse_cipher, </column>
+                    <column name="s_axi_CRTLS">Nr, 0x30, 32, W, Data signal of Nr, </column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table isCollapsed="0">
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk</column>
+                    <column name="ap_rst_n">reset, ap_rst_n</column>
+                    <column name="interrupt">interrupt, interrupt</column>
+                    <column name="ap_ctrl">ap_ctrl_hs</column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table isCollapsed="1">
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="mode_cipher">in, bool</column>
+                    <column name="mode_inverse_cipher">in, bool</column>
+                    <column name="data_in">in, unsigned char*</column>
+                    <column name="expandedKey">in, unsigned char*</column>
+                    <column name="Nr">in, unsigned short</column>
+                    <column name="data_out">out, unsigned char*</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table isCollapsed="1">
+                    <keys size="4">Argument, HW Interface, HW Type, HW Info</keys>
+                    <column name="mode_cipher">s_axi_CRTLS, register, name=mode_cipher offset=0x10 range=32</column>
+                    <column name="mode_inverse_cipher">s_axi_CRTLS, register, name=mode_inverse_cipher offset=0x18 range=32</column>
+                    <column name="data_in">s_axi_CRTLS, memory, name=data_in offset=32 range=16</column>
+                    <column name="expandedKey">s_axi_CRTLS, memory, name=expandedKey offset=256 range=256</column>
+                    <column name="Nr">s_axi_CRTLS, register, name=Nr offset=0x30 range=32</column>
+                    <column name="data_out">s_axi_CRTLS, memory, name=data_out offset=64 range=16</column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <PragmaReport>
+        <Pragma type="inline" location="source/AESfunctions.cpp:5" status="valid" parentFunction="subbytes" variable="" isDirective="0" options="off"/>
+        <Pragma type="unroll" location="source/AESfunctions.cpp:7" status="valid" parentFunction="subbytes" variable="" isDirective="0" options=""/>
+        <Pragma type="inline" location="source/AESfunctions.cpp:13" status="valid" parentFunction="invsubbytes" variable="" isDirective="0" options="off"/>
+        <Pragma type="unroll" location="source/AESfunctions.cpp:15" status="valid" parentFunction="invsubbytes" variable="" isDirective="0" options=""/>
+        <Pragma type="inline" location="source/AESfunctions.cpp:21" status="valid" parentFunction="shiftrows" variable="" isDirective="0" options="off"/>
+        <Pragma type="inline" location="source/AESfunctions.cpp:48" status="valid" parentFunction="invshiftrows" variable="" isDirective="0" options="off"/>
+        <Pragma type="inline" location="source/AESfunctions.cpp:75" status="valid" parentFunction="mixcolumns" variable="" isDirective="0" options="off"/>
+        <Pragma type="inline" location="source/AESfunctions.cpp:102" status="valid" parentFunction="invmixcolumns" variable="" isDirective="0" options="off"/>
+        <Pragma type="inline" location="source/AESfunctions.cpp:145" status="valid" parentFunction="addroundkey" variable="" isDirective="0" options="off"/>
+        <Pragma type="unroll" location="source/AESfunctions.cpp:147" status="valid" parentFunction="addroundkey" variable="" isDirective="0" options=""/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:156" status="valid" parentFunction="aes_encrypt" variable="plaintext" isDirective="0" options="s_axilite port=plaintext bundle=CRTLSc"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:157" status="valid" parentFunction="aes_encrypt" variable="expandedKey" isDirective="0" options="s_axilite port=expandedKey bundle=CRTLSc"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:158" status="valid" parentFunction="aes_encrypt" variable="Nr" isDirective="0" options="s_axilite port=Nr bundle=CRTLSc"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:159" status="valid" parentFunction="aes_encrypt" variable="ciphertext" isDirective="0" options="s_axilite port=ciphertext bundle=CRTLSc"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:160" status="valid" parentFunction="aes_encrypt" variable="return" isDirective="0" options="s_axilite port=return bundle=CRTLSc"/>
+        <Pragma type="inline" location="source/AESfunctions.cpp:162" status="warning" parentFunction="aes_encrypt" variable="" isDirective="0" options="region">
+            <Msg msg_id="207-5524" msg_severity="WARNING" msg_body="'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead"/>
+        </Pragma>
+        <Pragma type="allocation" location="source/AESfunctions.cpp:163" status="invalid" parentFunction="aes_encrypt" variable="" isDirective="0" options="instances">
+            <Msg msg_id="207-5551" msg_severity="WARNING" msg_body="unexpected pragma argument 'instances', expects function/operation"/>
+        </Pragma>
+        <Pragma type="array_map" location="source/AESfunctions.cpp:164" status="invalid" parentFunction="aes_encrypt" variable="" isDirective="0" options="variable">
+            <Msg msg_id="207-5503" msg_severity="WARNING" msg_body="the pragma is not supported and will be ignored"/>
+        </Pragma>
+        <Pragma type="array_map" location="source/AESfunctions.cpp:165" status="invalid" parentFunction="aes_encrypt" variable="" isDirective="0" options="variable">
+            <Msg msg_id="207-5503" msg_severity="WARNING" msg_body="the pragma is not supported and will be ignored"/>
+        </Pragma>
+        <Pragma type="array_map" location="source/AESfunctions.cpp:166" status="invalid" parentFunction="aes_encrypt" variable="" isDirective="0" options="variable">
+            <Msg msg_id="207-5503" msg_severity="WARNING" msg_body="the pragma is not supported and will be ignored"/>
+        </Pragma>
+        <Pragma type="interface" location="source/AESfunctions.cpp:199" status="valid" parentFunction="aes_decrypt" variable="ciphertext" isDirective="0" options="s_axilite port=ciphertext bundle=CRTLSic"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:200" status="valid" parentFunction="aes_decrypt" variable="expandedKey" isDirective="0" options="s_axilite port=expandedKey bundle=CRTLSic"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:201" status="valid" parentFunction="aes_decrypt" variable="Nr" isDirective="0" options="s_axilite port=Nr bundle=CRTLSic"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:202" status="valid" parentFunction="aes_decrypt" variable="plaintext" isDirective="0" options="s_axilite port=plaintext bundle=CRTLSic"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:203" status="valid" parentFunction="aes_decrypt" variable="return" isDirective="0" options="s_axilite port=return bundle=CRTLSic"/>
+        <Pragma type="inline" location="source/AESfunctions.cpp:205" status="warning" parentFunction="aes_decrypt" variable="" isDirective="0" options="region">
+            <Msg msg_id="207-5524" msg_severity="WARNING" msg_body="'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead"/>
+        </Pragma>
+        <Pragma type="allocation" location="source/AESfunctions.cpp:206" status="invalid" parentFunction="aes_decrypt" variable="" isDirective="0" options="instances">
+            <Msg msg_id="207-5551" msg_severity="WARNING" msg_body="unexpected pragma argument 'instances', expects function/operation"/>
+        </Pragma>
+        <Pragma type="array_map" location="source/AESfunctions.cpp:207" status="invalid" parentFunction="aes_decrypt" variable="" isDirective="0" options="variable">
+            <Msg msg_id="207-5503" msg_severity="WARNING" msg_body="the pragma is not supported and will be ignored"/>
+        </Pragma>
+        <Pragma type="array_map" location="source/AESfunctions.cpp:208" status="invalid" parentFunction="aes_decrypt" variable="" isDirective="0" options="variable">
+            <Msg msg_id="207-5503" msg_severity="WARNING" msg_body="the pragma is not supported and will be ignored"/>
+        </Pragma>
+        <Pragma type="array_map" location="source/AESfunctions.cpp:209" status="invalid" parentFunction="aes_decrypt" variable="" isDirective="0" options="variable">
+            <Msg msg_id="207-5503" msg_severity="WARNING" msg_body="the pragma is not supported and will be ignored"/>
+        </Pragma>
+        <Pragma type="array_map" location="source/AESfunctions.cpp:210" status="invalid" parentFunction="aes_decrypt" variable="" isDirective="0" options="variable">
+            <Msg msg_id="207-5503" msg_severity="WARNING" msg_body="the pragma is not supported and will be ignored"/>
+        </Pragma>
+        <Pragma type="array_map" location="source/AESfunctions.cpp:211" status="invalid" parentFunction="aes_decrypt" variable="" isDirective="0" options="variable">
+            <Msg msg_id="207-5503" msg_severity="WARNING" msg_body="the pragma is not supported and will be ignored"/>
+        </Pragma>
+        <Pragma type="interface" location="source/AESfunctions.cpp:244" status="valid" parentFunction="aes_full" variable="mode_cipher" isDirective="0" options="s_axilite port=mode_cipher bundle=CRTLS"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:245" status="valid" parentFunction="aes_full" variable="mode_inverse_cipher" isDirective="0" options="s_axilite port=mode_inverse_cipher bundle=CRTLS"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:246" status="valid" parentFunction="aes_full" variable="data_in" isDirective="0" options="s_axilite port=data_in bundle=CRTLS"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:247" status="valid" parentFunction="aes_full" variable="expandedKey" isDirective="0" options="s_axilite port=expandedKey bundle=CRTLS"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:248" status="valid" parentFunction="aes_full" variable="Nr" isDirective="0" options="s_axilite port=Nr bundle=CRTLS"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:249" status="valid" parentFunction="aes_full" variable="data_out" isDirective="0" options="s_axilite port=data_out bundle=CRTLS"/>
+        <Pragma type="interface" location="source/AESfunctions.cpp:250" status="valid" parentFunction="aes_full" variable="return" isDirective="0" options="s_axilite port=return bundle=CRTLS"/>
+        <Pragma type="inline" location="source/AESfunctions.cpp:252" status="warning" parentFunction="aes_full" variable="" isDirective="0" options="region">
+            <Msg msg_id="207-5524" msg_severity="WARNING" msg_body="'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead"/>
+        </Pragma>
+    </PragmaReport>
+</profile>
+

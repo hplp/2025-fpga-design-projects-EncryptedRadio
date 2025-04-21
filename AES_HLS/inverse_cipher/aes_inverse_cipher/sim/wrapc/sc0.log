@@ -1,0 +1,5 @@
+   Build using "C:/Dev/Xilinx/Vivado/2017.4/msys/bin/g++.exe"
+   Compiling AESfunctions.cpp_pre.cpp.tb.cpp
+   Compiling apatb_AES_Decrypt.cpp
+   Compiling test_AES.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe

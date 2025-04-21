@@ -1,0 +1,605 @@
+
+
+================================================================
+== Vitis HLS Report for 'InvMixColumns'
+================================================================
+* Date:           Thu Apr 17 13:41:44 2025
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+* Project:        aes_full
+* Solution:       full (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.566 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       17|       17|  0.170 us|  0.170 us|   18|   18|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 18, depth = 18
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 18
+* Pipeline : 1
+  Pipeline-0 : II = 18, D = 18, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%state_addr = getelementptr i8 %state, i64 0, i64 0" [source/AESfunctions.cpp:101]   --->   Operation 19 'getelementptr' 'state_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [2/2] (2.32ns)   --->   "%state_load = load i4 %state_addr" [source/AESfunctions.cpp:104]   --->   Operation 20 'load' 'state_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%state_addr_68 = getelementptr i8 %state, i64 0, i64 1" [source/AESfunctions.cpp:104]   --->   Operation 21 'getelementptr' 'state_addr_68' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [2/2] (2.32ns)   --->   "%state_load_68 = load i4 %state_addr_68" [source/AESfunctions.cpp:104]   --->   Operation 22 'load' 'state_load_68' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 2 <SV = 1> <Delay = 5.57>
+ST_2 : Operation 23 [1/2] (2.32ns)   --->   "%state_load = load i4 %state_addr" [source/AESfunctions.cpp:104]   --->   Operation 23 'load' 'state_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln104 = zext i8 %state_load" [source/AESfunctions.cpp:104]   --->   Operation 24 'zext' 'zext_ln104' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%mul14_addr = getelementptr i8 %mul14, i64 0, i64 %zext_ln104" [source/AESfunctions.cpp:104]   --->   Operation 25 'getelementptr' 'mul14_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [2/2] (3.25ns)   --->   "%mul14_load = load i8 %mul14_addr" [source/AESfunctions.cpp:104]   --->   Operation 26 'load' 'mul14_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_2 : Operation 27 [1/2] (2.32ns)   --->   "%state_load_68 = load i4 %state_addr_68" [source/AESfunctions.cpp:104]   --->   Operation 27 'load' 'state_load_68' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%zext_ln104_1 = zext i8 %state_load_68" [source/AESfunctions.cpp:104]   --->   Operation 28 'zext' 'zext_ln104_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%mul11_addr = getelementptr i8 %mul11, i64 0, i64 %zext_ln104_1" [source/AESfunctions.cpp:104]   --->   Operation 29 'getelementptr' 'mul11_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [2/2] (3.25ns)   --->   "%mul11_load = load i8 %mul11_addr" [source/AESfunctions.cpp:104]   --->   Operation 30 'load' 'mul11_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%state_addr_69 = getelementptr i8 %state, i64 0, i64 2" [source/AESfunctions.cpp:104]   --->   Operation 31 'getelementptr' 'state_addr_69' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [2/2] (2.32ns)   --->   "%state_load_69 = load i4 %state_addr_69" [source/AESfunctions.cpp:104]   --->   Operation 32 'load' 'state_load_69' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%state_addr_70 = getelementptr i8 %state, i64 0, i64 3" [source/AESfunctions.cpp:105]   --->   Operation 33 'getelementptr' 'state_addr_70' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [2/2] (2.32ns)   --->   "%state_load_70 = load i4 %state_addr_70" [source/AESfunctions.cpp:105]   --->   Operation 34 'load' 'state_load_70' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%mul09_addr_1 = getelementptr i8 %mul09, i64 0, i64 %zext_ln104" [source/AESfunctions.cpp:106]   --->   Operation 35 'getelementptr' 'mul09_addr_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [2/2] (3.25ns)   --->   "%mul09_load_1 = load i8 %mul09_addr_1" [source/AESfunctions.cpp:106]   --->   Operation 36 'load' 'mul09_load_1' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%mul13_addr_2 = getelementptr i8 %mul13, i64 0, i64 %zext_ln104" [source/AESfunctions.cpp:108]   --->   Operation 37 'getelementptr' 'mul13_addr_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [2/2] (3.25ns)   --->   "%mul13_load_2 = load i8 %mul13_addr_2" [source/AESfunctions.cpp:108]   --->   Operation 38 'load' 'mul13_load_2' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+
+State 3 <SV = 2> <Delay = 5.57>
+ST_3 : Operation 39 [1/2] (3.25ns)   --->   "%mul14_load = load i8 %mul14_addr" [source/AESfunctions.cpp:104]   --->   Operation 39 'load' 'mul14_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 40 [1/2] (3.25ns)   --->   "%mul11_load = load i8 %mul11_addr" [source/AESfunctions.cpp:104]   --->   Operation 40 'load' 'mul11_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 41 [1/2] (2.32ns)   --->   "%state_load_69 = load i4 %state_addr_69" [source/AESfunctions.cpp:104]   --->   Operation 41 'load' 'state_load_69' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%zext_ln104_2 = zext i8 %state_load_69" [source/AESfunctions.cpp:104]   --->   Operation 42 'zext' 'zext_ln104_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%mul13_addr = getelementptr i8 %mul13, i64 0, i64 %zext_ln104_2" [source/AESfunctions.cpp:104]   --->   Operation 43 'getelementptr' 'mul13_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [2/2] (3.25ns)   --->   "%mul13_load = load i8 %mul13_addr" [source/AESfunctions.cpp:104]   --->   Operation 44 'load' 'mul13_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 45 [1/2] (2.32ns)   --->   "%state_load_70 = load i4 %state_addr_70" [source/AESfunctions.cpp:105]   --->   Operation 45 'load' 'state_load_70' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%zext_ln105 = zext i8 %state_load_70" [source/AESfunctions.cpp:105]   --->   Operation 46 'zext' 'zext_ln105' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%mul09_addr = getelementptr i8 %mul09, i64 0, i64 %zext_ln105" [source/AESfunctions.cpp:105]   --->   Operation 47 'getelementptr' 'mul09_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [2/2] (3.25ns)   --->   "%mul09_load = load i8 %mul09_addr" [source/AESfunctions.cpp:105]   --->   Operation 48 'load' 'mul09_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 49 [1/2] (3.25ns)   --->   "%mul09_load_1 = load i8 %mul09_addr_1" [source/AESfunctions.cpp:106]   --->   Operation 49 'load' 'mul09_load_1' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%mul14_addr_1 = getelementptr i8 %mul14, i64 0, i64 %zext_ln104_1" [source/AESfunctions.cpp:106]   --->   Operation 50 'getelementptr' 'mul14_addr_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [2/2] (3.25ns)   --->   "%mul14_load_1 = load i8 %mul14_addr_1" [source/AESfunctions.cpp:106]   --->   Operation 51 'load' 'mul14_load_1' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%mul11_addr_1 = getelementptr i8 %mul11, i64 0, i64 %zext_ln104_2" [source/AESfunctions.cpp:106]   --->   Operation 52 'getelementptr' 'mul11_addr_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 53 [2/2] (3.25ns)   --->   "%mul11_load_1 = load i8 %mul11_addr_1" [source/AESfunctions.cpp:106]   --->   Operation 53 'load' 'mul11_load_1' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 54 [1/2] (3.25ns)   --->   "%mul13_load_2 = load i8 %mul13_addr_2" [source/AESfunctions.cpp:108]   --->   Operation 54 'load' 'mul13_load_2' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%state_addr_71 = getelementptr i8 %state, i64 0, i64 4" [source/AESfunctions.cpp:113]   --->   Operation 55 'getelementptr' 'state_addr_71' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 56 [2/2] (2.32ns)   --->   "%state_load_71 = load i4 %state_addr_71" [source/AESfunctions.cpp:113]   --->   Operation 56 'load' 'state_load_71' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%state_addr_72 = getelementptr i8 %state, i64 0, i64 5" [source/AESfunctions.cpp:113]   --->   Operation 57 'getelementptr' 'state_addr_72' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 58 [2/2] (2.32ns)   --->   "%state_load_72 = load i4 %state_addr_72" [source/AESfunctions.cpp:113]   --->   Operation 58 'load' 'state_load_72' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 4 <SV = 3> <Delay = 4.24>
+ST_4 : Operation 59 [1/2] (3.25ns)   --->   "%mul13_load = load i8 %mul13_addr" [source/AESfunctions.cpp:104]   --->   Operation 59 'load' 'mul13_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 60 [1/2] (3.25ns)   --->   "%mul09_load = load i8 %mul09_addr" [source/AESfunctions.cpp:105]   --->   Operation 60 'load' 'mul09_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 61 [1/1] (0.00ns) (grouped into LUT with out node xor_ln105)   --->   "%xor_ln105_1 = xor i8 %mul11_load, i8 %mul14_load" [source/AESfunctions.cpp:105]   --->   Operation 61 'xor' 'xor_ln105_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 62 [1/1] (0.00ns) (grouped into LUT with out node xor_ln105)   --->   "%xor_ln105_2 = xor i8 %mul13_load, i8 %mul09_load" [source/AESfunctions.cpp:105]   --->   Operation 62 'xor' 'xor_ln105_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 63 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln105 = xor i8 %xor_ln105_2, i8 %xor_ln105_1" [source/AESfunctions.cpp:105]   --->   Operation 63 'xor' 'xor_ln105' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 64 [1/2] (3.25ns)   --->   "%mul14_load_1 = load i8 %mul14_addr_1" [source/AESfunctions.cpp:106]   --->   Operation 64 'load' 'mul14_load_1' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 65 [1/2] (3.25ns)   --->   "%mul11_load_1 = load i8 %mul11_addr_1" [source/AESfunctions.cpp:106]   --->   Operation 65 'load' 'mul11_load_1' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 66 [1/1] (0.00ns)   --->   "%mul13_addr_1 = getelementptr i8 %mul13, i64 0, i64 %zext_ln105" [source/AESfunctions.cpp:107]   --->   Operation 66 'getelementptr' 'mul13_addr_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 67 [2/2] (3.25ns)   --->   "%mul13_load_1 = load i8 %mul13_addr_1" [source/AESfunctions.cpp:107]   --->   Operation 67 'load' 'mul13_load_1' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 68 [1/1] (0.00ns)   --->   "%mul09_addr_2 = getelementptr i8 %mul09, i64 0, i64 %zext_ln104_1" [source/AESfunctions.cpp:108]   --->   Operation 68 'getelementptr' 'mul09_addr_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 69 [2/2] (3.25ns)   --->   "%mul09_load_2 = load i8 %mul09_addr_2" [source/AESfunctions.cpp:108]   --->   Operation 69 'load' 'mul09_load_2' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 70 [1/1] (0.00ns)   --->   "%mul14_addr_2 = getelementptr i8 %mul14, i64 0, i64 %zext_ln104_2" [source/AESfunctions.cpp:108]   --->   Operation 70 'getelementptr' 'mul14_addr_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 71 [2/2] (3.25ns)   --->   "%mul14_load_2 = load i8 %mul14_addr_2" [source/AESfunctions.cpp:108]   --->   Operation 71 'load' 'mul14_load_2' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 72 [1/1] (0.00ns)   --->   "%mul11_addr_2 = getelementptr i8 %mul11, i64 0, i64 %zext_ln105" [source/AESfunctions.cpp:109]   --->   Operation 72 'getelementptr' 'mul11_addr_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 73 [2/2] (3.25ns)   --->   "%mul11_load_2 = load i8 %mul11_addr_2" [source/AESfunctions.cpp:109]   --->   Operation 73 'load' 'mul11_load_2' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 74 [1/2] (2.32ns)   --->   "%state_load_71 = load i4 %state_addr_71" [source/AESfunctions.cpp:113]   --->   Operation 74 'load' 'state_load_71' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 75 [1/2] (2.32ns)   --->   "%state_load_72 = load i4 %state_addr_72" [source/AESfunctions.cpp:113]   --->   Operation 75 'load' 'state_load_72' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 76 [1/1] (0.00ns)   --->   "%state_addr_73 = getelementptr i8 %state, i64 0, i64 6" [source/AESfunctions.cpp:113]   --->   Operation 76 'getelementptr' 'state_addr_73' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 77 [2/2] (2.32ns)   --->   "%state_load_73 = load i4 %state_addr_73" [source/AESfunctions.cpp:113]   --->   Operation 77 'load' 'state_load_73' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 78 [1/1] (0.00ns)   --->   "%state_addr_74 = getelementptr i8 %state, i64 0, i64 7" [source/AESfunctions.cpp:114]   --->   Operation 78 'getelementptr' 'state_addr_74' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 79 [2/2] (2.32ns)   --->   "%state_load_74 = load i4 %state_addr_74" [source/AESfunctions.cpp:114]   --->   Operation 79 'load' 'state_load_74' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 5 <SV = 4> <Delay = 4.24>
+ST_5 : Operation 80 [1/2] (3.25ns)   --->   "%mul13_load_1 = load i8 %mul13_addr_1" [source/AESfunctions.cpp:107]   --->   Operation 80 'load' 'mul13_load_1' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 81 [1/1] (0.00ns) (grouped into LUT with out node xor_ln107)   --->   "%xor_ln107_1 = xor i8 %mul14_load_1, i8 %mul09_load_1" [source/AESfunctions.cpp:107]   --->   Operation 81 'xor' 'xor_ln107_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 82 [1/1] (0.00ns) (grouped into LUT with out node xor_ln107)   --->   "%xor_ln107_2 = xor i8 %mul11_load_1, i8 %mul13_load_1" [source/AESfunctions.cpp:107]   --->   Operation 82 'xor' 'xor_ln107_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 83 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln107 = xor i8 %xor_ln107_2, i8 %xor_ln107_1" [source/AESfunctions.cpp:107]   --->   Operation 83 'xor' 'xor_ln107' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 84 [1/2] (3.25ns)   --->   "%mul09_load_2 = load i8 %mul09_addr_2" [source/AESfunctions.cpp:108]   --->   Operation 84 'load' 'mul09_load_2' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 85 [1/2] (3.25ns)   --->   "%mul14_load_2 = load i8 %mul14_addr_2" [source/AESfunctions.cpp:108]   --->   Operation 85 'load' 'mul14_load_2' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 86 [1/2] (3.25ns)   --->   "%mul11_load_2 = load i8 %mul11_addr_2" [source/AESfunctions.cpp:109]   --->   Operation 86 'load' 'mul11_load_2' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 87 [1/1] (0.00ns) (grouped into LUT with out node xor_ln109)   --->   "%xor_ln109_1 = xor i8 %mul09_load_2, i8 %mul13_load_2" [source/AESfunctions.cpp:109]   --->   Operation 87 'xor' 'xor_ln109_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 88 [1/1] (0.00ns) (grouped into LUT with out node xor_ln109)   --->   "%xor_ln109_2 = xor i8 %mul14_load_2, i8 %mul11_load_2" [source/AESfunctions.cpp:109]   --->   Operation 88 'xor' 'xor_ln109_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 89 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln109 = xor i8 %xor_ln109_2, i8 %xor_ln109_1" [source/AESfunctions.cpp:109]   --->   Operation 89 'xor' 'xor_ln109' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 90 [1/1] (0.00ns)   --->   "%mul11_addr_3 = getelementptr i8 %mul11, i64 0, i64 %zext_ln104" [source/AESfunctions.cpp:110]   --->   Operation 90 'getelementptr' 'mul11_addr_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 91 [2/2] (3.25ns)   --->   "%mul11_load_3 = load i8 %mul11_addr_3" [source/AESfunctions.cpp:110]   --->   Operation 91 'load' 'mul11_load_3' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 92 [1/1] (0.00ns)   --->   "%mul13_addr_3 = getelementptr i8 %mul13, i64 0, i64 %zext_ln104_1" [source/AESfunctions.cpp:110]   --->   Operation 92 'getelementptr' 'mul13_addr_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 93 [2/2] (3.25ns)   --->   "%mul13_load_3 = load i8 %mul13_addr_3" [source/AESfunctions.cpp:110]   --->   Operation 93 'load' 'mul13_load_3' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 94 [1/1] (0.00ns)   --->   "%mul09_addr_3 = getelementptr i8 %mul09, i64 0, i64 %zext_ln104_2" [source/AESfunctions.cpp:110]   --->   Operation 94 'getelementptr' 'mul09_addr_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 95 [2/2] (3.25ns)   --->   "%mul09_load_3 = load i8 %mul09_addr_3" [source/AESfunctions.cpp:110]   --->   Operation 95 'load' 'mul09_load_3' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 96 [1/1] (0.00ns)   --->   "%mul14_addr_3 = getelementptr i8 %mul14, i64 0, i64 %zext_ln105" [source/AESfunctions.cpp:111]   --->   Operation 96 'getelementptr' 'mul14_addr_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 97 [2/2] (3.25ns)   --->   "%mul14_load_3 = load i8 %mul14_addr_3" [source/AESfunctions.cpp:111]   --->   Operation 97 'load' 'mul14_load_3' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 98 [1/2] (2.32ns)   --->   "%state_load_73 = load i4 %state_addr_73" [source/AESfunctions.cpp:113]   --->   Operation 98 'load' 'state_load_73' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_5 : Operation 99 [1/2] (2.32ns)   --->   "%state_load_74 = load i4 %state_addr_74" [source/AESfunctions.cpp:114]   --->   Operation 99 'load' 'state_load_74' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_5 : Operation 100 [1/1] (0.00ns)   --->   "%state_addr_75 = getelementptr i8 %state, i64 0, i64 8" [source/AESfunctions.cpp:122]   --->   Operation 100 'getelementptr' 'state_addr_75' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 101 [2/2] (2.32ns)   --->   "%state_load_75 = load i4 %state_addr_75" [source/AESfunctions.cpp:122]   --->   Operation 101 'load' 'state_load_75' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_5 : Operation 102 [1/1] (0.00ns)   --->   "%state_addr_76 = getelementptr i8 %state, i64 0, i64 9" [source/AESfunctions.cpp:122]   --->   Operation 102 'getelementptr' 'state_addr_76' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 103 [2/2] (2.32ns)   --->   "%state_load_76 = load i4 %state_addr_76" [source/AESfunctions.cpp:122]   --->   Operation 103 'load' 'state_load_76' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 6 <SV = 5> <Delay = 4.24>
+ST_6 : Operation 104 [1/2] (3.25ns)   --->   "%mul11_load_3 = load i8 %mul11_addr_3" [source/AESfunctions.cpp:110]   --->   Operation 104 'load' 'mul11_load_3' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 105 [1/2] (3.25ns)   --->   "%mul13_load_3 = load i8 %mul13_addr_3" [source/AESfunctions.cpp:110]   --->   Operation 105 'load' 'mul13_load_3' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 106 [1/2] (3.25ns)   --->   "%mul09_load_3 = load i8 %mul09_addr_3" [source/AESfunctions.cpp:110]   --->   Operation 106 'load' 'mul09_load_3' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 107 [1/2] (3.25ns)   --->   "%mul14_load_3 = load i8 %mul14_addr_3" [source/AESfunctions.cpp:111]   --->   Operation 107 'load' 'mul14_load_3' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node xor_ln111)   --->   "%xor_ln111_1 = xor i8 %mul13_load_3, i8 %mul11_load_3" [source/AESfunctions.cpp:111]   --->   Operation 108 'xor' 'xor_ln111_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node xor_ln111)   --->   "%xor_ln111_2 = xor i8 %mul09_load_3, i8 %mul14_load_3" [source/AESfunctions.cpp:111]   --->   Operation 109 'xor' 'xor_ln111_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 110 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln111 = xor i8 %xor_ln111_2, i8 %xor_ln111_1" [source/AESfunctions.cpp:111]   --->   Operation 110 'xor' 'xor_ln111' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 111 [1/1] (0.00ns)   --->   "%zext_ln113 = zext i8 %state_load_71" [source/AESfunctions.cpp:113]   --->   Operation 111 'zext' 'zext_ln113' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 112 [1/1] (0.00ns)   --->   "%mul14_addr_4 = getelementptr i8 %mul14, i64 0, i64 %zext_ln113" [source/AESfunctions.cpp:113]   --->   Operation 112 'getelementptr' 'mul14_addr_4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 113 [2/2] (3.25ns)   --->   "%mul14_load_4 = load i8 %mul14_addr_4" [source/AESfunctions.cpp:113]   --->   Operation 113 'load' 'mul14_load_4' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 114 [1/1] (0.00ns)   --->   "%zext_ln113_1 = zext i8 %state_load_72" [source/AESfunctions.cpp:113]   --->   Operation 114 'zext' 'zext_ln113_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 115 [1/1] (0.00ns)   --->   "%mul11_addr_4 = getelementptr i8 %mul11, i64 0, i64 %zext_ln113_1" [source/AESfunctions.cpp:113]   --->   Operation 115 'getelementptr' 'mul11_addr_4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 116 [2/2] (3.25ns)   --->   "%mul11_load_4 = load i8 %mul11_addr_4" [source/AESfunctions.cpp:113]   --->   Operation 116 'load' 'mul11_load_4' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 117 [1/1] (0.00ns)   --->   "%zext_ln113_2 = zext i8 %state_load_73" [source/AESfunctions.cpp:113]   --->   Operation 117 'zext' 'zext_ln113_2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 118 [1/1] (0.00ns)   --->   "%mul13_addr_4 = getelementptr i8 %mul13, i64 0, i64 %zext_ln113_2" [source/AESfunctions.cpp:113]   --->   Operation 118 'getelementptr' 'mul13_addr_4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 119 [2/2] (3.25ns)   --->   "%mul13_load_4 = load i8 %mul13_addr_4" [source/AESfunctions.cpp:113]   --->   Operation 119 'load' 'mul13_load_4' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 120 [1/1] (0.00ns)   --->   "%zext_ln114 = zext i8 %state_load_74" [source/AESfunctions.cpp:114]   --->   Operation 120 'zext' 'zext_ln114' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 121 [1/1] (0.00ns)   --->   "%mul09_addr_4 = getelementptr i8 %mul09, i64 0, i64 %zext_ln114" [source/AESfunctions.cpp:114]   --->   Operation 121 'getelementptr' 'mul09_addr_4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 122 [2/2] (3.25ns)   --->   "%mul09_load_4 = load i8 %mul09_addr_4" [source/AESfunctions.cpp:114]   --->   Operation 122 'load' 'mul09_load_4' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 123 [1/2] (2.32ns)   --->   "%state_load_75 = load i4 %state_addr_75" [source/AESfunctions.cpp:122]   --->   Operation 123 'load' 'state_load_75' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 124 [1/2] (2.32ns)   --->   "%state_load_76 = load i4 %state_addr_76" [source/AESfunctions.cpp:122]   --->   Operation 124 'load' 'state_load_76' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 125 [1/1] (0.00ns)   --->   "%state_addr_77 = getelementptr i8 %state, i64 0, i64 10" [source/AESfunctions.cpp:122]   --->   Operation 125 'getelementptr' 'state_addr_77' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 126 [2/2] (2.32ns)   --->   "%state_load_77 = load i4 %state_addr_77" [source/AESfunctions.cpp:122]   --->   Operation 126 'load' 'state_load_77' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 127 [1/1] (0.00ns)   --->   "%state_addr_78 = getelementptr i8 %state, i64 0, i64 11" [source/AESfunctions.cpp:123]   --->   Operation 127 'getelementptr' 'state_addr_78' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 128 [2/2] (2.32ns)   --->   "%state_load_78 = load i4 %state_addr_78" [source/AESfunctions.cpp:123]   --->   Operation 128 'load' 'state_load_78' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 7 <SV = 6> <Delay = 4.24>
+ST_7 : Operation 129 [1/2] (3.25ns)   --->   "%mul14_load_4 = load i8 %mul14_addr_4" [source/AESfunctions.cpp:113]   --->   Operation 129 'load' 'mul14_load_4' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_7 : Operation 130 [1/2] (3.25ns)   --->   "%mul11_load_4 = load i8 %mul11_addr_4" [source/AESfunctions.cpp:113]   --->   Operation 130 'load' 'mul11_load_4' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_7 : Operation 131 [1/2] (3.25ns)   --->   "%mul13_load_4 = load i8 %mul13_addr_4" [source/AESfunctions.cpp:113]   --->   Operation 131 'load' 'mul13_load_4' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_7 : Operation 132 [1/2] (3.25ns)   --->   "%mul09_load_4 = load i8 %mul09_addr_4" [source/AESfunctions.cpp:114]   --->   Operation 132 'load' 'mul09_load_4' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_7 : Operation 133 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114)   --->   "%xor_ln114_1 = xor i8 %mul11_load_4, i8 %mul14_load_4" [source/AESfunctions.cpp:114]   --->   Operation 133 'xor' 'xor_ln114_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 134 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114)   --->   "%xor_ln114_2 = xor i8 %mul13_load_4, i8 %mul09_load_4" [source/AESfunctions.cpp:114]   --->   Operation 134 'xor' 'xor_ln114_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 135 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln114 = xor i8 %xor_ln114_2, i8 %xor_ln114_1" [source/AESfunctions.cpp:114]   --->   Operation 135 'xor' 'xor_ln114' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 136 [1/1] (0.00ns)   --->   "%mul09_addr_5 = getelementptr i8 %mul09, i64 0, i64 %zext_ln113" [source/AESfunctions.cpp:115]   --->   Operation 136 'getelementptr' 'mul09_addr_5' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 137 [2/2] (3.25ns)   --->   "%mul09_load_5 = load i8 %mul09_addr_5" [source/AESfunctions.cpp:115]   --->   Operation 137 'load' 'mul09_load_5' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_7 : Operation 138 [1/1] (0.00ns)   --->   "%mul14_addr_5 = getelementptr i8 %mul14, i64 0, i64 %zext_ln113_1" [source/AESfunctions.cpp:115]   --->   Operation 138 'getelementptr' 'mul14_addr_5' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 139 [2/2] (3.25ns)   --->   "%mul14_load_5 = load i8 %mul14_addr_5" [source/AESfunctions.cpp:115]   --->   Operation 139 'load' 'mul14_load_5' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_7 : Operation 140 [1/1] (0.00ns)   --->   "%mul11_addr_5 = getelementptr i8 %mul11, i64 0, i64 %zext_ln113_2" [source/AESfunctions.cpp:115]   --->   Operation 140 'getelementptr' 'mul11_addr_5' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 141 [2/2] (3.25ns)   --->   "%mul11_load_5 = load i8 %mul11_addr_5" [source/AESfunctions.cpp:115]   --->   Operation 141 'load' 'mul11_load_5' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_7 : Operation 142 [1/1] (0.00ns)   --->   "%mul13_addr_5 = getelementptr i8 %mul13, i64 0, i64 %zext_ln114" [source/AESfunctions.cpp:116]   --->   Operation 142 'getelementptr' 'mul13_addr_5' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 143 [2/2] (3.25ns)   --->   "%mul13_load_5 = load i8 %mul13_addr_5" [source/AESfunctions.cpp:116]   --->   Operation 143 'load' 'mul13_load_5' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_7 : Operation 144 [1/2] (2.32ns)   --->   "%state_load_77 = load i4 %state_addr_77" [source/AESfunctions.cpp:122]   --->   Operation 144 'load' 'state_load_77' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 145 [1/2] (2.32ns)   --->   "%state_load_78 = load i4 %state_addr_78" [source/AESfunctions.cpp:123]   --->   Operation 145 'load' 'state_load_78' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 146 [1/1] (0.00ns)   --->   "%state_addr_79 = getelementptr i8 %state, i64 0, i64 12" [source/AESfunctions.cpp:131]   --->   Operation 146 'getelementptr' 'state_addr_79' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 147 [2/2] (2.32ns)   --->   "%state_load_79 = load i4 %state_addr_79" [source/AESfunctions.cpp:131]   --->   Operation 147 'load' 'state_load_79' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 148 [1/1] (0.00ns)   --->   "%state_addr_80 = getelementptr i8 %state, i64 0, i64 13" [source/AESfunctions.cpp:131]   --->   Operation 148 'getelementptr' 'state_addr_80' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 149 [2/2] (2.32ns)   --->   "%state_load_80 = load i4 %state_addr_80" [source/AESfunctions.cpp:131]   --->   Operation 149 'load' 'state_load_80' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 8 <SV = 7> <Delay = 4.24>
+ST_8 : Operation 150 [1/2] (3.25ns)   --->   "%mul09_load_5 = load i8 %mul09_addr_5" [source/AESfunctions.cpp:115]   --->   Operation 150 'load' 'mul09_load_5' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_8 : Operation 151 [1/2] (3.25ns)   --->   "%mul14_load_5 = load i8 %mul14_addr_5" [source/AESfunctions.cpp:115]   --->   Operation 151 'load' 'mul14_load_5' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_8 : Operation 152 [1/2] (3.25ns)   --->   "%mul11_load_5 = load i8 %mul11_addr_5" [source/AESfunctions.cpp:115]   --->   Operation 152 'load' 'mul11_load_5' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_8 : Operation 153 [1/2] (3.25ns)   --->   "%mul13_load_5 = load i8 %mul13_addr_5" [source/AESfunctions.cpp:116]   --->   Operation 153 'load' 'mul13_load_5' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_8 : Operation 154 [1/1] (0.00ns) (grouped into LUT with out node xor_ln116)   --->   "%xor_ln116_1 = xor i8 %mul14_load_5, i8 %mul09_load_5" [source/AESfunctions.cpp:116]   --->   Operation 154 'xor' 'xor_ln116_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 155 [1/1] (0.00ns) (grouped into LUT with out node xor_ln116)   --->   "%xor_ln116_2 = xor i8 %mul11_load_5, i8 %mul13_load_5" [source/AESfunctions.cpp:116]   --->   Operation 155 'xor' 'xor_ln116_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 156 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln116 = xor i8 %xor_ln116_2, i8 %xor_ln116_1" [source/AESfunctions.cpp:116]   --->   Operation 156 'xor' 'xor_ln116' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 157 [1/1] (0.00ns)   --->   "%mul13_addr_6 = getelementptr i8 %mul13, i64 0, i64 %zext_ln113" [source/AESfunctions.cpp:117]   --->   Operation 157 'getelementptr' 'mul13_addr_6' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 158 [2/2] (3.25ns)   --->   "%mul13_load_6 = load i8 %mul13_addr_6" [source/AESfunctions.cpp:117]   --->   Operation 158 'load' 'mul13_load_6' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_8 : Operation 159 [1/1] (0.00ns)   --->   "%mul09_addr_6 = getelementptr i8 %mul09, i64 0, i64 %zext_ln113_1" [source/AESfunctions.cpp:117]   --->   Operation 159 'getelementptr' 'mul09_addr_6' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 160 [2/2] (3.25ns)   --->   "%mul09_load_6 = load i8 %mul09_addr_6" [source/AESfunctions.cpp:117]   --->   Operation 160 'load' 'mul09_load_6' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_8 : Operation 161 [1/1] (0.00ns)   --->   "%mul14_addr_6 = getelementptr i8 %mul14, i64 0, i64 %zext_ln113_2" [source/AESfunctions.cpp:117]   --->   Operation 161 'getelementptr' 'mul14_addr_6' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 162 [2/2] (3.25ns)   --->   "%mul14_load_6 = load i8 %mul14_addr_6" [source/AESfunctions.cpp:117]   --->   Operation 162 'load' 'mul14_load_6' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_8 : Operation 163 [1/1] (0.00ns)   --->   "%mul11_addr_6 = getelementptr i8 %mul11, i64 0, i64 %zext_ln114" [source/AESfunctions.cpp:118]   --->   Operation 163 'getelementptr' 'mul11_addr_6' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 164 [2/2] (3.25ns)   --->   "%mul11_load_6 = load i8 %mul11_addr_6" [source/AESfunctions.cpp:118]   --->   Operation 164 'load' 'mul11_load_6' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_8 : Operation 165 [1/2] (2.32ns)   --->   "%state_load_79 = load i4 %state_addr_79" [source/AESfunctions.cpp:131]   --->   Operation 165 'load' 'state_load_79' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 166 [1/2] (2.32ns)   --->   "%state_load_80 = load i4 %state_addr_80" [source/AESfunctions.cpp:131]   --->   Operation 166 'load' 'state_load_80' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 167 [1/1] (0.00ns)   --->   "%state_addr_81 = getelementptr i8 %state, i64 0, i64 14" [source/AESfunctions.cpp:131]   --->   Operation 167 'getelementptr' 'state_addr_81' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 168 [2/2] (2.32ns)   --->   "%state_load_81 = load i4 %state_addr_81" [source/AESfunctions.cpp:131]   --->   Operation 168 'load' 'state_load_81' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 169 [1/1] (0.00ns)   --->   "%state_addr_82 = getelementptr i8 %state, i64 0, i64 15" [source/AESfunctions.cpp:132]   --->   Operation 169 'getelementptr' 'state_addr_82' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 170 [2/2] (2.32ns)   --->   "%state_load_82 = load i4 %state_addr_82" [source/AESfunctions.cpp:132]   --->   Operation 170 'load' 'state_load_82' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 9 <SV = 8> <Delay = 4.24>
+ST_9 : Operation 171 [1/2] (3.25ns)   --->   "%mul13_load_6 = load i8 %mul13_addr_6" [source/AESfunctions.cpp:117]   --->   Operation 171 'load' 'mul13_load_6' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_9 : Operation 172 [1/2] (3.25ns)   --->   "%mul09_load_6 = load i8 %mul09_addr_6" [source/AESfunctions.cpp:117]   --->   Operation 172 'load' 'mul09_load_6' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_9 : Operation 173 [1/2] (3.25ns)   --->   "%mul14_load_6 = load i8 %mul14_addr_6" [source/AESfunctions.cpp:117]   --->   Operation 173 'load' 'mul14_load_6' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_9 : Operation 174 [1/2] (3.25ns)   --->   "%mul11_load_6 = load i8 %mul11_addr_6" [source/AESfunctions.cpp:118]   --->   Operation 174 'load' 'mul11_load_6' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_9 : Operation 175 [1/1] (0.00ns) (grouped into LUT with out node xor_ln118)   --->   "%xor_ln118_1 = xor i8 %mul09_load_6, i8 %mul13_load_6" [source/AESfunctions.cpp:118]   --->   Operation 175 'xor' 'xor_ln118_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 176 [1/1] (0.00ns) (grouped into LUT with out node xor_ln118)   --->   "%xor_ln118_2 = xor i8 %mul14_load_6, i8 %mul11_load_6" [source/AESfunctions.cpp:118]   --->   Operation 176 'xor' 'xor_ln118_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 177 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln118 = xor i8 %xor_ln118_2, i8 %xor_ln118_1" [source/AESfunctions.cpp:118]   --->   Operation 177 'xor' 'xor_ln118' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 178 [1/1] (0.00ns)   --->   "%mul11_addr_7 = getelementptr i8 %mul11, i64 0, i64 %zext_ln113" [source/AESfunctions.cpp:119]   --->   Operation 178 'getelementptr' 'mul11_addr_7' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 179 [2/2] (3.25ns)   --->   "%mul11_load_7 = load i8 %mul11_addr_7" [source/AESfunctions.cpp:119]   --->   Operation 179 'load' 'mul11_load_7' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_9 : Operation 180 [1/1] (0.00ns)   --->   "%mul13_addr_7 = getelementptr i8 %mul13, i64 0, i64 %zext_ln113_1" [source/AESfunctions.cpp:119]   --->   Operation 180 'getelementptr' 'mul13_addr_7' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 181 [2/2] (3.25ns)   --->   "%mul13_load_7 = load i8 %mul13_addr_7" [source/AESfunctions.cpp:119]   --->   Operation 181 'load' 'mul13_load_7' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_9 : Operation 182 [1/1] (0.00ns)   --->   "%mul09_addr_7 = getelementptr i8 %mul09, i64 0, i64 %zext_ln113_2" [source/AESfunctions.cpp:119]   --->   Operation 182 'getelementptr' 'mul09_addr_7' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 183 [2/2] (3.25ns)   --->   "%mul09_load_7 = load i8 %mul09_addr_7" [source/AESfunctions.cpp:119]   --->   Operation 183 'load' 'mul09_load_7' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_9 : Operation 184 [1/1] (0.00ns)   --->   "%mul14_addr_7 = getelementptr i8 %mul14, i64 0, i64 %zext_ln114" [source/AESfunctions.cpp:120]   --->   Operation 184 'getelementptr' 'mul14_addr_7' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 185 [2/2] (3.25ns)   --->   "%mul14_load_7 = load i8 %mul14_addr_7" [source/AESfunctions.cpp:120]   --->   Operation 185 'load' 'mul14_load_7' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_9 : Operation 186 [1/2] (2.32ns)   --->   "%state_load_81 = load i4 %state_addr_81" [source/AESfunctions.cpp:131]   --->   Operation 186 'load' 'state_load_81' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 187 [1/2] (2.32ns)   --->   "%state_load_82 = load i4 %state_addr_82" [source/AESfunctions.cpp:132]   --->   Operation 187 'load' 'state_load_82' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 188 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln105, i4 %state_addr" [source/AESfunctions.cpp:140]   --->   Operation 188 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 189 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln107, i4 %state_addr_68" [source/AESfunctions.cpp:140]   --->   Operation 189 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 10 <SV = 9> <Delay = 4.24>
+ST_10 : Operation 190 [1/2] (3.25ns)   --->   "%mul11_load_7 = load i8 %mul11_addr_7" [source/AESfunctions.cpp:119]   --->   Operation 190 'load' 'mul11_load_7' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_10 : Operation 191 [1/2] (3.25ns)   --->   "%mul13_load_7 = load i8 %mul13_addr_7" [source/AESfunctions.cpp:119]   --->   Operation 191 'load' 'mul13_load_7' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_10 : Operation 192 [1/2] (3.25ns)   --->   "%mul09_load_7 = load i8 %mul09_addr_7" [source/AESfunctions.cpp:119]   --->   Operation 192 'load' 'mul09_load_7' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_10 : Operation 193 [1/2] (3.25ns)   --->   "%mul14_load_7 = load i8 %mul14_addr_7" [source/AESfunctions.cpp:120]   --->   Operation 193 'load' 'mul14_load_7' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_10 : Operation 194 [1/1] (0.00ns) (grouped into LUT with out node xor_ln120)   --->   "%xor_ln120_1 = xor i8 %mul13_load_7, i8 %mul11_load_7" [source/AESfunctions.cpp:120]   --->   Operation 194 'xor' 'xor_ln120_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 195 [1/1] (0.00ns) (grouped into LUT with out node xor_ln120)   --->   "%xor_ln120_2 = xor i8 %mul09_load_7, i8 %mul14_load_7" [source/AESfunctions.cpp:120]   --->   Operation 195 'xor' 'xor_ln120_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 196 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln120 = xor i8 %xor_ln120_2, i8 %xor_ln120_1" [source/AESfunctions.cpp:120]   --->   Operation 196 'xor' 'xor_ln120' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 197 [1/1] (0.00ns)   --->   "%zext_ln122 = zext i8 %state_load_75" [source/AESfunctions.cpp:122]   --->   Operation 197 'zext' 'zext_ln122' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 198 [1/1] (0.00ns)   --->   "%mul14_addr_8 = getelementptr i8 %mul14, i64 0, i64 %zext_ln122" [source/AESfunctions.cpp:122]   --->   Operation 198 'getelementptr' 'mul14_addr_8' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 199 [2/2] (3.25ns)   --->   "%mul14_load_8 = load i8 %mul14_addr_8" [source/AESfunctions.cpp:122]   --->   Operation 199 'load' 'mul14_load_8' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_10 : Operation 200 [1/1] (0.00ns)   --->   "%zext_ln122_1 = zext i8 %state_load_76" [source/AESfunctions.cpp:122]   --->   Operation 200 'zext' 'zext_ln122_1' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 201 [1/1] (0.00ns)   --->   "%mul11_addr_8 = getelementptr i8 %mul11, i64 0, i64 %zext_ln122_1" [source/AESfunctions.cpp:122]   --->   Operation 201 'getelementptr' 'mul11_addr_8' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 202 [2/2] (3.25ns)   --->   "%mul11_load_8 = load i8 %mul11_addr_8" [source/AESfunctions.cpp:122]   --->   Operation 202 'load' 'mul11_load_8' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_10 : Operation 203 [1/1] (0.00ns)   --->   "%zext_ln122_2 = zext i8 %state_load_77" [source/AESfunctions.cpp:122]   --->   Operation 203 'zext' 'zext_ln122_2' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 204 [1/1] (0.00ns)   --->   "%mul13_addr_8 = getelementptr i8 %mul13, i64 0, i64 %zext_ln122_2" [source/AESfunctions.cpp:122]   --->   Operation 204 'getelementptr' 'mul13_addr_8' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 205 [2/2] (3.25ns)   --->   "%mul13_load_8 = load i8 %mul13_addr_8" [source/AESfunctions.cpp:122]   --->   Operation 205 'load' 'mul13_load_8' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_10 : Operation 206 [1/1] (0.00ns)   --->   "%zext_ln123 = zext i8 %state_load_78" [source/AESfunctions.cpp:123]   --->   Operation 206 'zext' 'zext_ln123' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 207 [1/1] (0.00ns)   --->   "%mul09_addr_8 = getelementptr i8 %mul09, i64 0, i64 %zext_ln123" [source/AESfunctions.cpp:123]   --->   Operation 207 'getelementptr' 'mul09_addr_8' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 208 [2/2] (3.25ns)   --->   "%mul09_load_8 = load i8 %mul09_addr_8" [source/AESfunctions.cpp:123]   --->   Operation 208 'load' 'mul09_load_8' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_10 : Operation 209 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln109, i4 %state_addr_69" [source/AESfunctions.cpp:140]   --->   Operation 209 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_10 : Operation 210 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln111, i4 %state_addr_70" [source/AESfunctions.cpp:140]   --->   Operation 210 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 11 <SV = 10> <Delay = 4.24>
+ST_11 : Operation 211 [1/2] (3.25ns)   --->   "%mul14_load_8 = load i8 %mul14_addr_8" [source/AESfunctions.cpp:122]   --->   Operation 211 'load' 'mul14_load_8' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_11 : Operation 212 [1/2] (3.25ns)   --->   "%mul11_load_8 = load i8 %mul11_addr_8" [source/AESfunctions.cpp:122]   --->   Operation 212 'load' 'mul11_load_8' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_11 : Operation 213 [1/2] (3.25ns)   --->   "%mul13_load_8 = load i8 %mul13_addr_8" [source/AESfunctions.cpp:122]   --->   Operation 213 'load' 'mul13_load_8' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_11 : Operation 214 [1/2] (3.25ns)   --->   "%mul09_load_8 = load i8 %mul09_addr_8" [source/AESfunctions.cpp:123]   --->   Operation 214 'load' 'mul09_load_8' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_11 : Operation 215 [1/1] (0.00ns) (grouped into LUT with out node xor_ln123)   --->   "%xor_ln123_1 = xor i8 %mul11_load_8, i8 %mul14_load_8" [source/AESfunctions.cpp:123]   --->   Operation 215 'xor' 'xor_ln123_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 216 [1/1] (0.00ns) (grouped into LUT with out node xor_ln123)   --->   "%xor_ln123_2 = xor i8 %mul13_load_8, i8 %mul09_load_8" [source/AESfunctions.cpp:123]   --->   Operation 216 'xor' 'xor_ln123_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 217 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln123 = xor i8 %xor_ln123_2, i8 %xor_ln123_1" [source/AESfunctions.cpp:123]   --->   Operation 217 'xor' 'xor_ln123' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 218 [1/1] (0.00ns)   --->   "%mul09_addr_9 = getelementptr i8 %mul09, i64 0, i64 %zext_ln122" [source/AESfunctions.cpp:124]   --->   Operation 218 'getelementptr' 'mul09_addr_9' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 219 [2/2] (3.25ns)   --->   "%mul09_load_9 = load i8 %mul09_addr_9" [source/AESfunctions.cpp:124]   --->   Operation 219 'load' 'mul09_load_9' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_11 : Operation 220 [1/1] (0.00ns)   --->   "%mul14_addr_9 = getelementptr i8 %mul14, i64 0, i64 %zext_ln122_1" [source/AESfunctions.cpp:124]   --->   Operation 220 'getelementptr' 'mul14_addr_9' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 221 [2/2] (3.25ns)   --->   "%mul14_load_9 = load i8 %mul14_addr_9" [source/AESfunctions.cpp:124]   --->   Operation 221 'load' 'mul14_load_9' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_11 : Operation 222 [1/1] (0.00ns)   --->   "%mul11_addr_9 = getelementptr i8 %mul11, i64 0, i64 %zext_ln122_2" [source/AESfunctions.cpp:124]   --->   Operation 222 'getelementptr' 'mul11_addr_9' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 223 [2/2] (3.25ns)   --->   "%mul11_load_9 = load i8 %mul11_addr_9" [source/AESfunctions.cpp:124]   --->   Operation 223 'load' 'mul11_load_9' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_11 : Operation 224 [1/1] (0.00ns)   --->   "%mul13_addr_9 = getelementptr i8 %mul13, i64 0, i64 %zext_ln123" [source/AESfunctions.cpp:125]   --->   Operation 224 'getelementptr' 'mul13_addr_9' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 225 [2/2] (3.25ns)   --->   "%mul13_load_9 = load i8 %mul13_addr_9" [source/AESfunctions.cpp:125]   --->   Operation 225 'load' 'mul13_load_9' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_11 : Operation 226 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln114, i4 %state_addr_71" [source/AESfunctions.cpp:140]   --->   Operation 226 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_11 : Operation 227 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln116, i4 %state_addr_72" [source/AESfunctions.cpp:140]   --->   Operation 227 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 12 <SV = 11> <Delay = 4.24>
+ST_12 : Operation 228 [1/2] (3.25ns)   --->   "%mul09_load_9 = load i8 %mul09_addr_9" [source/AESfunctions.cpp:124]   --->   Operation 228 'load' 'mul09_load_9' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_12 : Operation 229 [1/2] (3.25ns)   --->   "%mul14_load_9 = load i8 %mul14_addr_9" [source/AESfunctions.cpp:124]   --->   Operation 229 'load' 'mul14_load_9' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_12 : Operation 230 [1/2] (3.25ns)   --->   "%mul11_load_9 = load i8 %mul11_addr_9" [source/AESfunctions.cpp:124]   --->   Operation 230 'load' 'mul11_load_9' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_12 : Operation 231 [1/2] (3.25ns)   --->   "%mul13_load_9 = load i8 %mul13_addr_9" [source/AESfunctions.cpp:125]   --->   Operation 231 'load' 'mul13_load_9' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_12 : Operation 232 [1/1] (0.00ns) (grouped into LUT with out node xor_ln125)   --->   "%xor_ln125_1 = xor i8 %mul14_load_9, i8 %mul09_load_9" [source/AESfunctions.cpp:125]   --->   Operation 232 'xor' 'xor_ln125_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 233 [1/1] (0.00ns) (grouped into LUT with out node xor_ln125)   --->   "%xor_ln125_2 = xor i8 %mul11_load_9, i8 %mul13_load_9" [source/AESfunctions.cpp:125]   --->   Operation 233 'xor' 'xor_ln125_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 234 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln125 = xor i8 %xor_ln125_2, i8 %xor_ln125_1" [source/AESfunctions.cpp:125]   --->   Operation 234 'xor' 'xor_ln125' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 235 [1/1] (0.00ns)   --->   "%mul13_addr_10 = getelementptr i8 %mul13, i64 0, i64 %zext_ln122" [source/AESfunctions.cpp:126]   --->   Operation 235 'getelementptr' 'mul13_addr_10' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 236 [2/2] (3.25ns)   --->   "%mul13_load_10 = load i8 %mul13_addr_10" [source/AESfunctions.cpp:126]   --->   Operation 236 'load' 'mul13_load_10' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_12 : Operation 237 [1/1] (0.00ns)   --->   "%mul09_addr_10 = getelementptr i8 %mul09, i64 0, i64 %zext_ln122_1" [source/AESfunctions.cpp:126]   --->   Operation 237 'getelementptr' 'mul09_addr_10' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 238 [2/2] (3.25ns)   --->   "%mul09_load_10 = load i8 %mul09_addr_10" [source/AESfunctions.cpp:126]   --->   Operation 238 'load' 'mul09_load_10' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_12 : Operation 239 [1/1] (0.00ns)   --->   "%mul14_addr_10 = getelementptr i8 %mul14, i64 0, i64 %zext_ln122_2" [source/AESfunctions.cpp:126]   --->   Operation 239 'getelementptr' 'mul14_addr_10' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 240 [2/2] (3.25ns)   --->   "%mul14_load_10 = load i8 %mul14_addr_10" [source/AESfunctions.cpp:126]   --->   Operation 240 'load' 'mul14_load_10' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_12 : Operation 241 [1/1] (0.00ns)   --->   "%mul11_addr_10 = getelementptr i8 %mul11, i64 0, i64 %zext_ln123" [source/AESfunctions.cpp:127]   --->   Operation 241 'getelementptr' 'mul11_addr_10' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 242 [2/2] (3.25ns)   --->   "%mul11_load_10 = load i8 %mul11_addr_10" [source/AESfunctions.cpp:127]   --->   Operation 242 'load' 'mul11_load_10' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_12 : Operation 243 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln118, i4 %state_addr_73" [source/AESfunctions.cpp:140]   --->   Operation 243 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_12 : Operation 244 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln120, i4 %state_addr_74" [source/AESfunctions.cpp:140]   --->   Operation 244 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 13 <SV = 12> <Delay = 4.24>
+ST_13 : Operation 245 [1/2] (3.25ns)   --->   "%mul13_load_10 = load i8 %mul13_addr_10" [source/AESfunctions.cpp:126]   --->   Operation 245 'load' 'mul13_load_10' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_13 : Operation 246 [1/2] (3.25ns)   --->   "%mul09_load_10 = load i8 %mul09_addr_10" [source/AESfunctions.cpp:126]   --->   Operation 246 'load' 'mul09_load_10' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_13 : Operation 247 [1/2] (3.25ns)   --->   "%mul14_load_10 = load i8 %mul14_addr_10" [source/AESfunctions.cpp:126]   --->   Operation 247 'load' 'mul14_load_10' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_13 : Operation 248 [1/2] (3.25ns)   --->   "%mul11_load_10 = load i8 %mul11_addr_10" [source/AESfunctions.cpp:127]   --->   Operation 248 'load' 'mul11_load_10' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_13 : Operation 249 [1/1] (0.00ns) (grouped into LUT with out node xor_ln127)   --->   "%xor_ln127_1 = xor i8 %mul09_load_10, i8 %mul13_load_10" [source/AESfunctions.cpp:127]   --->   Operation 249 'xor' 'xor_ln127_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 250 [1/1] (0.00ns) (grouped into LUT with out node xor_ln127)   --->   "%xor_ln127_2 = xor i8 %mul14_load_10, i8 %mul11_load_10" [source/AESfunctions.cpp:127]   --->   Operation 250 'xor' 'xor_ln127_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 251 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln127 = xor i8 %xor_ln127_2, i8 %xor_ln127_1" [source/AESfunctions.cpp:127]   --->   Operation 251 'xor' 'xor_ln127' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 252 [1/1] (0.00ns)   --->   "%mul11_addr_11 = getelementptr i8 %mul11, i64 0, i64 %zext_ln122" [source/AESfunctions.cpp:128]   --->   Operation 252 'getelementptr' 'mul11_addr_11' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 253 [2/2] (3.25ns)   --->   "%mul11_load_11 = load i8 %mul11_addr_11" [source/AESfunctions.cpp:128]   --->   Operation 253 'load' 'mul11_load_11' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_13 : Operation 254 [1/1] (0.00ns)   --->   "%mul13_addr_11 = getelementptr i8 %mul13, i64 0, i64 %zext_ln122_1" [source/AESfunctions.cpp:128]   --->   Operation 254 'getelementptr' 'mul13_addr_11' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 255 [2/2] (3.25ns)   --->   "%mul13_load_11 = load i8 %mul13_addr_11" [source/AESfunctions.cpp:128]   --->   Operation 255 'load' 'mul13_load_11' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_13 : Operation 256 [1/1] (0.00ns)   --->   "%mul09_addr_11 = getelementptr i8 %mul09, i64 0, i64 %zext_ln122_2" [source/AESfunctions.cpp:128]   --->   Operation 256 'getelementptr' 'mul09_addr_11' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 257 [2/2] (3.25ns)   --->   "%mul09_load_11 = load i8 %mul09_addr_11" [source/AESfunctions.cpp:128]   --->   Operation 257 'load' 'mul09_load_11' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_13 : Operation 258 [1/1] (0.00ns)   --->   "%mul14_addr_11 = getelementptr i8 %mul14, i64 0, i64 %zext_ln123" [source/AESfunctions.cpp:129]   --->   Operation 258 'getelementptr' 'mul14_addr_11' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 259 [2/2] (3.25ns)   --->   "%mul14_load_11 = load i8 %mul14_addr_11" [source/AESfunctions.cpp:129]   --->   Operation 259 'load' 'mul14_load_11' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_13 : Operation 260 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln123, i4 %state_addr_75" [source/AESfunctions.cpp:140]   --->   Operation 260 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_13 : Operation 261 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln125, i4 %state_addr_76" [source/AESfunctions.cpp:140]   --->   Operation 261 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 14 <SV = 13> <Delay = 6.56>
+ST_14 : Operation 262 [1/2] (3.25ns)   --->   "%mul11_load_11 = load i8 %mul11_addr_11" [source/AESfunctions.cpp:128]   --->   Operation 262 'load' 'mul11_load_11' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_14 : Operation 263 [1/2] (3.25ns)   --->   "%mul13_load_11 = load i8 %mul13_addr_11" [source/AESfunctions.cpp:128]   --->   Operation 263 'load' 'mul13_load_11' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_14 : Operation 264 [1/2] (3.25ns)   --->   "%mul09_load_11 = load i8 %mul09_addr_11" [source/AESfunctions.cpp:128]   --->   Operation 264 'load' 'mul09_load_11' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_14 : Operation 265 [1/2] (3.25ns)   --->   "%mul14_load_11 = load i8 %mul14_addr_11" [source/AESfunctions.cpp:129]   --->   Operation 265 'load' 'mul14_load_11' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_14 : Operation 266 [1/1] (0.00ns) (grouped into LUT with out node xor_ln129)   --->   "%xor_ln129_1 = xor i8 %mul13_load_11, i8 %mul11_load_11" [source/AESfunctions.cpp:129]   --->   Operation 266 'xor' 'xor_ln129_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 267 [1/1] (0.00ns) (grouped into LUT with out node xor_ln129)   --->   "%xor_ln129_2 = xor i8 %mul09_load_11, i8 %mul14_load_11" [source/AESfunctions.cpp:129]   --->   Operation 267 'xor' 'xor_ln129_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 268 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln129 = xor i8 %xor_ln129_2, i8 %xor_ln129_1" [source/AESfunctions.cpp:129]   --->   Operation 268 'xor' 'xor_ln129' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 269 [1/1] (0.00ns)   --->   "%zext_ln131 = zext i8 %state_load_79" [source/AESfunctions.cpp:131]   --->   Operation 269 'zext' 'zext_ln131' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 270 [1/1] (0.00ns)   --->   "%mul14_addr_12 = getelementptr i8 %mul14, i64 0, i64 %zext_ln131" [source/AESfunctions.cpp:131]   --->   Operation 270 'getelementptr' 'mul14_addr_12' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 271 [2/2] (3.25ns)   --->   "%mul14_load_12 = load i8 %mul14_addr_12" [source/AESfunctions.cpp:131]   --->   Operation 271 'load' 'mul14_load_12' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_14 : Operation 272 [1/1] (0.00ns)   --->   "%zext_ln131_1 = zext i8 %state_load_80" [source/AESfunctions.cpp:131]   --->   Operation 272 'zext' 'zext_ln131_1' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 273 [1/1] (0.00ns)   --->   "%mul11_addr_12 = getelementptr i8 %mul11, i64 0, i64 %zext_ln131_1" [source/AESfunctions.cpp:131]   --->   Operation 273 'getelementptr' 'mul11_addr_12' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 274 [2/2] (3.25ns)   --->   "%mul11_load_12 = load i8 %mul11_addr_12" [source/AESfunctions.cpp:131]   --->   Operation 274 'load' 'mul11_load_12' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_14 : Operation 275 [1/1] (0.00ns)   --->   "%zext_ln131_2 = zext i8 %state_load_81" [source/AESfunctions.cpp:131]   --->   Operation 275 'zext' 'zext_ln131_2' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 276 [1/1] (0.00ns)   --->   "%mul13_addr_12 = getelementptr i8 %mul13, i64 0, i64 %zext_ln131_2" [source/AESfunctions.cpp:131]   --->   Operation 276 'getelementptr' 'mul13_addr_12' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 277 [2/2] (3.25ns)   --->   "%mul13_load_12 = load i8 %mul13_addr_12" [source/AESfunctions.cpp:131]   --->   Operation 277 'load' 'mul13_load_12' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_14 : Operation 278 [1/1] (0.00ns)   --->   "%zext_ln132 = zext i8 %state_load_82" [source/AESfunctions.cpp:132]   --->   Operation 278 'zext' 'zext_ln132' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 279 [1/1] (0.00ns)   --->   "%mul09_addr_12 = getelementptr i8 %mul09, i64 0, i64 %zext_ln132" [source/AESfunctions.cpp:132]   --->   Operation 279 'getelementptr' 'mul09_addr_12' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 280 [2/2] (3.25ns)   --->   "%mul09_load_12 = load i8 %mul09_addr_12" [source/AESfunctions.cpp:132]   --->   Operation 280 'load' 'mul09_load_12' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_14 : Operation 281 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln127, i4 %state_addr_77" [source/AESfunctions.cpp:140]   --->   Operation 281 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_14 : Operation 282 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln129, i4 %state_addr_78" [source/AESfunctions.cpp:140]   --->   Operation 282 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 15 <SV = 14> <Delay = 6.56>
+ST_15 : Operation 283 [1/2] (3.25ns)   --->   "%mul14_load_12 = load i8 %mul14_addr_12" [source/AESfunctions.cpp:131]   --->   Operation 283 'load' 'mul14_load_12' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_15 : Operation 284 [1/2] (3.25ns)   --->   "%mul11_load_12 = load i8 %mul11_addr_12" [source/AESfunctions.cpp:131]   --->   Operation 284 'load' 'mul11_load_12' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_15 : Operation 285 [1/2] (3.25ns)   --->   "%mul13_load_12 = load i8 %mul13_addr_12" [source/AESfunctions.cpp:131]   --->   Operation 285 'load' 'mul13_load_12' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_15 : Operation 286 [1/2] (3.25ns)   --->   "%mul09_load_12 = load i8 %mul09_addr_12" [source/AESfunctions.cpp:132]   --->   Operation 286 'load' 'mul09_load_12' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_15 : Operation 287 [1/1] (0.00ns) (grouped into LUT with out node xor_ln132)   --->   "%xor_ln132_1 = xor i8 %mul11_load_12, i8 %mul14_load_12" [source/AESfunctions.cpp:132]   --->   Operation 287 'xor' 'xor_ln132_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 288 [1/1] (0.00ns) (grouped into LUT with out node xor_ln132)   --->   "%xor_ln132_2 = xor i8 %mul13_load_12, i8 %mul09_load_12" [source/AESfunctions.cpp:132]   --->   Operation 288 'xor' 'xor_ln132_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 289 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln132 = xor i8 %xor_ln132_2, i8 %xor_ln132_1" [source/AESfunctions.cpp:132]   --->   Operation 289 'xor' 'xor_ln132' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 290 [1/1] (0.00ns)   --->   "%mul09_addr_13 = getelementptr i8 %mul09, i64 0, i64 %zext_ln131" [source/AESfunctions.cpp:133]   --->   Operation 290 'getelementptr' 'mul09_addr_13' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 291 [2/2] (3.25ns)   --->   "%mul09_load_13 = load i8 %mul09_addr_13" [source/AESfunctions.cpp:133]   --->   Operation 291 'load' 'mul09_load_13' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_15 : Operation 292 [1/1] (0.00ns)   --->   "%mul14_addr_13 = getelementptr i8 %mul14, i64 0, i64 %zext_ln131_1" [source/AESfunctions.cpp:133]   --->   Operation 292 'getelementptr' 'mul14_addr_13' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 293 [2/2] (3.25ns)   --->   "%mul14_load_13 = load i8 %mul14_addr_13" [source/AESfunctions.cpp:133]   --->   Operation 293 'load' 'mul14_load_13' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_15 : Operation 294 [1/1] (0.00ns)   --->   "%mul11_addr_13 = getelementptr i8 %mul11, i64 0, i64 %zext_ln131_2" [source/AESfunctions.cpp:133]   --->   Operation 294 'getelementptr' 'mul11_addr_13' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 295 [2/2] (3.25ns)   --->   "%mul11_load_13 = load i8 %mul11_addr_13" [source/AESfunctions.cpp:133]   --->   Operation 295 'load' 'mul11_load_13' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_15 : Operation 296 [1/1] (0.00ns)   --->   "%mul13_addr_13 = getelementptr i8 %mul13, i64 0, i64 %zext_ln132" [source/AESfunctions.cpp:134]   --->   Operation 296 'getelementptr' 'mul13_addr_13' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 297 [2/2] (3.25ns)   --->   "%mul13_load_13 = load i8 %mul13_addr_13" [source/AESfunctions.cpp:134]   --->   Operation 297 'load' 'mul13_load_13' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_15 : Operation 298 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln132, i4 %state_addr_79" [source/AESfunctions.cpp:140]   --->   Operation 298 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 16 <SV = 15> <Delay = 6.56>
+ST_16 : Operation 299 [1/2] (3.25ns)   --->   "%mul09_load_13 = load i8 %mul09_addr_13" [source/AESfunctions.cpp:133]   --->   Operation 299 'load' 'mul09_load_13' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_16 : Operation 300 [1/2] (3.25ns)   --->   "%mul14_load_13 = load i8 %mul14_addr_13" [source/AESfunctions.cpp:133]   --->   Operation 300 'load' 'mul14_load_13' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_16 : Operation 301 [1/2] (3.25ns)   --->   "%mul11_load_13 = load i8 %mul11_addr_13" [source/AESfunctions.cpp:133]   --->   Operation 301 'load' 'mul11_load_13' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_16 : Operation 302 [1/2] (3.25ns)   --->   "%mul13_load_13 = load i8 %mul13_addr_13" [source/AESfunctions.cpp:134]   --->   Operation 302 'load' 'mul13_load_13' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_16 : Operation 303 [1/1] (0.00ns) (grouped into LUT with out node xor_ln134)   --->   "%xor_ln134_1 = xor i8 %mul14_load_13, i8 %mul09_load_13" [source/AESfunctions.cpp:134]   --->   Operation 303 'xor' 'xor_ln134_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 304 [1/1] (0.00ns) (grouped into LUT with out node xor_ln134)   --->   "%xor_ln134_2 = xor i8 %mul11_load_13, i8 %mul13_load_13" [source/AESfunctions.cpp:134]   --->   Operation 304 'xor' 'xor_ln134_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 305 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln134 = xor i8 %xor_ln134_2, i8 %xor_ln134_1" [source/AESfunctions.cpp:134]   --->   Operation 305 'xor' 'xor_ln134' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 306 [1/1] (0.00ns)   --->   "%mul13_addr_14 = getelementptr i8 %mul13, i64 0, i64 %zext_ln131" [source/AESfunctions.cpp:135]   --->   Operation 306 'getelementptr' 'mul13_addr_14' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 307 [2/2] (3.25ns)   --->   "%mul13_load_14 = load i8 %mul13_addr_14" [source/AESfunctions.cpp:135]   --->   Operation 307 'load' 'mul13_load_14' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_16 : Operation 308 [1/1] (0.00ns)   --->   "%mul09_addr_14 = getelementptr i8 %mul09, i64 0, i64 %zext_ln131_1" [source/AESfunctions.cpp:135]   --->   Operation 308 'getelementptr' 'mul09_addr_14' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 309 [2/2] (3.25ns)   --->   "%mul09_load_14 = load i8 %mul09_addr_14" [source/AESfunctions.cpp:135]   --->   Operation 309 'load' 'mul09_load_14' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_16 : Operation 310 [1/1] (0.00ns)   --->   "%mul14_addr_14 = getelementptr i8 %mul14, i64 0, i64 %zext_ln131_2" [source/AESfunctions.cpp:135]   --->   Operation 310 'getelementptr' 'mul14_addr_14' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 311 [2/2] (3.25ns)   --->   "%mul14_load_14 = load i8 %mul14_addr_14" [source/AESfunctions.cpp:135]   --->   Operation 311 'load' 'mul14_load_14' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_16 : Operation 312 [1/1] (0.00ns)   --->   "%mul11_addr_14 = getelementptr i8 %mul11, i64 0, i64 %zext_ln132" [source/AESfunctions.cpp:136]   --->   Operation 312 'getelementptr' 'mul11_addr_14' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 313 [2/2] (3.25ns)   --->   "%mul11_load_14 = load i8 %mul11_addr_14" [source/AESfunctions.cpp:136]   --->   Operation 313 'load' 'mul11_load_14' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_16 : Operation 314 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln134, i4 %state_addr_80" [source/AESfunctions.cpp:140]   --->   Operation 314 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 17 <SV = 16> <Delay = 6.56>
+ST_17 : Operation 315 [1/2] (3.25ns)   --->   "%mul13_load_14 = load i8 %mul13_addr_14" [source/AESfunctions.cpp:135]   --->   Operation 315 'load' 'mul13_load_14' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_17 : Operation 316 [1/2] (3.25ns)   --->   "%mul09_load_14 = load i8 %mul09_addr_14" [source/AESfunctions.cpp:135]   --->   Operation 316 'load' 'mul09_load_14' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_17 : Operation 317 [1/2] (3.25ns)   --->   "%mul14_load_14 = load i8 %mul14_addr_14" [source/AESfunctions.cpp:135]   --->   Operation 317 'load' 'mul14_load_14' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_17 : Operation 318 [1/2] (3.25ns)   --->   "%mul11_load_14 = load i8 %mul11_addr_14" [source/AESfunctions.cpp:136]   --->   Operation 318 'load' 'mul11_load_14' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_17 : Operation 319 [1/1] (0.00ns) (grouped into LUT with out node xor_ln136)   --->   "%xor_ln136_1 = xor i8 %mul09_load_14, i8 %mul13_load_14" [source/AESfunctions.cpp:136]   --->   Operation 319 'xor' 'xor_ln136_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 320 [1/1] (0.00ns) (grouped into LUT with out node xor_ln136)   --->   "%xor_ln136_2 = xor i8 %mul14_load_14, i8 %mul11_load_14" [source/AESfunctions.cpp:136]   --->   Operation 320 'xor' 'xor_ln136_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 321 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln136 = xor i8 %xor_ln136_2, i8 %xor_ln136_1" [source/AESfunctions.cpp:136]   --->   Operation 321 'xor' 'xor_ln136' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 322 [1/1] (0.00ns)   --->   "%mul11_addr_15 = getelementptr i8 %mul11, i64 0, i64 %zext_ln131" [source/AESfunctions.cpp:137]   --->   Operation 322 'getelementptr' 'mul11_addr_15' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 323 [2/2] (3.25ns)   --->   "%mul11_load_15 = load i8 %mul11_addr_15" [source/AESfunctions.cpp:137]   --->   Operation 323 'load' 'mul11_load_15' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_17 : Operation 324 [1/1] (0.00ns)   --->   "%mul13_addr_15 = getelementptr i8 %mul13, i64 0, i64 %zext_ln131_1" [source/AESfunctions.cpp:137]   --->   Operation 324 'getelementptr' 'mul13_addr_15' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 325 [2/2] (3.25ns)   --->   "%mul13_load_15 = load i8 %mul13_addr_15" [source/AESfunctions.cpp:137]   --->   Operation 325 'load' 'mul13_load_15' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_17 : Operation 326 [1/1] (0.00ns)   --->   "%mul09_addr_15 = getelementptr i8 %mul09, i64 0, i64 %zext_ln131_2" [source/AESfunctions.cpp:137]   --->   Operation 326 'getelementptr' 'mul09_addr_15' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 327 [2/2] (3.25ns)   --->   "%mul09_load_15 = load i8 %mul09_addr_15" [source/AESfunctions.cpp:137]   --->   Operation 327 'load' 'mul09_load_15' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_17 : Operation 328 [1/1] (0.00ns)   --->   "%mul14_addr_15 = getelementptr i8 %mul14, i64 0, i64 %zext_ln132" [source/AESfunctions.cpp:138]   --->   Operation 328 'getelementptr' 'mul14_addr_15' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 329 [2/2] (3.25ns)   --->   "%mul14_load_15 = load i8 %mul14_addr_15" [source/AESfunctions.cpp:138]   --->   Operation 329 'load' 'mul14_load_15' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_17 : Operation 330 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln136, i4 %state_addr_81" [source/AESfunctions.cpp:140]   --->   Operation 330 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 18 <SV = 17> <Delay = 6.56>
+ST_18 : Operation 331 [1/2] (3.25ns)   --->   "%mul11_load_15 = load i8 %mul11_addr_15" [source/AESfunctions.cpp:137]   --->   Operation 331 'load' 'mul11_load_15' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_18 : Operation 332 [1/2] (3.25ns)   --->   "%mul13_load_15 = load i8 %mul13_addr_15" [source/AESfunctions.cpp:137]   --->   Operation 332 'load' 'mul13_load_15' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_18 : Operation 333 [1/2] (3.25ns)   --->   "%mul09_load_15 = load i8 %mul09_addr_15" [source/AESfunctions.cpp:137]   --->   Operation 333 'load' 'mul09_load_15' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_18 : Operation 334 [1/2] (3.25ns)   --->   "%mul14_load_15 = load i8 %mul14_addr_15" [source/AESfunctions.cpp:138]   --->   Operation 334 'load' 'mul14_load_15' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_18 : Operation 335 [1/1] (0.00ns) (grouped into LUT with out node xor_ln138)   --->   "%xor_ln138_1 = xor i8 %mul13_load_15, i8 %mul11_load_15" [source/AESfunctions.cpp:138]   --->   Operation 335 'xor' 'xor_ln138_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 336 [1/1] (0.00ns) (grouped into LUT with out node xor_ln138)   --->   "%xor_ln138_2 = xor i8 %mul09_load_15, i8 %mul14_load_15" [source/AESfunctions.cpp:138]   --->   Operation 336 'xor' 'xor_ln138_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 337 [1/1] (0.99ns) (out node of the LUT)   --->   "%xor_ln138 = xor i8 %xor_ln138_2, i8 %xor_ln138_1" [source/AESfunctions.cpp:138]   --->   Operation 337 'xor' 'xor_ln138' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 338 [1/1] (2.32ns)   --->   "%store_ln140 = store i8 %xor_ln138, i4 %state_addr_82" [source/AESfunctions.cpp:140]   --->   Operation 338 'store' 'store_ln140' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_18 : Operation 339 [1/1] (0.00ns)   --->   "%ret_ln142 = ret" [source/AESfunctions.cpp:142]   --->   Operation 339 'ret' 'ret_ln142' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('state_addr', source/AESfunctions.cpp:101) [6]  (0 ns)
+	'load' operation ('state_load', source/AESfunctions.cpp:104) on array 'state' [7]  (2.32 ns)
+
+ <State 2>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('state_load', source/AESfunctions.cpp:104) on array 'state' [7]  (2.32 ns)
+	'getelementptr' operation ('mul14_addr', source/AESfunctions.cpp:104) [9]  (0 ns)
+	'load' operation ('mul14_load', source/AESfunctions.cpp:104) on array 'mul14' [10]  (3.25 ns)
+
+ <State 3>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('state_load_69', source/AESfunctions.cpp:104) on array 'state' [17]  (2.32 ns)
+	'getelementptr' operation ('mul13_addr', source/AESfunctions.cpp:104) [19]  (0 ns)
+	'load' operation ('mul13_load', source/AESfunctions.cpp:104) on array 'mul13' [20]  (3.25 ns)
+
+ <State 4>: 4.24ns
+The critical path consists of the following:
+	'load' operation ('mul13_load', source/AESfunctions.cpp:104) on array 'mul13' [20]  (3.25 ns)
+	'xor' operation ('xor_ln105_2', source/AESfunctions.cpp:105) [27]  (0 ns)
+	'xor' operation ('xor_ln105', source/AESfunctions.cpp:105) [28]  (0.99 ns)
+
+ <State 5>: 4.24ns
+The critical path consists of the following:
+	'load' operation ('mul13_load_1', source/AESfunctions.cpp:107) on array 'mul13' [36]  (3.25 ns)
+	'xor' operation ('xor_ln107_2', source/AESfunctions.cpp:107) [38]  (0 ns)
+	'xor' operation ('xor_ln107', source/AESfunctions.cpp:107) [39]  (0.99 ns)
+
+ <State 6>: 4.24ns
+The critical path consists of the following:
+	'load' operation ('mul11_load_3', source/AESfunctions.cpp:110) on array 'mul11' [52]  (3.25 ns)
+	'xor' operation ('xor_ln111_1', source/AESfunctions.cpp:111) [59]  (0 ns)
+	'xor' operation ('xor_ln111', source/AESfunctions.cpp:111) [61]  (0.99 ns)
+
+ <State 7>: 4.24ns
+The critical path consists of the following:
+	'load' operation ('mul14_load_4', source/AESfunctions.cpp:113) on array 'mul14' [66]  (3.25 ns)
+	'xor' operation ('xor_ln114_1', source/AESfunctions.cpp:114) [82]  (0 ns)
+	'xor' operation ('xor_ln114', source/AESfunctions.cpp:114) [84]  (0.99 ns)
+
+ <State 8>: 4.24ns
+The critical path consists of the following:
+	'load' operation ('mul09_load_5', source/AESfunctions.cpp:115) on array 'mul09' [86]  (3.25 ns)
+	'xor' operation ('xor_ln116_1', source/AESfunctions.cpp:116) [93]  (0 ns)
+	'xor' operation ('xor_ln116', source/AESfunctions.cpp:116) [95]  (0.99 ns)
+
+ <State 9>: 4.24ns
+The critical path consists of the following:
+	'load' operation ('mul13_load_6', source/AESfunctions.cpp:117) on array 'mul13' [97]  (3.25 ns)
+	'xor' operation ('xor_ln118_1', source/AESfunctions.cpp:118) [104]  (0 ns)
+	'xor' operation ('xor_ln118', source/AESfunctions.cpp:118) [106]  (0.99 ns)
+
+ <State 10>: 4.24ns
+The critical path consists of the following:
+	'load' operation ('mul11_load_7', source/AESfunctions.cpp:119) on array 'mul11' [108]  (3.25 ns)
+	'xor' operation ('xor_ln120_1', source/AESfunctions.cpp:120) [115]  (0 ns)
+	'xor' operation ('xor_ln120', source/AESfunctions.cpp:120) [117]  (0.99 ns)
+
+ <State 11>: 4.24ns
+The critical path consists of the following:
+	'load' operation ('mul14_load_8', source/AESfunctions.cpp:122) on array 'mul14' [122]  (3.25 ns)
+	'xor' operation ('xor_ln123_1', source/AESfunctions.cpp:123) [138]  (0 ns)
+	'xor' operation ('xor_ln123', source/AESfunctions.cpp:123) [140]  (0.99 ns)
+
+ <State 12>: 4.24ns
+The critical path consists of the following:
+	'load' operation ('mul09_load_9', source/AESfunctions.cpp:124) on array 'mul09' [142]  (3.25 ns)
+	'xor' operation ('xor_ln125_1', source/AESfunctions.cpp:125) [149]  (0 ns)
+	'xor' operation ('xor_ln125', source/AESfunctions.cpp:125) [151]  (0.99 ns)
+
+ <State 13>: 4.24ns
+The critical path consists of the following:
+	'load' operation ('mul13_load_10', source/AESfunctions.cpp:126) on array 'mul13' [153]  (3.25 ns)
+	'xor' operation ('xor_ln127_1', source/AESfunctions.cpp:127) [160]  (0 ns)
+	'xor' operation ('xor_ln127', source/AESfunctions.cpp:127) [162]  (0.99 ns)
+
+ <State 14>: 6.57ns
+The critical path consists of the following:
+	'load' operation ('mul11_load_11', source/AESfunctions.cpp:128) on array 'mul11' [164]  (3.25 ns)
+	'xor' operation ('xor_ln129_1', source/AESfunctions.cpp:129) [171]  (0 ns)
+	'xor' operation ('xor_ln129', source/AESfunctions.cpp:129) [173]  (0.99 ns)
+	'store' operation ('store_ln140', source/AESfunctions.cpp:140) of variable 'xor_ln129', source/AESfunctions.cpp:129 on array 'state' [241]  (2.32 ns)
+
+ <State 15>: 6.57ns
+The critical path consists of the following:
+	'load' operation ('mul14_load_12', source/AESfunctions.cpp:131) on array 'mul14' [178]  (3.25 ns)
+	'xor' operation ('xor_ln132_1', source/AESfunctions.cpp:132) [194]  (0 ns)
+	'xor' operation ('xor_ln132', source/AESfunctions.cpp:132) [196]  (0.99 ns)
+	'store' operation ('store_ln140', source/AESfunctions.cpp:140) of variable 'xor_ln132', source/AESfunctions.cpp:132 on array 'state' [242]  (2.32 ns)
+
+ <State 16>: 6.57ns
+The critical path consists of the following:
+	'load' operation ('mul09_load_13', source/AESfunctions.cpp:133) on array 'mul09' [198]  (3.25 ns)
+	'xor' operation ('xor_ln134_1', source/AESfunctions.cpp:134) [205]  (0 ns)
+	'xor' operation ('xor_ln134', source/AESfunctions.cpp:134) [207]  (0.99 ns)
+	'store' operation ('store_ln140', source/AESfunctions.cpp:140) of variable 'xor_ln134', source/AESfunctions.cpp:134 on array 'state' [243]  (2.32 ns)
+
+ <State 17>: 6.57ns
+The critical path consists of the following:
+	'load' operation ('mul13_load_14', source/AESfunctions.cpp:135) on array 'mul13' [209]  (3.25 ns)
+	'xor' operation ('xor_ln136_1', source/AESfunctions.cpp:136) [216]  (0 ns)
+	'xor' operation ('xor_ln136', source/AESfunctions.cpp:136) [218]  (0.99 ns)
+	'store' operation ('store_ln140', source/AESfunctions.cpp:140) of variable 'xor_ln136', source/AESfunctions.cpp:136 on array 'state' [244]  (2.32 ns)
+
+ <State 18>: 6.57ns
+The critical path consists of the following:
+	'load' operation ('mul11_load_15', source/AESfunctions.cpp:137) on array 'mul11' [220]  (3.25 ns)
+	'xor' operation ('xor_ln138_1', source/AESfunctions.cpp:138) [227]  (0 ns)
+	'xor' operation ('xor_ln138', source/AESfunctions.cpp:138) [229]  (0.99 ns)
+	'store' operation ('store_ln140', source/AESfunctions.cpp:140) of variable 'xor_ln138', source/AESfunctions.cpp:138 on array 'state' [245]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

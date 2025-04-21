@@ -1,0 +1,533 @@
+
+
+================================================================
+== Vitis HLS Report for 'AES_Full'
+================================================================
+* Date:           Thu Apr 17 13:41:46 2025
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+* Project:        aes_full
+* Solution:       full (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 45
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 23 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 45 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 46 [1/1] (1.00ns)   --->   "%Nr_read = read i16 @_ssdm_op_Read.s_axilite.i16, i16 %Nr"   --->   Operation 46 'read' 'Nr_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 47 [1/1] (1.00ns)   --->   "%mode_inverse_cipher_read = read i1 @_ssdm_op_Read.s_axilite.i1, i1 %mode_inverse_cipher"   --->   Operation 47 'read' 'mode_inverse_cipher_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 48 [1/1] (1.00ns)   --->   "%mode_cipher_read = read i1 @_ssdm_op_Read.s_axilite.i1, i1 %mode_cipher"   --->   Operation 48 'read' 'mode_cipher_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%state_1 = alloca i64 1" [source/AESfunctions.cpp:214->source/AESfunctions.cpp:257]   --->   Operation 49 'alloca' 'state_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%state = alloca i64 1" [source/AESfunctions.cpp:169->source/AESfunctions.cpp:254]   --->   Operation 50 'alloca' 'state' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_10"   --->   Operation 51 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %mode_cipher"   --->   Operation 52 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %mode_cipher, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_2, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 53 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %mode_cipher, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 54 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %mode_inverse_cipher"   --->   Operation 55 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %mode_inverse_cipher, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_4, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 56 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %mode_inverse_cipher, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 57 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %data_in, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_5, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 58 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %data_in, void @empty_6, i32 0, i32 0, void @empty_0, i32 1, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 59 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %data_in, i64 666, i64 207, i64 1"   --->   Operation 60 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %data_in"   --->   Operation 61 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %expandedKey, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_7, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 62 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %expandedKey, void @empty_6, i32 0, i32 0, void @empty_0, i32 1, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 63 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %expandedKey, i64 666, i64 207, i64 1"   --->   Operation 64 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %expandedKey"   --->   Operation 65 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i16 %Nr"   --->   Operation 66 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %Nr, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_8, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 67 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %Nr, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 68 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %data_out, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_9, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 69 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %data_out, void @empty_6, i32 0, i32 0, void @empty_0, i32 1, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 70 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %data_out, i64 666, i64 207, i64 1"   --->   Operation 71 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %data_out"   --->   Operation 72 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 73 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%br_ln253 = br i1 %mode_cipher_read, void %._crit_edge, void %AES_Encrypt.region_begin" [source/AESfunctions.cpp:253]   --->   Operation 74 'br' 'br_ln253' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [2/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy, i8 %data_in, i8 %state"   --->   Operation 75 'call' 'call_ln0' <Predicate = (mode_cipher_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 76 [1/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy, i8 %data_in, i8 %state"   --->   Operation 76 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 4.84>
+ST_3 : Operation 77 [17/17] (4.84ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 77 'call' 'call_ln176' <Predicate = true> <Delay = 4.84> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 7.30>
+ST_4 : Operation 78 [16/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 78 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 7.30>
+ST_5 : Operation 79 [15/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 79 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 7.30>
+ST_6 : Operation 80 [14/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 80 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 7.30>
+ST_7 : Operation 81 [13/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 81 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 7.30>
+ST_8 : Operation 82 [12/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 82 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 7.30>
+ST_9 : Operation 83 [11/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 83 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 7.30>
+ST_10 : Operation 84 [10/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 84 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 7.30>
+ST_11 : Operation 85 [9/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 85 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 7.30>
+ST_12 : Operation 86 [8/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 86 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 7.30>
+ST_13 : Operation 87 [7/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 87 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 7.30>
+ST_14 : Operation 88 [6/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 88 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 7.30>
+ST_15 : Operation 89 [5/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 89 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 7.30>
+ST_16 : Operation 90 [4/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 90 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 7.30>
+ST_17 : Operation 91 [3/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 91 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 7.30>
+ST_18 : Operation 92 [2/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 92 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 0.00>
+ST_19 : Operation 93 [1/17] (0.00ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 93 'call' 'call_ln176' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 19> <Delay = 6.09>
+ST_20 : Operation 94 [1/1] (0.00ns)   --->   "%Nr_cast = zext i16 %Nr_read"   --->   Operation 94 'zext' 'Nr_cast' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 95 [1/1] (2.07ns)   --->   "%sub_i = add i17 %Nr_cast, i17 131071"   --->   Operation 95 'add' 'sub_i' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 96 [2/2] (4.01ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_rounds, i16 %Nr_read, i8 %state, i8 %expandedKey, i17 %sub_i, i8 %s_box, i8 %mul02, i8 %mul03"   --->   Operation 96 'call' 'call_ln0' <Predicate = true> <Delay = 4.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 20> <Delay = 0.00>
+ST_21 : Operation 97 [1/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_rounds, i16 %Nr_read, i8 %state, i8 %expandedKey, i17 %sub_i, i8 %s_box, i8 %mul02, i8 %mul03"   --->   Operation 97 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 21> <Delay = 0.00>
+ST_22 : Operation 98 [2/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy_o, i8 %state, i8 %data_out"   --->   Operation 98 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 22> <Delay = 0.00>
+ST_23 : Operation 99 [1/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy_o, i8 %state, i8 %data_out"   --->   Operation 99 'call' 'call_ln0' <Predicate = (mode_cipher_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_23 : Operation 100 [1/1] (0.00ns)   --->   "%br_ln255 = br void %._crit_edge" [source/AESfunctions.cpp:255]   --->   Operation 100 'br' 'br_ln255' <Predicate = (mode_cipher_read)> <Delay = 0.00>
+ST_23 : Operation 101 [1/1] (0.00ns)   --->   "%br_ln256 = br i1 %mode_inverse_cipher_read, void %._crit_edge1, void %AES_Decrypt.region_begin" [source/AESfunctions.cpp:256]   --->   Operation 101 'br' 'br_ln256' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 102 [2/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy1, i8 %data_in, i8 %state_1"   --->   Operation 102 'call' 'call_ln0' <Predicate = (mode_inverse_cipher_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 23> <Delay = 0.00>
+ST_24 : Operation 103 [1/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy1, i8 %data_in, i8 %state_1"   --->   Operation 103 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 24> <Delay = 4.84>
+ST_25 : Operation 104 [1/1] (0.00ns)   --->   "%trunc_ln220 = trunc i16 %Nr_read" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 104 'trunc' 'trunc_ln220' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 105 [1/1] (0.00ns)   --->   "%shl_ln1 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i4.i4, i4 %trunc_ln220, i4 0" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 105 'bitconcatenate' 'shl_ln1' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 106 [17/17] (4.84ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 106 'call' 'call_ln220' <Predicate = true> <Delay = 4.84> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 26 <SV = 25> <Delay = 7.30>
+ST_26 : Operation 107 [16/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 107 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 27 <SV = 26> <Delay = 7.30>
+ST_27 : Operation 108 [15/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 108 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 28 <SV = 27> <Delay = 7.30>
+ST_28 : Operation 109 [14/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 109 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 29 <SV = 28> <Delay = 7.30>
+ST_29 : Operation 110 [13/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 110 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 30 <SV = 29> <Delay = 7.30>
+ST_30 : Operation 111 [12/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 111 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 31 <SV = 30> <Delay = 7.30>
+ST_31 : Operation 112 [11/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 112 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 32 <SV = 31> <Delay = 7.30>
+ST_32 : Operation 113 [10/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 113 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 33 <SV = 32> <Delay = 7.30>
+ST_33 : Operation 114 [9/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 114 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 34 <SV = 33> <Delay = 7.30>
+ST_34 : Operation 115 [8/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 115 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 35 <SV = 34> <Delay = 7.30>
+ST_35 : Operation 116 [7/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 116 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 36 <SV = 35> <Delay = 7.30>
+ST_36 : Operation 117 [6/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 117 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 37 <SV = 36> <Delay = 7.30>
+ST_37 : Operation 118 [5/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 118 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 38 <SV = 37> <Delay = 7.30>
+ST_38 : Operation 119 [4/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 119 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 39 <SV = 38> <Delay = 7.30>
+ST_39 : Operation 120 [3/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 120 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 40 <SV = 39> <Delay = 7.30>
+ST_40 : Operation 121 [2/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 121 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 41 <SV = 40> <Delay = 0.00>
+ST_41 : Operation 122 [1/17] (0.00ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 122 'call' 'call_ln220' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 42 <SV = 41> <Delay = 6.09>
+ST_42 : Operation 123 [1/1] (0.00ns)   --->   "%zext_ln220 = zext i16 %Nr_read" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 123 'zext' 'zext_ln220' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 124 [1/1] (2.07ns)   --->   "%sub19_i = add i17 %zext_ln220, i17 131071" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 124 'add' 'sub19_i' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 125 [2/2] (4.01ns)   --->   "%call_ln220 = call void @AES_Full_Pipeline_L_rounds2, i16 %Nr_read, i8 %state_1, i4 %trunc_ln220, i8 %expandedKey, i17 %sub19_i, i8 %inverted_s_box, i8 %mul14, i8 %mul11, i8 %mul13, i8 %mul09" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 125 'call' 'call_ln220' <Predicate = true> <Delay = 4.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 43 <SV = 42> <Delay = 0.00>
+ST_43 : Operation 126 [1/2] (0.00ns)   --->   "%call_ln220 = call void @AES_Full_Pipeline_L_rounds2, i16 %Nr_read, i8 %state_1, i4 %trunc_ln220, i8 %expandedKey, i17 %sub19_i, i8 %inverted_s_box, i8 %mul14, i8 %mul11, i8 %mul13, i8 %mul09" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 126 'call' 'call_ln220' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 44 <SV = 43> <Delay = 0.00>
+ST_44 : Operation 127 [2/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy_o3, i8 %state_1, i8 %data_out"   --->   Operation 127 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 45 <SV = 44> <Delay = 0.00>
+ST_45 : Operation 128 [1/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy_o3, i8 %state_1, i8 %data_out"   --->   Operation 128 'call' 'call_ln0' <Predicate = (mode_inverse_cipher_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_45 : Operation 129 [1/1] (0.00ns)   --->   "%br_ln258 = br void %._crit_edge1" [source/AESfunctions.cpp:258]   --->   Operation 129 'br' 'br_ln258' <Predicate = (mode_inverse_cipher_read)> <Delay = 0.00>
+ST_45 : Operation 130 [1/1] (0.00ns)   --->   "%ret_ln259 = ret" [source/AESfunctions.cpp:259]   --->   Operation 130 'ret' 'ret_ln259' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read operation ('Nr') on port 'Nr' [15]  (1 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 4.84ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (4.84 ns)
+
+ <State 4>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 5>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 6>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 7>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 8>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 9>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 10>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 11>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 12>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 13>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 14>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 15>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 16>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 17>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 18>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln176', source/AESfunctions.cpp:176->source/AESfunctions.cpp:254) to 'AddRoundKey' [46]  (7.3 ns)
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+ <State 20>: 6.09ns
+The critical path consists of the following:
+	'add' operation ('sub_i') [48]  (2.08 ns)
+	'call' operation ('call_ln0') to 'AES_Full_Pipeline_L_rounds' [49]  (4.02 ns)
+
+ <State 21>: 0ns
+The critical path consists of the following:
+
+ <State 22>: 0ns
+The critical path consists of the following:
+
+ <State 23>: 0ns
+The critical path consists of the following:
+
+ <State 24>: 0ns
+The critical path consists of the following:
+
+ <State 25>: 4.84ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (4.84 ns)
+
+ <State 26>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 27>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 28>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 29>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 30>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 31>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 32>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 33>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 34>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 35>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 36>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 37>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 38>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 39>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 40>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AddRoundKey' [59]  (7.3 ns)
+
+ <State 41>: 0ns
+The critical path consists of the following:
+
+ <State 42>: 6.09ns
+The critical path consists of the following:
+	'add' operation ('sub19_i', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) [60]  (2.08 ns)
+	'call' operation ('call_ln220', source/AESfunctions.cpp:220->source/AESfunctions.cpp:257) to 'AES_Full_Pipeline_L_rounds2' [61]  (4.02 ns)
+
+ <State 43>: 0ns
+The critical path consists of the following:
+
+ <State 44>: 0ns
+The critical path consists of the following:
+
+ <State 45>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

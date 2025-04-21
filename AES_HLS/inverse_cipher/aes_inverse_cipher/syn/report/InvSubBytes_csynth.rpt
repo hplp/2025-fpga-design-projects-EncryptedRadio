@@ -1,0 +1,148 @@
+
+
+================================================================
+== Vivado HLS Report for 'InvSubBytes'
+================================================================
+* Date:           Wed Feb  7 17:52:11 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        inverse_cipher
+* Solution:       aes_inverse_cipher
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      5.58|        0.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   15|   15|   15|   15|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        1|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|    343|
+|Register         |        -|      -|     112|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        1|      0|     112|    343|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |    ~0   |      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +------------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |      Memory      |        Module        | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +------------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |inverse_cipher_U  |InvSubBytes_invercud  |        1|  0|   0|  1280|    8|     1|        10240|
+    +------------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |Total             |                      |        1|  0|   0|  1280|    8|     1|        10240|
+    +------------------+----------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                |  85|         17|    1|         17|
+    |inverse_cipher_address0  |  44|          9|   11|         99|
+    |inverse_cipher_address1  |  44|          9|   11|         99|
+    |state_address0           |  85|         17|    4|         68|
+    |state_address1           |  85|         17|    4|         68|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    | 343|         69|   31|        351|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------+----+----+-----+-----------+
+    |          Name         | FF | LUT| Bits| Const Bits|
+    +-----------------------+----+----+-----+-----------+
+    |ap_CS_fsm              |  16|   0|   16|          0|
+    |reg_324                |   8|   0|    8|          0|
+    |reg_328                |   8|   0|    8|          0|
+    |reg_332                |   8|   0|    8|          0|
+    |reg_336                |   8|   0|    8|          0|
+    |state_load_10_reg_502  |   8|   0|    8|          0|
+    |state_load_11_reg_507  |   8|   0|    8|          0|
+    |state_load_4_reg_442   |   8|   0|    8|          0|
+    |state_load_5_reg_447   |   8|   0|    8|          0|
+    |state_load_6_reg_462   |   8|   0|    8|          0|
+    |state_load_7_reg_467   |   8|   0|    8|          0|
+    |state_load_8_reg_482   |   8|   0|    8|          0|
+    |state_load_9_reg_487   |   8|   0|    8|          0|
+    +-----------------------+----+----+-----+-----------+
+    |Total                  | 112|   0|  112|          0|
+    +-----------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------+-----+-----+------------+--------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  | Source Object|    C Type    |
++----------------+-----+-----+------------+--------------+--------------+
+|ap_clk          |  in |    1| ap_ctrl_hs |  InvSubBytes | return value |
+|ap_rst          |  in |    1| ap_ctrl_hs |  InvSubBytes | return value |
+|ap_start        |  in |    1| ap_ctrl_hs |  InvSubBytes | return value |
+|ap_done         | out |    1| ap_ctrl_hs |  InvSubBytes | return value |
+|ap_idle         | out |    1| ap_ctrl_hs |  InvSubBytes | return value |
+|ap_ready        | out |    1| ap_ctrl_hs |  InvSubBytes | return value |
+|state_address0  | out |    4|  ap_memory |     state    |     array    |
+|state_ce0       | out |    1|  ap_memory |     state    |     array    |
+|state_we0       | out |    1|  ap_memory |     state    |     array    |
+|state_d0        | out |    8|  ap_memory |     state    |     array    |
+|state_q0        |  in |    8|  ap_memory |     state    |     array    |
+|state_address1  | out |    4|  ap_memory |     state    |     array    |
+|state_ce1       | out |    1|  ap_memory |     state    |     array    |
+|state_we1       | out |    1|  ap_memory |     state    |     array    |
+|state_d1        | out |    8|  ap_memory |     state    |     array    |
+|state_q1        |  in |    8|  ap_memory |     state    |     array    |
++----------------+-----+-----+------------+--------------+--------------+
+

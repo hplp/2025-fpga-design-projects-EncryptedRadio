@@ -1,0 +1,1407 @@
+
+
+================================================================
+== Vitis HLS Report for 'AES_Full'
+================================================================
+* Date:           Thu Apr 17 13:41:46 2025
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+* Project:        aes_full
+* Solution:       full (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------------+-----------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                        |                             |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                Instance                |            Module           |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +----------------------------------------+-----------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_AES_Full_Pipeline_L_copy_fu_122     |AES_Full_Pipeline_L_copy     |       18|       18|  0.180 us|  0.180 us|   18|   18|       no|
+        |grp_AddRoundKey_fu_130                  |AddRoundKey                  |       16|       16|  0.160 us|  0.160 us|   17|   17|      yes|
+        |grp_AES_Full_Pipeline_L_rounds_fu_139   |AES_Full_Pipeline_L_rounds   |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+        |grp_AES_Full_Pipeline_L_copy_o_fu_154   |AES_Full_Pipeline_L_copy_o   |       18|       18|  0.180 us|  0.180 us|   18|   18|       no|
+        |grp_AES_Full_Pipeline_L_copy1_fu_161    |AES_Full_Pipeline_L_copy1    |       18|       18|  0.180 us|  0.180 us|   18|   18|       no|
+        |grp_AES_Full_Pipeline_L_rounds2_fu_168  |AES_Full_Pipeline_L_rounds2  |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+        |grp_AES_Full_Pipeline_L_copy_o3_fu_188  |AES_Full_Pipeline_L_copy_o3  |       18|       18|  0.180 us|  0.180 us|   18|   18|       no|
+        +----------------------------------------+-----------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 45
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 23 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 45 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 46 [1/1] (1.00ns)   --->   "%Nr_read = read i16 @_ssdm_op_Read.s_axilite.i16, i16 %Nr"   --->   Operation 46 'read' 'Nr_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 47 [1/1] (1.00ns)   --->   "%mode_inverse_cipher_read = read i1 @_ssdm_op_Read.s_axilite.i1, i1 %mode_inverse_cipher"   --->   Operation 47 'read' 'mode_inverse_cipher_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 48 [1/1] (1.00ns)   --->   "%mode_cipher_read = read i1 @_ssdm_op_Read.s_axilite.i1, i1 %mode_cipher"   --->   Operation 48 'read' 'mode_cipher_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 49 [1/1] (2.32ns)   --->   "%state_1 = alloca i64 1" [source/AESfunctions.cpp:214->source/AESfunctions.cpp:257]   --->   Operation 49 'alloca' 'state_1' <Predicate = true> <Delay = 2.32>
+ST_1 : Operation 50 [1/1] (2.32ns)   --->   "%state = alloca i64 1" [source/AESfunctions.cpp:169->source/AESfunctions.cpp:254]   --->   Operation 50 'alloca' 'state' <Predicate = true> <Delay = 2.32>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_10"   --->   Operation 51 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %mode_cipher"   --->   Operation 52 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %mode_cipher, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_2, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 53 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %mode_cipher, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 54 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %mode_inverse_cipher"   --->   Operation 55 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %mode_inverse_cipher, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_4, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 56 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %mode_inverse_cipher, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 57 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %data_in, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_5, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 58 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %data_in, void @empty_6, i32 0, i32 0, void @empty_0, i32 1, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 59 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %data_in, i64 666, i64 207, i64 1"   --->   Operation 60 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %data_in"   --->   Operation 61 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %expandedKey, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_7, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 62 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %expandedKey, void @empty_6, i32 0, i32 0, void @empty_0, i32 1, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 63 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %expandedKey, i64 666, i64 207, i64 1"   --->   Operation 64 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %expandedKey"   --->   Operation 65 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i16 %Nr"   --->   Operation 66 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %Nr, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_8, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 67 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %Nr, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 68 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %data_out, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_9, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 69 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %data_out, void @empty_6, i32 0, i32 0, void @empty_0, i32 1, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 70 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %data_out, i64 666, i64 207, i64 1"   --->   Operation 71 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %data_out"   --->   Operation 72 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 73 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%br_ln253 = br i1 %mode_cipher_read, void %._crit_edge, void %AES_Encrypt.region_begin" [source/AESfunctions.cpp:253]   --->   Operation 74 'br' 'br_ln253' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [2/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy, i8 %data_in, i8 %state"   --->   Operation 75 'call' 'call_ln0' <Predicate = (mode_cipher_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 76 [1/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy, i8 %data_in, i8 %state"   --->   Operation 76 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 4.84>
+ST_3 : Operation 77 [17/17] (4.84ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 77 'call' 'call_ln176' <Predicate = true> <Delay = 4.84> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 7.30>
+ST_4 : Operation 78 [16/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 78 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 7.30>
+ST_5 : Operation 79 [15/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 79 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 7.30>
+ST_6 : Operation 80 [14/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 80 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 7.30>
+ST_7 : Operation 81 [13/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 81 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 7.30>
+ST_8 : Operation 82 [12/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 82 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 7.30>
+ST_9 : Operation 83 [11/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 83 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 7.30>
+ST_10 : Operation 84 [10/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 84 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 7.30>
+ST_11 : Operation 85 [9/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 85 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 7.30>
+ST_12 : Operation 86 [8/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 86 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 7.30>
+ST_13 : Operation 87 [7/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 87 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 7.30>
+ST_14 : Operation 88 [6/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 88 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 7.30>
+ST_15 : Operation 89 [5/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 89 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 7.30>
+ST_16 : Operation 90 [4/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 90 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 7.30>
+ST_17 : Operation 91 [3/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 91 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 7.30>
+ST_18 : Operation 92 [2/17] (7.30ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 92 'call' 'call_ln176' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 0.00>
+ST_19 : Operation 93 [1/17] (0.00ns)   --->   "%call_ln176 = call void @AddRoundKey, i8 %state, i8 %expandedKey, i8 0" [source/AESfunctions.cpp:176->source/AESfunctions.cpp:254]   --->   Operation 93 'call' 'call_ln176' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 19> <Delay = 6.09>
+ST_20 : Operation 94 [1/1] (0.00ns)   --->   "%Nr_cast = zext i16 %Nr_read"   --->   Operation 94 'zext' 'Nr_cast' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 95 [1/1] (2.07ns)   --->   "%sub_i = add i17 %Nr_cast, i17 131071"   --->   Operation 95 'add' 'sub_i' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 96 [2/2] (4.01ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_rounds, i16 %Nr_read, i8 %state, i8 %expandedKey, i17 %sub_i, i8 %s_box, i8 %mul02, i8 %mul03"   --->   Operation 96 'call' 'call_ln0' <Predicate = true> <Delay = 4.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 20> <Delay = 0.00>
+ST_21 : Operation 97 [1/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_rounds, i16 %Nr_read, i8 %state, i8 %expandedKey, i17 %sub_i, i8 %s_box, i8 %mul02, i8 %mul03"   --->   Operation 97 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 21> <Delay = 0.00>
+ST_22 : Operation 98 [2/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy_o, i8 %state, i8 %data_out"   --->   Operation 98 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 22> <Delay = 0.00>
+ST_23 : Operation 99 [1/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy_o, i8 %state, i8 %data_out"   --->   Operation 99 'call' 'call_ln0' <Predicate = (mode_cipher_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_23 : Operation 100 [1/1] (0.00ns)   --->   "%br_ln255 = br void %._crit_edge" [source/AESfunctions.cpp:255]   --->   Operation 100 'br' 'br_ln255' <Predicate = (mode_cipher_read)> <Delay = 0.00>
+ST_23 : Operation 101 [1/1] (0.00ns)   --->   "%br_ln256 = br i1 %mode_inverse_cipher_read, void %._crit_edge1, void %AES_Decrypt.region_begin" [source/AESfunctions.cpp:256]   --->   Operation 101 'br' 'br_ln256' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 102 [2/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy1, i8 %data_in, i8 %state_1"   --->   Operation 102 'call' 'call_ln0' <Predicate = (mode_inverse_cipher_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 23> <Delay = 0.00>
+ST_24 : Operation 103 [1/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy1, i8 %data_in, i8 %state_1"   --->   Operation 103 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 24> <Delay = 4.84>
+ST_25 : Operation 104 [1/1] (0.00ns)   --->   "%trunc_ln220 = trunc i16 %Nr_read" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 104 'trunc' 'trunc_ln220' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 105 [1/1] (0.00ns)   --->   "%shl_ln1 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i4.i4, i4 %trunc_ln220, i4 0" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 105 'bitconcatenate' 'shl_ln1' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 106 [17/17] (4.84ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 106 'call' 'call_ln220' <Predicate = true> <Delay = 4.84> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 26 <SV = 25> <Delay = 7.30>
+ST_26 : Operation 107 [16/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 107 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 27 <SV = 26> <Delay = 7.30>
+ST_27 : Operation 108 [15/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 108 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 28 <SV = 27> <Delay = 7.30>
+ST_28 : Operation 109 [14/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 109 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 29 <SV = 28> <Delay = 7.30>
+ST_29 : Operation 110 [13/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 110 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 30 <SV = 29> <Delay = 7.30>
+ST_30 : Operation 111 [12/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 111 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 31 <SV = 30> <Delay = 7.30>
+ST_31 : Operation 112 [11/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 112 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 32 <SV = 31> <Delay = 7.30>
+ST_32 : Operation 113 [10/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 113 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 33 <SV = 32> <Delay = 7.30>
+ST_33 : Operation 114 [9/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 114 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 34 <SV = 33> <Delay = 7.30>
+ST_34 : Operation 115 [8/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 115 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 35 <SV = 34> <Delay = 7.30>
+ST_35 : Operation 116 [7/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 116 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 36 <SV = 35> <Delay = 7.30>
+ST_36 : Operation 117 [6/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 117 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 37 <SV = 36> <Delay = 7.30>
+ST_37 : Operation 118 [5/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 118 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 38 <SV = 37> <Delay = 7.30>
+ST_38 : Operation 119 [4/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 119 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 39 <SV = 38> <Delay = 7.30>
+ST_39 : Operation 120 [3/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 120 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 40 <SV = 39> <Delay = 7.30>
+ST_40 : Operation 121 [2/17] (7.30ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 121 'call' 'call_ln220' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 41 <SV = 40> <Delay = 0.00>
+ST_41 : Operation 122 [1/17] (0.00ns)   --->   "%call_ln220 = call void @AddRoundKey, i8 %state_1, i8 %expandedKey, i8 %shl_ln1" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 122 'call' 'call_ln220' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 42 <SV = 41> <Delay = 6.09>
+ST_42 : Operation 123 [1/1] (0.00ns)   --->   "%zext_ln220 = zext i16 %Nr_read" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 123 'zext' 'zext_ln220' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 124 [1/1] (2.07ns)   --->   "%sub19_i = add i17 %zext_ln220, i17 131071" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 124 'add' 'sub19_i' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 125 [2/2] (4.01ns)   --->   "%call_ln220 = call void @AES_Full_Pipeline_L_rounds2, i16 %Nr_read, i8 %state_1, i4 %trunc_ln220, i8 %expandedKey, i17 %sub19_i, i8 %inverted_s_box, i8 %mul14, i8 %mul11, i8 %mul13, i8 %mul09" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 125 'call' 'call_ln220' <Predicate = true> <Delay = 4.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 43 <SV = 42> <Delay = 0.00>
+ST_43 : Operation 126 [1/2] (0.00ns)   --->   "%call_ln220 = call void @AES_Full_Pipeline_L_rounds2, i16 %Nr_read, i8 %state_1, i4 %trunc_ln220, i8 %expandedKey, i17 %sub19_i, i8 %inverted_s_box, i8 %mul14, i8 %mul11, i8 %mul13, i8 %mul09" [source/AESfunctions.cpp:220->source/AESfunctions.cpp:257]   --->   Operation 126 'call' 'call_ln220' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 44 <SV = 43> <Delay = 0.00>
+ST_44 : Operation 127 [2/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy_o3, i8 %state_1, i8 %data_out"   --->   Operation 127 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 45 <SV = 44> <Delay = 0.00>
+ST_45 : Operation 128 [1/2] (0.00ns)   --->   "%call_ln0 = call void @AES_Full_Pipeline_L_copy_o3, i8 %state_1, i8 %data_out"   --->   Operation 128 'call' 'call_ln0' <Predicate = (mode_inverse_cipher_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_45 : Operation 129 [1/1] (0.00ns)   --->   "%br_ln258 = br void %._crit_edge1" [source/AESfunctions.cpp:258]   --->   Operation 129 'br' 'br_ln258' <Predicate = (mode_inverse_cipher_read)> <Delay = 0.00>
+ST_45 : Operation 130 [1/1] (0.00ns)   --->   "%ret_ln259 = ret" [source/AESfunctions.cpp:259]   --->   Operation 130 'ret' 'ret_ln259' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ mode_cipher]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ mode_inverse_cipher]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ data_in]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ expandedKey]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ Nr]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ data_out]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[0]; IO mode=ap_memory:ce=0
+Port [ s_box]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ mul02]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ mul03]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ inverted_s_box]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ mul14]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ mul11]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ mul13]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ mul09]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+Nr_read                  (read          ) [ 0011111111111111111111111111111111111111111100]
+mode_inverse_cipher_read (read          ) [ 0011111111111111111111111111111111111111111111]
+mode_cipher_read         (read          ) [ 0111111111111111111111110000000000000000000000]
+state_1                  (alloca        ) [ 0011111111111111111111111111111111111111111111]
+state                    (alloca        ) [ 0011111111111111111111110000000000000000000000]
+spectopmodule_ln0        (spectopmodule ) [ 0000000000000000000000000000000000000000000000]
+specbitsmap_ln0          (specbitsmap   ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specbitsmap_ln0          (specbitsmap   ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specmemcore_ln0          (specmemcore   ) [ 0000000000000000000000000000000000000000000000]
+specbitsmap_ln0          (specbitsmap   ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specmemcore_ln0          (specmemcore   ) [ 0000000000000000000000000000000000000000000000]
+specbitsmap_ln0          (specbitsmap   ) [ 0000000000000000000000000000000000000000000000]
+specbitsmap_ln0          (specbitsmap   ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+specmemcore_ln0          (specmemcore   ) [ 0000000000000000000000000000000000000000000000]
+specbitsmap_ln0          (specbitsmap   ) [ 0000000000000000000000000000000000000000000000]
+specinterface_ln0        (specinterface ) [ 0000000000000000000000000000000000000000000000]
+br_ln253                 (br            ) [ 0000000000000000000000000000000000000000000000]
+call_ln0                 (call          ) [ 0000000000000000000000000000000000000000000000]
+call_ln176               (call          ) [ 0000000000000000000000000000000000000000000000]
+Nr_cast                  (zext          ) [ 0000000000000000000000000000000000000000000000]
+sub_i                    (add           ) [ 0000000000000000000001000000000000000000000000]
+call_ln0                 (call          ) [ 0000000000000000000000000000000000000000000000]
+call_ln0                 (call          ) [ 0000000000000000000000000000000000000000000000]
+br_ln255                 (br            ) [ 0000000000000000000000000000000000000000000000]
+br_ln256                 (br            ) [ 0000000000000000000000000000000000000000000000]
+call_ln0                 (call          ) [ 0000000000000000000000000000000000000000000000]
+trunc_ln220              (trunc         ) [ 0000000000000000000000000011111111111111111100]
+shl_ln1                  (bitconcatenate) [ 0000000000000000000000000000000000000000000000]
+call_ln220               (call          ) [ 0000000000000000000000000000000000000000000000]
+zext_ln220               (zext          ) [ 0000000000000000000000000000000000000000000000]
+sub19_i                  (add           ) [ 0000000000000000000000000000000000000000000100]
+call_ln220               (call          ) [ 0000000000000000000000000000000000000000000000]
+call_ln0                 (call          ) [ 0000000000000000000000000000000000000000000000]
+br_ln258                 (br            ) [ 0000000000000000000000000000000000000000000000]
+ret_ln259                (ret           ) [ 0000000000000000000000000000000000000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="mode_cipher">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mode_cipher"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="mode_inverse_cipher">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mode_inverse_cipher"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="data_in">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="data_in"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="expandedKey">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="expandedKey"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="Nr">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Nr"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="data_out">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="data_out"/><MemPortTyVec>0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="s_box">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="s_box"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="mul02">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mul02"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="mul03">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mul03"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="inverted_s_box">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="inverted_s_box"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="mul14">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mul14"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="mul11">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mul11"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="mul13">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mul13"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="mul09">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mul09"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.s_axilite.i16"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.s_axilite.i1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_10"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecMemCore"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1001" name="const_64">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1001" name="const_66">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1001" name="const_68">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1001" name="const_70">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_8"/></StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1001" name="const_72">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_9"/></StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1001" name="const_74">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="AES_Full_Pipeline_L_copy"/></StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1001" name="const_76">
+<pin_list>
+<pin id="77" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="AddRoundKey"/></StgValue>
+</bind>
+</comp>
+
+<comp id="78" class="1001" name="const_78">
+<pin_list>
+<pin id="79" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="80" class="1001" name="const_80">
+<pin_list>
+<pin id="81" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="82" class="1001" name="const_82">
+<pin_list>
+<pin id="83" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="AES_Full_Pipeline_L_rounds"/></StgValue>
+</bind>
+</comp>
+
+<comp id="84" class="1001" name="const_84">
+<pin_list>
+<pin id="85" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="AES_Full_Pipeline_L_copy_o"/></StgValue>
+</bind>
+</comp>
+
+<comp id="86" class="1001" name="const_86">
+<pin_list>
+<pin id="87" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="AES_Full_Pipeline_L_copy1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="88" class="1001" name="const_88">
+<pin_list>
+<pin id="89" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i8.i4.i4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="90" class="1001" name="const_90">
+<pin_list>
+<pin id="91" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="92" class="1001" name="const_92">
+<pin_list>
+<pin id="93" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="AES_Full_Pipeline_L_rounds2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="94" class="1001" name="const_94">
+<pin_list>
+<pin id="95" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="AES_Full_Pipeline_L_copy_o3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="96" class="1004" name="state_1_alloca_fu_96">
+<pin_list>
+<pin id="97" dir="0" index="0" bw="1" slack="0"/>
+<pin id="98" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="state_1/1 "/>
+</bind>
+</comp>
+
+<comp id="100" class="1004" name="state_alloca_fu_100">
+<pin_list>
+<pin id="101" dir="0" index="0" bw="1" slack="0"/>
+<pin id="102" dir="1" index="1" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="state/1 "/>
+</bind>
+</comp>
+
+<comp id="104" class="1004" name="Nr_read_read_fu_104">
+<pin_list>
+<pin id="105" dir="0" index="0" bw="16" slack="0"/>
+<pin id="106" dir="0" index="1" bw="16" slack="0"/>
+<pin id="107" dir="1" index="2" bw="16" slack="19"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="Nr_read/1 "/>
+</bind>
+</comp>
+
+<comp id="110" class="1004" name="mode_inverse_cipher_read_read_fu_110">
+<pin_list>
+<pin id="111" dir="0" index="0" bw="1" slack="0"/>
+<pin id="112" dir="0" index="1" bw="1" slack="0"/>
+<pin id="113" dir="1" index="2" bw="1" slack="22"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="mode_inverse_cipher_read/1 "/>
+</bind>
+</comp>
+
+<comp id="116" class="1004" name="mode_cipher_read_read_fu_116">
+<pin_list>
+<pin id="117" dir="0" index="0" bw="1" slack="0"/>
+<pin id="118" dir="0" index="1" bw="1" slack="0"/>
+<pin id="119" dir="1" index="2" bw="1" slack="22"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="mode_cipher_read/1 "/>
+</bind>
+</comp>
+
+<comp id="122" class="1004" name="grp_AES_Full_Pipeline_L_copy_fu_122">
+<pin_list>
+<pin id="123" dir="0" index="0" bw="0" slack="0"/>
+<pin id="124" dir="0" index="1" bw="8" slack="0"/>
+<pin id="125" dir="0" index="2" bw="8" slack="0"/>
+<pin id="126" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln0/1 "/>
+</bind>
+</comp>
+
+<comp id="130" class="1004" name="grp_AddRoundKey_fu_130">
+<pin_list>
+<pin id="131" dir="0" index="0" bw="0" slack="0"/>
+<pin id="132" dir="0" index="1" bw="8" slack="2147483647"/>
+<pin id="133" dir="0" index="2" bw="8" slack="0"/>
+<pin id="134" dir="0" index="3" bw="8" slack="0"/>
+<pin id="135" dir="1" index="4" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln176/3 call_ln220/25 "/>
+</bind>
+</comp>
+
+<comp id="139" class="1004" name="grp_AES_Full_Pipeline_L_rounds_fu_139">
+<pin_list>
+<pin id="140" dir="0" index="0" bw="0" slack="0"/>
+<pin id="141" dir="0" index="1" bw="16" slack="19"/>
+<pin id="142" dir="0" index="2" bw="8" slack="2147483647"/>
+<pin id="143" dir="0" index="3" bw="8" slack="0"/>
+<pin id="144" dir="0" index="4" bw="17" slack="0"/>
+<pin id="145" dir="0" index="5" bw="8" slack="0"/>
+<pin id="146" dir="0" index="6" bw="8" slack="0"/>
+<pin id="147" dir="0" index="7" bw="8" slack="0"/>
+<pin id="148" dir="1" index="8" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln0/20 "/>
+</bind>
+</comp>
+
+<comp id="154" class="1004" name="grp_AES_Full_Pipeline_L_copy_o_fu_154">
+<pin_list>
+<pin id="155" dir="0" index="0" bw="0" slack="0"/>
+<pin id="156" dir="0" index="1" bw="8" slack="2147483647"/>
+<pin id="157" dir="0" index="2" bw="8" slack="0"/>
+<pin id="158" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln0/22 "/>
+</bind>
+</comp>
+
+<comp id="161" class="1004" name="grp_AES_Full_Pipeline_L_copy1_fu_161">
+<pin_list>
+<pin id="162" dir="0" index="0" bw="0" slack="0"/>
+<pin id="163" dir="0" index="1" bw="8" slack="0"/>
+<pin id="164" dir="0" index="2" bw="8" slack="2147483647"/>
+<pin id="165" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln0/23 "/>
+</bind>
+</comp>
+
+<comp id="168" class="1004" name="grp_AES_Full_Pipeline_L_rounds2_fu_168">
+<pin_list>
+<pin id="169" dir="0" index="0" bw="0" slack="0"/>
+<pin id="170" dir="0" index="1" bw="16" slack="41"/>
+<pin id="171" dir="0" index="2" bw="8" slack="2147483647"/>
+<pin id="172" dir="0" index="3" bw="4" slack="17"/>
+<pin id="173" dir="0" index="4" bw="8" slack="0"/>
+<pin id="174" dir="0" index="5" bw="17" slack="0"/>
+<pin id="175" dir="0" index="6" bw="8" slack="0"/>
+<pin id="176" dir="0" index="7" bw="8" slack="0"/>
+<pin id="177" dir="0" index="8" bw="8" slack="0"/>
+<pin id="178" dir="0" index="9" bw="8" slack="0"/>
+<pin id="179" dir="0" index="10" bw="8" slack="0"/>
+<pin id="180" dir="1" index="11" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln220/42 "/>
+</bind>
+</comp>
+
+<comp id="188" class="1004" name="grp_AES_Full_Pipeline_L_copy_o3_fu_188">
+<pin_list>
+<pin id="189" dir="0" index="0" bw="0" slack="0"/>
+<pin id="190" dir="0" index="1" bw="8" slack="2147483647"/>
+<pin id="191" dir="0" index="2" bw="8" slack="0"/>
+<pin id="192" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln0/44 "/>
+</bind>
+</comp>
+
+<comp id="195" class="1004" name="Nr_cast_fu_195">
+<pin_list>
+<pin id="196" dir="0" index="0" bw="16" slack="19"/>
+<pin id="197" dir="1" index="1" bw="17" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="Nr_cast/20 "/>
+</bind>
+</comp>
+
+<comp id="198" class="1004" name="sub_i_fu_198">
+<pin_list>
+<pin id="199" dir="0" index="0" bw="16" slack="0"/>
+<pin id="200" dir="0" index="1" bw="1" slack="0"/>
+<pin id="201" dir="1" index="2" bw="17" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="sub_i/20 "/>
+</bind>
+</comp>
+
+<comp id="205" class="1004" name="trunc_ln220_fu_205">
+<pin_list>
+<pin id="206" dir="0" index="0" bw="16" slack="24"/>
+<pin id="207" dir="1" index="1" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln220/25 "/>
+</bind>
+</comp>
+
+<comp id="208" class="1004" name="shl_ln1_fu_208">
+<pin_list>
+<pin id="209" dir="0" index="0" bw="8" slack="0"/>
+<pin id="210" dir="0" index="1" bw="4" slack="0"/>
+<pin id="211" dir="0" index="2" bw="1" slack="0"/>
+<pin id="212" dir="1" index="3" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="shl_ln1/25 "/>
+</bind>
+</comp>
+
+<comp id="217" class="1004" name="zext_ln220_fu_217">
+<pin_list>
+<pin id="218" dir="0" index="0" bw="16" slack="41"/>
+<pin id="219" dir="1" index="1" bw="17" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln220/42 "/>
+</bind>
+</comp>
+
+<comp id="220" class="1004" name="sub19_i_fu_220">
+<pin_list>
+<pin id="221" dir="0" index="0" bw="16" slack="0"/>
+<pin id="222" dir="0" index="1" bw="1" slack="0"/>
+<pin id="223" dir="1" index="2" bw="17" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="sub19_i/42 "/>
+</bind>
+</comp>
+
+<comp id="227" class="1005" name="Nr_read_reg_227">
+<pin_list>
+<pin id="228" dir="0" index="0" bw="16" slack="19"/>
+<pin id="229" dir="1" index="1" bw="16" slack="19"/>
+</pin_list>
+<bind>
+<opset="Nr_read "/>
+</bind>
+</comp>
+
+<comp id="236" class="1005" name="mode_inverse_cipher_read_reg_236">
+<pin_list>
+<pin id="237" dir="0" index="0" bw="1" slack="22"/>
+<pin id="238" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="mode_inverse_cipher_read "/>
+</bind>
+</comp>
+
+<comp id="240" class="1005" name="mode_cipher_read_reg_240">
+<pin_list>
+<pin id="241" dir="0" index="0" bw="1" slack="22"/>
+<pin id="242" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="mode_cipher_read "/>
+</bind>
+</comp>
+
+<comp id="244" class="1005" name="sub_i_reg_244">
+<pin_list>
+<pin id="245" dir="0" index="0" bw="17" slack="1"/>
+<pin id="246" dir="1" index="1" bw="17" slack="1"/>
+</pin_list>
+<bind>
+<opset="sub_i "/>
+</bind>
+</comp>
+
+<comp id="249" class="1005" name="trunc_ln220_reg_249">
+<pin_list>
+<pin id="250" dir="0" index="0" bw="4" slack="17"/>
+<pin id="251" dir="1" index="1" bw="4" slack="17"/>
+</pin_list>
+<bind>
+<opset="trunc_ln220 "/>
+</bind>
+</comp>
+
+<comp id="254" class="1005" name="sub19_i_reg_254">
+<pin_list>
+<pin id="255" dir="0" index="0" bw="17" slack="1"/>
+<pin id="256" dir="1" index="1" bw="17" slack="1"/>
+</pin_list>
+<bind>
+<opset="sub19_i "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="99"><net_src comp="32" pin="0"/><net_sink comp="96" pin=0"/></net>
+
+<net id="103"><net_src comp="32" pin="0"/><net_sink comp="100" pin=0"/></net>
+
+<net id="108"><net_src comp="28" pin="0"/><net_sink comp="104" pin=0"/></net>
+
+<net id="109"><net_src comp="8" pin="0"/><net_sink comp="104" pin=1"/></net>
+
+<net id="114"><net_src comp="30" pin="0"/><net_sink comp="110" pin=0"/></net>
+
+<net id="115"><net_src comp="2" pin="0"/><net_sink comp="110" pin=1"/></net>
+
+<net id="120"><net_src comp="30" pin="0"/><net_sink comp="116" pin=0"/></net>
+
+<net id="121"><net_src comp="0" pin="0"/><net_sink comp="116" pin=1"/></net>
+
+<net id="127"><net_src comp="74" pin="0"/><net_sink comp="122" pin=0"/></net>
+
+<net id="128"><net_src comp="4" pin="0"/><net_sink comp="122" pin=1"/></net>
+
+<net id="129"><net_src comp="100" pin="1"/><net_sink comp="122" pin=2"/></net>
+
+<net id="136"><net_src comp="76" pin="0"/><net_sink comp="130" pin=0"/></net>
+
+<net id="137"><net_src comp="6" pin="0"/><net_sink comp="130" pin=2"/></net>
+
+<net id="138"><net_src comp="78" pin="0"/><net_sink comp="130" pin=3"/></net>
+
+<net id="149"><net_src comp="82" pin="0"/><net_sink comp="139" pin=0"/></net>
+
+<net id="150"><net_src comp="6" pin="0"/><net_sink comp="139" pin=3"/></net>
+
+<net id="151"><net_src comp="12" pin="0"/><net_sink comp="139" pin=5"/></net>
+
+<net id="152"><net_src comp="14" pin="0"/><net_sink comp="139" pin=6"/></net>
+
+<net id="153"><net_src comp="16" pin="0"/><net_sink comp="139" pin=7"/></net>
+
+<net id="159"><net_src comp="84" pin="0"/><net_sink comp="154" pin=0"/></net>
+
+<net id="160"><net_src comp="10" pin="0"/><net_sink comp="154" pin=2"/></net>
+
+<net id="166"><net_src comp="86" pin="0"/><net_sink comp="161" pin=0"/></net>
+
+<net id="167"><net_src comp="4" pin="0"/><net_sink comp="161" pin=1"/></net>
+
+<net id="181"><net_src comp="92" pin="0"/><net_sink comp="168" pin=0"/></net>
+
+<net id="182"><net_src comp="6" pin="0"/><net_sink comp="168" pin=4"/></net>
+
+<net id="183"><net_src comp="18" pin="0"/><net_sink comp="168" pin=6"/></net>
+
+<net id="184"><net_src comp="20" pin="0"/><net_sink comp="168" pin=7"/></net>
+
+<net id="185"><net_src comp="22" pin="0"/><net_sink comp="168" pin=8"/></net>
+
+<net id="186"><net_src comp="24" pin="0"/><net_sink comp="168" pin=9"/></net>
+
+<net id="187"><net_src comp="26" pin="0"/><net_sink comp="168" pin=10"/></net>
+
+<net id="193"><net_src comp="94" pin="0"/><net_sink comp="188" pin=0"/></net>
+
+<net id="194"><net_src comp="10" pin="0"/><net_sink comp="188" pin=2"/></net>
+
+<net id="202"><net_src comp="195" pin="1"/><net_sink comp="198" pin=0"/></net>
+
+<net id="203"><net_src comp="80" pin="0"/><net_sink comp="198" pin=1"/></net>
+
+<net id="204"><net_src comp="198" pin="2"/><net_sink comp="139" pin=4"/></net>
+
+<net id="213"><net_src comp="88" pin="0"/><net_sink comp="208" pin=0"/></net>
+
+<net id="214"><net_src comp="205" pin="1"/><net_sink comp="208" pin=1"/></net>
+
+<net id="215"><net_src comp="90" pin="0"/><net_sink comp="208" pin=2"/></net>
+
+<net id="216"><net_src comp="208" pin="3"/><net_sink comp="130" pin=3"/></net>
+
+<net id="224"><net_src comp="217" pin="1"/><net_sink comp="220" pin=0"/></net>
+
+<net id="225"><net_src comp="80" pin="0"/><net_sink comp="220" pin=1"/></net>
+
+<net id="226"><net_src comp="220" pin="2"/><net_sink comp="168" pin=5"/></net>
+
+<net id="230"><net_src comp="104" pin="2"/><net_sink comp="227" pin=0"/></net>
+
+<net id="231"><net_src comp="227" pin="1"/><net_sink comp="195" pin=0"/></net>
+
+<net id="232"><net_src comp="227" pin="1"/><net_sink comp="139" pin=1"/></net>
+
+<net id="233"><net_src comp="227" pin="1"/><net_sink comp="205" pin=0"/></net>
+
+<net id="234"><net_src comp="227" pin="1"/><net_sink comp="217" pin=0"/></net>
+
+<net id="235"><net_src comp="227" pin="1"/><net_sink comp="168" pin=1"/></net>
+
+<net id="239"><net_src comp="110" pin="2"/><net_sink comp="236" pin=0"/></net>
+
+<net id="243"><net_src comp="116" pin="2"/><net_sink comp="240" pin=0"/></net>
+
+<net id="247"><net_src comp="198" pin="2"/><net_sink comp="244" pin=0"/></net>
+
+<net id="248"><net_src comp="244" pin="1"/><net_sink comp="139" pin=4"/></net>
+
+<net id="252"><net_src comp="205" pin="1"/><net_sink comp="249" pin=0"/></net>
+
+<net id="253"><net_src comp="249" pin="1"/><net_sink comp="168" pin=3"/></net>
+
+<net id="257"><net_src comp="220" pin="2"/><net_sink comp="254" pin=0"/></net>
+
+<net id="258"><net_src comp="254" pin="1"/><net_sink comp="168" pin=5"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: data_out | {22 23 44 45 }
+ - Input state : 
+	Port: AES_Full : mode_cipher | {1 }
+	Port: AES_Full : mode_inverse_cipher | {1 }
+	Port: AES_Full : data_in | {1 2 23 24 }
+	Port: AES_Full : expandedKey | {3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 }
+	Port: AES_Full : Nr | {1 }
+	Port: AES_Full : s_box | {20 21 }
+	Port: AES_Full : mul02 | {20 21 }
+	Port: AES_Full : mul03 | {20 21 }
+	Port: AES_Full : inverted_s_box | {42 43 }
+	Port: AES_Full : mul14 | {42 43 }
+	Port: AES_Full : mul11 | {42 43 }
+	Port: AES_Full : mul13 | {42 43 }
+	Port: AES_Full : mul09 | {42 43 }
+  - Chain level:
+	State 1
+		call_ln0 : 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+		sub_i : 1
+		call_ln0 : 2
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+		shl_ln1 : 1
+		call_ln220 : 2
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+		sub19_i : 1
+		call_ln220 : 2
+	State 43
+	State 44
+	State 45
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|----------------------------------------|---------|---------|---------|
+| Operation|             Functional Unit            |  Delay  |    FF   |   LUT   |
+|----------|----------------------------------------|---------|---------|---------|
+|          |   grp_AES_Full_Pipeline_L_copy_fu_122  |  1.588  |    73   |    31   |
+|          |         grp_AddRoundKey_fu_130         | 19.6686 |   344   |   721   |
+|          |  grp_AES_Full_Pipeline_L_rounds_fu_139 | 75.5926 |   2262  |   2352  |
+|   call   |  grp_AES_Full_Pipeline_L_copy_o_fu_154 |  1.588  |    73   |    31   |
+|          |  grp_AES_Full_Pipeline_L_copy1_fu_161  |  1.588  |    73   |    31   |
+|          | grp_AES_Full_Pipeline_L_rounds2_fu_168 |  73.824 |   2534  |   2593  |
+|          | grp_AES_Full_Pipeline_L_copy_o3_fu_188 |  1.588  |    73   |    31   |
+|----------|----------------------------------------|---------|---------|---------|
+|    add   |              sub_i_fu_198              |    0    |    0    |    23   |
+|          |             sub19_i_fu_220             |    0    |    0    |    23   |
+|----------|----------------------------------------|---------|---------|---------|
+|          |           Nr_read_read_fu_104          |    0    |    0    |    0    |
+|   read   |  mode_inverse_cipher_read_read_fu_110  |    0    |    0    |    0    |
+|          |      mode_cipher_read_read_fu_116      |    0    |    0    |    0    |
+|----------|----------------------------------------|---------|---------|---------|
+|   zext   |             Nr_cast_fu_195             |    0    |    0    |    0    |
+|          |            zext_ln220_fu_217           |    0    |    0    |    0    |
+|----------|----------------------------------------|---------|---------|---------|
+|   trunc  |           trunc_ln220_fu_205           |    0    |    0    |    0    |
+|----------|----------------------------------------|---------|---------|---------|
+|bitconcatenate|             shl_ln1_fu_208             |    0    |    0    |    0    |
+|----------|----------------------------------------|---------|---------|---------|
+|   Total  |                                        | 175.437 |   5432  |   5836  |
+|----------|----------------------------------------|---------|---------|---------|
+
+Memories:
++--------------+--------+--------+--------+--------+
+|              |  BRAM  |   FF   |   LUT  |  URAM  |
++--------------+--------+--------+--------+--------+
+|inverted_s_box|    1   |    0   |    0   |    -   |
+|     mul02    |    1   |    0   |    0   |    -   |
+|     mul03    |    1   |    0   |    0   |    -   |
+|     mul09    |    1   |    0   |    0   |    -   |
+|     mul11    |    1   |    0   |    0   |    -   |
+|     mul13    |    1   |    0   |    0   |    -   |
+|     mul14    |    1   |    0   |    0   |    -   |
+|     s_box    |    1   |    0   |    0   |    -   |
+|     state    |    0   |   16   |    2   |    0   |
+|    state_1   |    0   |   16   |    2   |    0   |
++--------------+--------+--------+--------+--------+
+|     Total    |    8   |   32   |    4   |    0   |
++--------------+--------+--------+--------+--------+
+
+* Register list:
++--------------------------------+--------+
+|                                |   FF   |
++--------------------------------+--------+
+|         Nr_read_reg_227        |   16   |
+|    mode_cipher_read_reg_240    |    1   |
+|mode_inverse_cipher_read_reg_236|    1   |
+|         sub19_i_reg_254        |   17   |
+|          sub_i_reg_244         |   17   |
+|       trunc_ln220_reg_249      |    4   |
++--------------------------------+--------+
+|              Total             |   56   |
++--------------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|----------------------------------------|------|------|------|--------||---------||---------|
+|                  Comp                  |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|----------------------------------------|------|------|------|--------||---------||---------|
+|         grp_AddRoundKey_fu_130         |  p3  |   2  |   8  |   16   ||    9    |
+|  grp_AES_Full_Pipeline_L_rounds_fu_139 |  p4  |   2  |  17  |   34   ||    9    |
+| grp_AES_Full_Pipeline_L_rounds2_fu_168 |  p5  |   2  |  17  |   34   ||    9    |
+|----------------------------------------|------|------|------|--------||---------||---------|
+|                  Total                 |      |      |      |   84   ||  4.764  ||    27   |
+|----------------------------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+
+|           |  BRAM  |  Delay |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+--------+
+|  Function |    -   |   175  |  5432  |  5836  |    -   |
+|   Memory  |    8   |    -   |   32   |    4   |    0   |
+|Multiplexer|    -   |    4   |    -   |   27   |    -   |
+|  Register |    -   |    -   |   56   |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+
+|   Total   |    8   |   180  |  5520  |  5867  |    0   |
++-----------+--------+--------+--------+--------+--------+

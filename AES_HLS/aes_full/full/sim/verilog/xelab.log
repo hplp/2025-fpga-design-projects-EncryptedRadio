@@ -1,0 +1,112 @@
+Vivado Simulator v2021.2
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_AES_Full_top glbl -Oenable_linking_all_libraries -prj AES_Full.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_19 -L floating_point_v7_1_13 --lib ieee_proposed=./ieee_proposed -s AES_Full 
+Multi-threading is on. Using 10 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AESL_axi_slave_CRTLS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_CRTLS
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_AES_Full_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_AddRoundKey.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_AddRoundKey
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_AES_Full_Pipeline_L_copy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_AES_Full_Pipeline_L_copy
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_AES_Full_Pipeline_L_copy1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_AES_Full_Pipeline_L_copy1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_AES_Full_Pipeline_L_copy_o.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_AES_Full_Pipeline_L_copy_o
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_AES_Full_Pipeline_L_copy_o3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_AES_Full_Pipeline_L_copy_o3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_AES_Full_Pipeline_L_rounds.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_AES_Full_Pipeline_L_rounds
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_AES_Full_Pipeline_L_rounds2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_AES_Full_Pipeline_L_rounds2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_CRTLS_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_CRTLS_s_axi
+INFO: [VRFC 10-311] analyzing module AES_Full_CRTLS_s_axi_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_InvMixColumns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_InvMixColumns
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_InvMixColumns_mul09_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_InvMixColumns_mul09_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_InvMixColumns_mul11_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_InvMixColumns_mul11_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_InvMixColumns_mul13_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_InvMixColumns_mul13_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_InvMixColumns_mul14_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_InvMixColumns_mul14_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_InvShiftRows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_InvShiftRows
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_InvSubBytes.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_InvSubBytes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_InvSubBytes_inverted_s_box_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_InvSubBytes_inverted_s_box_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_MixColumns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_MixColumns
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_MixColumns_mul02_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_MixColumns_mul02_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_MixColumns_mul03_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_MixColumns_mul03_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_ShiftRows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_ShiftRows
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_state_1_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_state_1_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_SubBytes.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_SubBytes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AES_Full_SubBytes_s_box_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Full_SubBytes_s_box_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.AES_Full_state_1_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.AES_Full_flow_control_loop_pipe_...
+Compiling module xil_defaultlib.AES_Full_AES_Full_Pipeline_L_cop...
+Compiling module xil_defaultlib.AES_Full_AddRoundKey
+Compiling module xil_defaultlib.AES_Full_SubBytes_s_box_ROM_AUTO...
+Compiling module xil_defaultlib.AES_Full_SubBytes
+Compiling module xil_defaultlib.AES_Full_ShiftRows
+Compiling module xil_defaultlib.AES_Full_MixColumns_mul02_ROM_AU...
+Compiling module xil_defaultlib.AES_Full_MixColumns_mul03_ROM_AU...
+Compiling module xil_defaultlib.AES_Full_MixColumns
+Compiling module xil_defaultlib.AES_Full_AES_Full_Pipeline_L_rou...
+Compiling module xil_defaultlib.AES_Full_AES_Full_Pipeline_L_cop...
+Compiling module xil_defaultlib.AES_Full_AES_Full_Pipeline_L_cop...
+Compiling module xil_defaultlib.AES_Full_InvShiftRows
+Compiling module xil_defaultlib.AES_Full_InvSubBytes_inverted_s_...
+Compiling module xil_defaultlib.AES_Full_InvSubBytes
+Compiling module xil_defaultlib.AES_Full_InvMixColumns_mul14_ROM...
+Compiling module xil_defaultlib.AES_Full_InvMixColumns_mul11_ROM...
+Compiling module xil_defaultlib.AES_Full_InvMixColumns_mul13_ROM...
+Compiling module xil_defaultlib.AES_Full_InvMixColumns_mul09_ROM...
+Compiling module xil_defaultlib.AES_Full_InvMixColumns
+Compiling module xil_defaultlib.AES_Full_AES_Full_Pipeline_L_rou...
+Compiling module xil_defaultlib.AES_Full_AES_Full_Pipeline_L_cop...
+Compiling module xil_defaultlib.AES_Full_CRTLS_s_axi_ram(MEM_TYP...
+Compiling module xil_defaultlib.AES_Full_CRTLS_s_axi_ram(DEPTH=4...
+Compiling module xil_defaultlib.AES_Full_CRTLS_s_axi_ram(MEM_TYP...
+Compiling module xil_defaultlib.AES_Full_CRTLS_s_axi
+Compiling module xil_defaultlib.AES_Full
+Compiling module xil_defaultlib.AESL_axi_slave_CRTLS
+WARNING: [XSIM 43-3373] "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AESL_axi_slave_CRTLS.v" Line 1200. System function $fread is used as system task. This system function should have a LHS e.g. x=$fread().
+WARNING: [XSIM 43-3373] "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AESL_axi_slave_CRTLS.v" Line 1209. System function $fread is used as system task. This system function should have a LHS e.g. x=$fread().
+WARNING: [XSIM 43-3373] "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AESL_axi_slave_CRTLS.v" Line 1250. System function $fread is used as system task. This system function should have a LHS e.g. x=$fread().
+WARNING: [XSIM 43-3373] "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AESL_axi_slave_CRTLS.v" Line 1317. System function $fread is used as system task. This system function should have a LHS e.g. x=$fread().
+WARNING: [XSIM 43-3373] "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AESL_axi_slave_CRTLS.v" Line 1326. System function $fread is used as system task. This system function should have a LHS e.g. x=$fread().
+WARNING: [XSIM 43-3373] "C:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/sim/verilog/AESL_axi_slave_CRTLS.v" Line 1367. System function $fread is used as system task. This system function should have a LHS e.g. x=$fread().
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=62)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_AES_Full_top
+Compiling module work.glbl
+Built simulation snapshot AES_Full

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="AESfunctions.cpp" path="D:\OneDrive\UVA\crypto\AES_code\VivadoHLS\source\AESfunctions.cpp"/>
+    <originFiles name="AESfunctions.h" path="D:\OneDrive\UVA\crypto\AES_code\VivadoHLS\source\AESfunctions.h"/>
+    <originFiles name="AEStables.h" path="D:\OneDrive\UVA\crypto\AES_code\VivadoHLS\source\AEStables.h"/>
+  </source>
+  <testbench>
+    <originFiles name="test_AES.cpp" path="D:\OneDrive\UVA\crypto\AES_code\VivadoHLS\source\test_AES.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

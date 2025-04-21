@@ -1,0 +1,173 @@
+
+
+================================================================
+== Vivado HLS Report for 'AddRoundKey'
+================================================================
+* Date:           Wed Feb  7 17:52:10 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        inverse_cipher
+* Solution:       aes_inverse_cipher
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      3.42|        0.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   15|   15|   15|   15|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    158|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    379|
+|Register         |        -|      -|     176|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|     176|    537|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |      1|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |ap_block_state1      |    or    |      0|  0|   8|           1|           1|
+    |grp_fu_220_p2        |    xor   |      0|  0|  15|           8|           8|
+    |grp_fu_226_p2        |    xor   |      0|  0|  15|           8|           8|
+    |grp_fu_232_p2        |    xor   |      0|  0|  15|           8|           8|
+    |tmp_65_10_fu_278_p2  |    xor   |      0|  0|  15|           8|           8|
+    |tmp_65_12_fu_283_p2  |    xor   |      0|  0|  15|           8|           8|
+    |tmp_65_14_fu_288_p2  |    xor   |      0|  0|  15|           8|           8|
+    |tmp_65_1_fu_261_p2   |    xor   |      0|  0|  15|           8|           8|
+    |tmp_65_2_fu_267_p2   |    xor   |      0|  0|  15|           8|           8|
+    |tmp_65_9_fu_273_p2   |    xor   |      0|  0|  15|           8|           8|
+    |tmp_s_fu_256_p2      |    xor   |      0|  0|  15|           8|           8|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |Total                |          |      0|  0| 158|          81|          81|
+    +---------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------+----+-----------+-----+-----------+
+    |         Name         | LUT| Input Size| Bits| Total Bits|
+    +----------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm             |  85|         17|    1|         17|
+    |reg_205               |   9|          2|    8|         16|
+    |reg_210               |   9|          2|    8|         16|
+    |reg_215               |   9|          2|    8|         16|
+    |roundKey_TDATA_blk_n  |   9|          2|    1|          2|
+    |state_address0        |  85|         17|    4|         68|
+    |state_address1        |  85|         17|    4|         68|
+    |state_d0              |  44|          9|    8|         72|
+    |state_d1              |  44|          9|    8|         72|
+    +----------------------+----+-----------+-----+-----------+
+    |Total                 | 379|         77|   50|        347|
+    +----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------+----+----+-----+-----------+
+    |          Name         | FF | LUT| Bits| Const Bits|
+    +-----------------------+----+----+-----+-----------+
+    |ap_CS_fsm              |  16|   0|   16|          0|
+    |reg_205                |   8|   0|    8|          0|
+    |reg_210                |   8|   0|    8|          0|
+    |reg_215                |   8|   0|    8|          0|
+    |reg_238                |   8|   0|    8|          0|
+    |reg_244                |   8|   0|    8|          0|
+    |reg_250                |   8|   0|    8|          0|
+    |roundKey_read_reg_294  |   8|   0|    8|          0|
+    |state_load_11_reg_389  |   8|   0|    8|          0|
+    |state_load_13_reg_404  |   8|   0|    8|          0|
+    |state_load_15_reg_424  |   8|   0|    8|          0|
+    |state_load_9_reg_369   |   8|   0|    8|          0|
+    |tmp_65_10_reg_434      |   8|   0|    8|          0|
+    |tmp_65_12_reg_439      |   8|   0|    8|          0|
+    |tmp_65_1_reg_314       |   8|   0|    8|          0|
+    |tmp_65_2_reg_329       |   8|   0|    8|          0|
+    |tmp_65_4_reg_354       |   8|   0|    8|          0|
+    |tmp_65_6_reg_384       |   8|   0|    8|          0|
+    |tmp_65_8_reg_419       |   8|   0|    8|          0|
+    |tmp_65_9_reg_429       |   8|   0|    8|          0|
+    |tmp_s_reg_309          |   8|   0|    8|          0|
+    +-----------------------+----+----+-----+-----------+
+    |Total                  | 176|   0|  176|          0|
+    +-----------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------+-----+-----+------------+--------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------+-----+-----+------------+--------------+--------------+
+|ap_clk           |  in |    1| ap_ctrl_hs |  AddRoundKey | return value |
+|ap_rst           |  in |    1| ap_ctrl_hs |  AddRoundKey | return value |
+|ap_start         |  in |    1| ap_ctrl_hs |  AddRoundKey | return value |
+|ap_done          | out |    1| ap_ctrl_hs |  AddRoundKey | return value |
+|ap_idle          | out |    1| ap_ctrl_hs |  AddRoundKey | return value |
+|ap_ready         | out |    1| ap_ctrl_hs |  AddRoundKey | return value |
+|state_address0   | out |    4|  ap_memory |     state    |     array    |
+|state_ce0        | out |    1|  ap_memory |     state    |     array    |
+|state_we0        | out |    1|  ap_memory |     state    |     array    |
+|state_d0         | out |    8|  ap_memory |     state    |     array    |
+|state_q0         |  in |    8|  ap_memory |     state    |     array    |
+|state_address1   | out |    4|  ap_memory |     state    |     array    |
+|state_ce1        | out |    1|  ap_memory |     state    |     array    |
+|state_we1        | out |    1|  ap_memory |     state    |     array    |
+|state_d1         | out |    8|  ap_memory |     state    |     array    |
+|state_q1         |  in |    8|  ap_memory |     state    |     array    |
+|roundKey_TDATA   |  in |    8|    axis    |   roundKey   |    pointer   |
+|roundKey_TVALID  |  in |    1|    axis    |   roundKey   |    pointer   |
+|roundKey_TREADY  | out |    1|    axis    |   roundKey   |    pointer   |
++-----------------+-----+-----+------------+--------------+--------------+
+

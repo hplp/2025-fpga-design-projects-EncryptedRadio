@@ -1,0 +1,22 @@
+<pragmas>
+<pragma file="source/AESfunctions.cpp" line="240" pragmaType="inline" parentfunction="AES_Full" off="0" region="1" recursive="0"/>
+<pragma file="source/AESfunctions.cpp" line="243" pragmaType="interface" parentfunction="AES_Full" mode="s_axilite" port="mode_cipher" bundle="CRTLS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="source/AESfunctions.cpp" line="244" pragmaType="interface" parentfunction="AES_Full" mode="s_axilite" port="mode_inverse_cipher" bundle="CRTLS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="source/AESfunctions.cpp" line="245" pragmaType="interface" parentfunction="AES_Full" mode="s_axilite" port="data_in" bundle="CRTLS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="source/AESfunctions.cpp" line="246" pragmaType="interface" parentfunction="AES_Full" mode="s_axilite" port="expandedKey" bundle="CRTLS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="source/AESfunctions.cpp" line="247" pragmaType="interface" parentfunction="AES_Full" mode="s_axilite" port="Nr" bundle="CRTLS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="source/AESfunctions.cpp" line="248" pragmaType="interface" parentfunction="AES_Full" mode="s_axilite" port="data_out" bundle="CRTLS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="source/AESfunctions.cpp" line="249" pragmaType="interface" parentfunction="AES_Full" mode="s_axilite" port="" bundle="CRTLS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="source/AESfunctions.cpp" line="20" pragmaType="inline" parentfunction="ShiftRows" off="1" region="0" recursive="0"/>
+<pragma file="source/AESfunctions.cpp" line="144" pragmaType="inline" parentfunction="AddRoundKey" off="1" region="0" recursive="0"/>
+<pragma file="source/AESfunctions.cpp" line="146" pragmaType="unroll" parentfunction="AddRoundKey" factor="-1" skip_exit_check="0"/>
+<pragma file="source/AESfunctions.cpp" line="101" pragmaType="inline" parentfunction="InvMixColumns" off="1" region="0" recursive="0"/>
+<pragma file="source/AESfunctions.cpp" line="153" pragmaType="inline" parentfunction="AES_Encrypt" off="0" region="1" recursive="0"/>
+<pragma file="source/AESfunctions.cpp" line="196" pragmaType="inline" parentfunction="AES_Decrypt" off="0" region="1" recursive="0"/>
+<pragma file="source/AESfunctions.cpp" line="47" pragmaType="inline" parentfunction="InvShiftRows" off="1" region="0" recursive="0"/>
+<pragma file="source/AESfunctions.cpp" line="4" pragmaType="inline" parentfunction="SubBytes" off="1" region="0" recursive="0"/>
+<pragma file="source/AESfunctions.cpp" line="6" pragmaType="unroll" parentfunction="SubBytes" factor="-1" skip_exit_check="0"/>
+<pragma file="source/AESfunctions.cpp" line="74" pragmaType="inline" parentfunction="MixColumns" off="1" region="0" recursive="0"/>
+<pragma file="source/AESfunctions.cpp" line="12" pragmaType="inline" parentfunction="InvSubBytes" off="1" region="0" recursive="0"/>
+<pragma file="source/AESfunctions.cpp" line="14" pragmaType="unroll" parentfunction="InvSubBytes" factor="-1" skip_exit_check="0"/>
+</pragmas>

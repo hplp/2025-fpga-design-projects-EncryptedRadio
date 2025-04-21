@@ -1,0 +1,1081 @@
+INFO: [HLS 200-0] Workspace D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher opened at Wed Feb 07 17:52:28 -0500 2018
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Command     config_clock returned 0; 0.001 sec.
+Execute     config_clock -quiet -name default -uncertainty 0 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0ns.
+Command     config_clock returned 0; 0 sec.
+Execute     open_platform DefaultPlatform 
+Command     open_platform returned 0; 0 sec.
+Execute     import_lib C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.lib 
+Command           ap_source returned 0; 0.001 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.lib 
+Command           ap_source returned 0; 0.001 sec.
+Command         ap_source returned 0; 0.002 sec.
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.lib 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.004 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_old.lib 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_vivado.lib 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command           ap_source returned 0; 0 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.001 sec.
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command         ap_source returned 0; 0.001 sec.
+Command       ap_source returned 0; 0.004 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/dsp48e1.hlp 
+Command       ap_source returned 0; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command       config_chip_info returned 0; 0 sec.
+Execute       config_chip_info -quiet -speed medium 
+Command       config_chip_info returned 0; 0 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command         ap_source returned 0; 0.001 sec.
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command           ap_source returned 0; 0 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command         ap_source returned 0; 0.001 sec.
+Command       ap_source returned 0; 0.004 sec.
+Command     import_lib returned 0; 0.019 sec.
+Execute     source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command           ap_source returned 0; 0.001 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command           ap_source returned 0; 0.001 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command           ap_source returned 0; 0.002 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command             ap_source returned 0; 0.003 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command             ap_source returned 0; 0.006 sec.
+Command           ap_source returned 0; 0.012 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command           ap_source returned 0; 0.011 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command           ap_source returned 0; 0.008 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command           ap_source returned 0; 0.003 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command           ap_source returned 0; 0.001 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source returned 0; 0.099 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source returned 0; 0.001 sec.
+Command         ap_source returned 0; 0.139 sec.
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source returned 0; 0.001 sec.
+Command       ap_source returned 0; 0.142 sec.
+Command     ap_source returned 0; 0.142 sec.
+Execute     open_platform DefaultPlatform 
+Command     open_platform returned 0; 0 sec.
+Execute     import_lib C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_hp.lib 
+Command         ap_source returned 0; 0.001 sec.
+Command       ap_source returned 0; 0.003 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command           ap_source returned 0; 0.005 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command             ap_source returned 0; 0 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command           ap_source returned 0; 0.001 sec.
+Command         ap_source returned 0; 0.008 sec.
+Command       ap_source returned 0; 0.009 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_hp.hlp 
+Command       ap_source returned 0; 0.002 sec.
+Command     import_lib returned 0; 0.024 sec.
+Execute     source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command       ap_source returned 0; 0.002 sec.
+Command     ap_source returned 0; 0.002 sec.
+Execute     set_part xc7z020clg400-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart returned 1; 0.023 sec.
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command         config_chip_info returned 0; 0 sec.
+Execute         config_chip_info -quiet -speed slow 
+Command         config_chip_info returned 0; 0 sec.
+Command       add_library returned 0; 0.03 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Command       add_library returned 0; 0.002 sec.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Command     set_part returned 0; 0.066 sec.
+Execute     get_default_platform 
+Command     get_default_platform returned 0; 0 sec.
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command     config_chip_info returned 0; 0 sec.
+Execute     config_chip_info -quiet -speed slow 
+Command     config_chip_info returned 0; 0 sec.
+Command   open_solution returned 0; 0.275 sec.
+Execute   set_part xc7z020clg400-1 -tool vivado 
+Execute     add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       license_isbetapart xc7z020 
+Command       license_isbetapart returned 1; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Command       config_chip_info returned 0; 0 sec.
+Execute       config_chip_info -quiet -speed slow 
+Command       config_chip_info returned 0; 0 sec.
+Command     add_library returned 0; 0.004 sec.
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Command     add_library returned 0; 0.002 sec.
+Execute     get_default_platform 
+Command     get_default_platform returned 0; 0 sec.
+Command   set_part returned 0; 0.038 sec.
+Execute   create_clock -period 10 -name default 
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Command     config_clock returned 0; 0 sec.
+Command   create_clock returned 0; 0.002 sec.
+Execute   set_clock_uncertainty 0 
+Command   set_clock_uncertainty returned 0; 0.002 sec.
+Execute   csynth_design 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -VP9_rom_infer_simplify=0 -ng=0 -g=0 -opt_fp=0 -enable_clang39=0 
+INFO: [HLS 200-10] Analyzing design file 'source/AESfunctions.cpp' ...
+INFO: [HLS 200-0] Compiling one TU...
+Execute       is_m_axi_addr64 
+Command       is_m_axi_addr64 returned 0; 0 sec.
+INFO: [HLS 200-0] Handling source/AESfunctions.cpp as C++
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       is_encrypted source/AESfunctions.cpp 
+Command       is_encrypted returned 0; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Dev/Xilinx/Vivado/2017.4/msys" -hls  -fno-exceptions  -D__llvm__  -E "source/AESfunctions.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pp.0.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain C:/Dev/Xilinx/Vivado/2017.4/msys -hls -fno-exceptions -D__llvm__ -E source/AESfunctions.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot -I C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pp.0.cpp
+Command       clang returned 0; 0.832 sec.
+INFO: [HLS 200-0] Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Dev/Xilinx/Vivado/2017.4/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pp.0.cpp"  -o "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/useless.bc"  
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain C:/Dev/Xilinx/Vivado/2017.4/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot -I C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pp.0.cpp -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/useless.bc
+Command       clang returned 0; 0.888 sec.
+INFO: [HLS 200-0] GCC PP time: 1 seconds per iteration
+Execute       list_core -type functional_unit 
+Command       list_core returned 0; 0 sec.
+INFO: [HLS 200-0] CDT Preprocessing...
+INFO: [HLS 200-0] Marker-Pragma convertor: D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pp.0.cpp D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pp.0.cpp.ap-line.cpp D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pp.0.cpp.ap-line.cpp.CXX 1
+INFO: [HLS 200-0] Converting Markers to Pragmas...
+Execute       cdt  "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pp.0.cpp.ap-line.cpp"  -m "AES_Encrypt" -o "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pp.0.cpp.ap-cdt.cpp" --pp --directive D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/aes_cipher.directive --source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/source/AESfunctions.cpp --error D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSP_Double_Pump_Mac16 DSP_Double_Pump_Mac8 DSP_Macro DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_fulldsp HAddSub_meddsp HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db --ca --es --gf --pd --p2d D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db --sd --scff D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/.systemc_flag --ad 
+Command       cdt returned 0; 1.874 sec.
+INFO: [HLS 200-0] Marker-Pragma convertor: D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pp.0.cpp.ap-cdt.cpp D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pragma.0.cpp D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pragma.0.cpp.ap-line.CXX 0
+INFO: [HLS 200-0] Converting Pragmas to Markers...
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/pragma.status.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Pragma Handling...
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Dev/Xilinx/Vivado/2017.4/msys" -hls  -fno-exceptions  -D__llvm__  -E "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pragma.2.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain C:/Dev/Xilinx/Vivado/2017.4/msys -hls -fno-exceptions -D__llvm__ -E D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot -I C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pragma.2.cpp
+Command       clang returned 0; 0.817 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-0] Processing labels
+Execute       clang  -fno-limit-debug-info -gcc-toolchain C:/Dev/Xilinx/Vivado/2017.4/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.g.bc" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain C:/Dev/Xilinx/Vivado/2017.4/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot -I C:/Dev/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.g.bc
+Command       clang returned 0; 0.905 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ve_warning.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-10] Validating synthesis directives ...
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/pragma.status.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 100.039 ; gain = 45.105
+INFO: [HLS 200-0] Linking Release ...
+Execute       llvm-ld D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.bc -hls-opt -except-internalize AES_Encrypt -LC:/Dev/Xilinx/Vivado/2017.4/win64/lib -lm_basic -lhlsmc++ -lhlsm -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o 
+Command       llvm-ld returned 0; 0.579 sec.
+Execute       disassemble D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o 
+Execute         is_encrypted D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.bc 
+Command         is_encrypted returned 0; 0 sec.
+Command       disassemble returned 0; 0.419 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-0] Linking Debug ...
+Execute       llvm-ld D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AESfunctions.g.bc -hls-opt -except-internalize AES_Encrypt -LC:/Dev/Xilinx/Vivado/2017.4/win64/lib -lm_basic -lhlsmc++ -lhlsm -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g 
+Command       llvm-ld returned 0; 0.574 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 100.078 ; gain = 45.145
+Execute       ::config_rtl 
+Command       config_rtl returned 0; 0.001 sec.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 -enable_clang39=0 -VP9_rom_infer_simplify=0 
+Execute         cleanup_all_models 
+Command         cleanup_all_models returned 0; 0 sec.
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.pp.bc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.pp.0.bc -f 
+Command         transform returned 0; 0.02 sec.
+Execute         llvm-ld D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.pp.0.bc -disable-opt -LC:/Dev/Xilinx/Vivado/2017.4/win64/lib -lfloatconversion -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g.0 
+Command         llvm-ld returned 0; 0.453 sec.
+INFO: [HLS 200-0] Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top AES_Encrypt -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g.0.bc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform returned 0; 0.064 sec.
+Execute         disassemble D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g.1 D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g.1 
+Execute           is_encrypted D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g.1.bc 
+Command           is_encrypted returned 0; 0.001 sec.
+Command         disassemble returned 0; 0.415 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 105.215 ; gain = 50.281
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-0] Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g.1.bc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g.2.prechk.bc -f 
+Command         transform returned 0; 0.073 sec.
+INFO: [HLS 200-0] Checking Synthesizability 2/2..
+Execute         transform -syn-check D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g.2.prechk.bc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g.2.bc -f -phase syn-check 
+Command         transform returned 0; 0.023 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 108.039 ; gain = 53.105
+INFO: [HLS 200-0] Compiler optimizing ...
+INFO: [HLS 200-0] Share syncheck's 1.bc for syn flow: copy D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.g.1.bc to D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.1.bc
+INFO: [HLS 200-0] Presyn 1...
+Execute         transform -hls -tmp D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -simplifycfg -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.1.bc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-501] Unrolling loop 'Loop-3' (source/AESfunctions.cpp:187) in function 'AES_Encrypt' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (source/AESfunctions.cpp:6) in function 'SubBytes' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (source/AESfunctions.cpp:146) in function 'AddRoundKey' completely.
+WARNING: [XFORM 203-124] Array  'expandedKey' (source/AESfunctions.cpp:154): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+Command         transform returned 0; 0.266 sec.
+INFO: [HLS 200-0] Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.1.tmp.bc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-11] Balancing expressions in function 'MixColumns' (source/AESfunctions.cpp:74)...48 expression(s) balanced.
+Command         transform returned 0; 0.143 sec.
+Execute         disassemble D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.2 D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.2 
+Execute           is_encrypted D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.2.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.419 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 131.277 ; gain = 76.344
+INFO: [HLS 200-0] Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -interface-preproc -directive-preproc -interface-gen -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -read-loop-dep -dce -bitwidth -loop-dep -check-stream -norm-name -legalize -validate-dataflow -cdfg-build D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.2.bc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-151] Mapping array 's_box' with offset 0, array 'mul02' with offset 256 and array 'mul03' with offset 512 into array 'cipher' horizontally.
+Command         transform returned 0; 0.36 sec.
+Execute         disassemble D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.3 D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.3 
+Execute           is_encrypted D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.o.3.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.402 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 164.684 ; gain = 109.750
+INFO: [HLS 200-0] Finish building internal data model.
+Command       opt_and_import_c returned 0; 2.737 sec.
+Command     elaborate returned 0; 10.303 sec.
+Execute     autosyn 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-0] Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'AES_Encrypt' ...
+Execute       ap_set_top_model AES_Encrypt 
+Command       ap_set_top_model returned 0; 0 sec.
+Execute       get_model_list AES_Encrypt -filter all-wo-channel -topdown 
+Command       get_model_list returned 0; 0 sec.
+Execute       preproc_iomode -model AES_Encrypt 
+Command       preproc_iomode returned 0; 0.001 sec.
+Execute       preproc_iomode -model MixColumns 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model ShiftRows 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model SubBytes 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model AddRoundKey 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       get_model_list AES_Encrypt -filter all-wo-channel 
+Command       get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for configure: AddRoundKey SubBytes ShiftRows MixColumns AES_Encrypt
+INFO: [HLS 200-0] Configuring Module : AddRoundKey ...
+Execute       set_default_model AddRoundKey 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit AddRoundKey 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : SubBytes ...
+Execute       set_default_model SubBytes 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit SubBytes 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : ShiftRows ...
+Execute       set_default_model ShiftRows 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit ShiftRows 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : MixColumns ...
+Execute       set_default_model MixColumns 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit MixColumns 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : AES_Encrypt ...
+Execute       set_default_model AES_Encrypt 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit AES_Encrypt 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for preprocess: AddRoundKey SubBytes ShiftRows MixColumns AES_Encrypt
+INFO: [HLS 200-0] Preprocessing Module: AddRoundKey ...
+Execute       set_default_model AddRoundKey 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model AddRoundKey 
+Command       cdfg_preprocess returned 0; 0.001 sec.
+Execute       rtl_gen_preprocess AddRoundKey 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: SubBytes ...
+Execute       set_default_model SubBytes 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model SubBytes 
+Command       cdfg_preprocess returned 0; 0.001 sec.
+Execute       rtl_gen_preprocess SubBytes 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: ShiftRows ...
+Execute       set_default_model ShiftRows 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model ShiftRows 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess ShiftRows 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: MixColumns ...
+Execute       set_default_model MixColumns 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model MixColumns 
+Command       cdfg_preprocess returned 0; 0.001 sec.
+Execute       rtl_gen_preprocess MixColumns 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: AES_Encrypt ...
+Execute       set_default_model AES_Encrypt 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model AES_Encrypt 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess AES_Encrypt 
+Command       rtl_gen_preprocess returned 0; 0.001 sec.
+INFO: [HLS 200-0] Model list for synthesis: AddRoundKey SubBytes ShiftRows MixColumns AES_Encrypt
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'AddRoundKey'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model AddRoundKey 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model AddRoundKey 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.046 sec.
+INFO: [HLS 200-111]  Elapsed time: 11.261 seconds; current allocated memory: 123.758 MB.
+Execute       report -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.036 sec.
+Execute       db_write -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.sched.adb -f 
+Command       db_write returned 0; 0.018 sec.
+INFO: [HLS 200-0] Finish scheduling AddRoundKey.
+Execute       set_default_model AddRoundKey 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model AddRoundKey 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=AddRoundKey
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.035 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.103 seconds; current allocated memory: 124.066 MB.
+Execute       report -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.037 sec.
+Execute       db_write -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.bind.adb -f 
+Command       db_write returned 0; 0.025 sec.
+INFO: [HLS 200-0] Finish binding AddRoundKey.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'SubBytes'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model SubBytes 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model SubBytes 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.049 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.135 seconds; current allocated memory: 124.370 MB.
+Execute       report -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.039 sec.
+Execute       db_write -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.sched.adb -f 
+Command       db_write returned 0; 0.022 sec.
+INFO: [HLS 200-0] Finish scheduling SubBytes.
+Execute       set_default_model SubBytes 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model SubBytes 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=SubBytes
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.034 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.113 seconds; current allocated memory: 124.649 MB.
+Execute       report -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.037 sec.
+Execute       db_write -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.bind.adb -f 
+Command       db_write returned 0; 0.025 sec.
+INFO: [HLS 200-0] Finish binding SubBytes.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ShiftRows'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model ShiftRows 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model ShiftRows 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.041 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.129 seconds; current allocated memory: 124.886 MB.
+Execute       report -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.029 sec.
+Execute       db_write -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.sched.adb -f 
+Command       db_write returned 0; 0.016 sec.
+INFO: [HLS 200-0] Finish scheduling ShiftRows.
+Execute       set_default_model ShiftRows 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model ShiftRows 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=ShiftRows
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.034 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.095 seconds; current allocated memory: 125.107 MB.
+Execute       report -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.033 sec.
+Execute       db_write -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.bind.adb -f 
+Command       db_write returned 0; 0.03 sec.
+INFO: [HLS 200-0] Finish binding ShiftRows.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MixColumns'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model MixColumns 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model MixColumns 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.09 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.179 seconds; current allocated memory: 125.622 MB.
+Execute       report -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.07 sec.
+Execute       db_write -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.sched.adb -f 
+Command       db_write returned 0; 0.037 sec.
+INFO: [HLS 200-0] Finish scheduling MixColumns.
+Execute       set_default_model MixColumns 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model MixColumns 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=MixColumns
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.05 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.192 seconds; current allocated memory: 126.296 MB.
+Execute       report -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.092 sec.
+Execute       db_write -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.bind.adb -f 
+Command       db_write returned 0; 0.045 sec.
+INFO: [HLS 200-0] Finish binding MixColumns.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'AES_Encrypt'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model AES_Encrypt 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model AES_Encrypt 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_copy'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.059 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.219 seconds; current allocated memory: 126.706 MB.
+Execute       report -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.051 sec.
+Execute       db_write -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.sched.adb -f 
+Command       db_write returned 0; 0.022 sec.
+INFO: [HLS 200-0] Finish scheduling AES_Encrypt.
+Execute       set_default_model AES_Encrypt 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model AES_Encrypt 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=AES_Encrypt
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Starting global binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.089 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.191 seconds; current allocated memory: 127.060 MB.
+Execute       report -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.091 sec.
+Execute       db_write -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.bind.adb -f 
+Command       db_write returned 0; 0.029 sec.
+INFO: [HLS 200-0] Finish binding AES_Encrypt.
+Execute       get_model_list AES_Encrypt -filter all-wo-channel 
+Command       get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess AddRoundKey 
+Command       rtl_gen_preprocess returned 0; 0.001 sec.
+Execute       rtl_gen_preprocess SubBytes 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess ShiftRows 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess MixColumns 
+Command       rtl_gen_preprocess returned 0; 0.001 sec.
+Execute       rtl_gen_preprocess AES_Encrypt 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for RTL generation: AddRoundKey SubBytes ShiftRows MixColumns AES_Encrypt
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'AddRoundKey'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model AddRoundKey -vendor xilinx -mg_file D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'AddRoundKey'.
+Command       create_rtl_model returned 0; 0.023 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.178 seconds; current allocated memory: 127.538 MB.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       gen_rtl AddRoundKey -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/systemc/AddRoundKey -synmodules AddRoundKey SubBytes ShiftRows MixColumns AES_Encrypt 
+Command       gen_rtl returned 0; 0.008 sec.
+Execute       gen_rtl AddRoundKey -style xilinx -f -lang vhdl -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/vhdl/AddRoundKey 
+Command       gen_rtl returned 0; 0.006 sec.
+Execute       gen_rtl AddRoundKey -style xilinx -f -lang vlog -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/verilog/AddRoundKey 
+Command       gen_rtl returned 0; 0.006 sec.
+Execute       gen_tb_info AddRoundKey -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey -p D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db 
+Command       gen_tb_info returned 0; 0.006 sec.
+Execute       report -model AddRoundKey -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/report/AddRoundKey_csynth.rpt -f 
+Command       report returned 0; 0.008 sec.
+Execute       report -model AddRoundKey -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/report/AddRoundKey_csynth.xml -f -x 
+Command       report returned 0; 0.005 sec.
+Execute       report -model AddRoundKey -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.verbose.rpt -verbose -f 
+Command       report returned 0; 0.045 sec.
+Execute       db_write -model AddRoundKey -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.adb -f 
+Command       db_write returned 0; 0.038 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'SubBytes'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model SubBytes -vendor xilinx -mg_file D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'SubBytes'.
+Command       create_rtl_model returned 0; 0.025 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.232 seconds; current allocated memory: 128.118 MB.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl SubBytes -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/systemc/SubBytes -synmodules AddRoundKey SubBytes ShiftRows MixColumns AES_Encrypt 
+Command       gen_rtl returned 0; 0.008 sec.
+Execute       gen_rtl SubBytes -style xilinx -f -lang vhdl -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/vhdl/SubBytes 
+Command       gen_rtl returned 0; 0.005 sec.
+Execute       gen_rtl SubBytes -style xilinx -f -lang vlog -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/verilog/SubBytes 
+Command       gen_rtl returned 0; 0.005 sec.
+Execute       gen_tb_info SubBytes -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes -p D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db 
+Command       gen_tb_info returned 0; 0.006 sec.
+Execute       report -model SubBytes -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/report/SubBytes_csynth.rpt -f 
+Command       report returned 0; 0.006 sec.
+Execute       report -model SubBytes -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/report/SubBytes_csynth.xml -f -x 
+Command       report returned 0; 0.003 sec.
+Execute       report -model SubBytes -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.verbose.rpt -verbose -f 
+Command       report returned 0; 0.042 sec.
+Execute       db_write -model SubBytes -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.adb -f 
+Command       db_write returned 0; 0.037 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ShiftRows'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model ShiftRows -vendor xilinx -mg_file D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ShiftRows'.
+Command       create_rtl_model returned 0; 0.017 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.236 seconds; current allocated memory: 128.448 MB.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl ShiftRows -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/systemc/ShiftRows -synmodules AddRoundKey SubBytes ShiftRows MixColumns AES_Encrypt 
+Command       gen_rtl returned 0; 0.005 sec.
+Execute       gen_rtl ShiftRows -style xilinx -f -lang vhdl -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/vhdl/ShiftRows 
+Command       gen_rtl returned 0; 0.005 sec.
+Execute       gen_rtl ShiftRows -style xilinx -f -lang vlog -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/verilog/ShiftRows 
+Command       gen_rtl returned 0; 0.004 sec.
+Execute       gen_tb_info ShiftRows -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows -p D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db 
+Command       gen_tb_info returned 0; 0.007 sec.
+Execute       report -model ShiftRows -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/report/ShiftRows_csynth.rpt -f 
+Command       report returned 0; 0.006 sec.
+Execute       report -model ShiftRows -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/report/ShiftRows_csynth.xml -f -x 
+Command       report returned 0; 0.004 sec.
+Execute       report -model ShiftRows -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.verbose.rpt -verbose -f 
+Command       report returned 0; 0.039 sec.
+Execute       db_write -model ShiftRows -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.adb -f 
+Command       db_write returned 0; 0.048 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MixColumns'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model MixColumns -vendor xilinx -mg_file D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'MixColumns_tmp_state' to 'MixColumns_tmp_stbkb' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MixColumns'.
+Command       create_rtl_model returned 0; 0.046 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.246 seconds; current allocated memory: 129.403 MB.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0.002 sec.
+Execute       gen_rtl MixColumns -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/systemc/MixColumns -synmodules AddRoundKey SubBytes ShiftRows MixColumns AES_Encrypt 
+Command       gen_rtl returned 0; 0.009 sec.
+Execute       gen_rtl MixColumns -style xilinx -f -lang vhdl -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/vhdl/MixColumns 
+Command       gen_rtl returned 0; 0.005 sec.
+Execute       gen_rtl MixColumns -style xilinx -f -lang vlog -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/verilog/MixColumns 
+Command       gen_rtl returned 0; 0.004 sec.
+Execute       gen_tb_info MixColumns -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns -p D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db 
+Command       gen_tb_info returned 0; 0.015 sec.
+Execute       report -model MixColumns -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/report/MixColumns_csynth.rpt -f 
+Command       report returned 0; 0.018 sec.
+Execute       report -model MixColumns -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/report/MixColumns_csynth.xml -f -x 
+Command       report returned 0; 0.014 sec.
+Execute       report -model MixColumns -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.verbose.rpt -verbose -f 
+Command       report returned 0; 0.108 sec.
+Execute       db_write -model MixColumns -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.adb -f 
+Command       db_write returned 0; 0.097 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'AES_Encrypt'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model AES_Encrypt -vendor xilinx -mg_file D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'AES_Encrypt/plaintext' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'AES_Encrypt/expandedKey' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'AES_Encrypt/Nr' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'AES_Encrypt/ciphertext' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'AES_Encrypt' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'AES_Encrypt'.
+Command       create_rtl_model returned 0; 0.066 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.515 seconds; current allocated memory: 130.671 MB.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       gen_rtl AES_Encrypt -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/systemc/AES_Encrypt -synmodules AddRoundKey SubBytes ShiftRows MixColumns AES_Encrypt 
+Command       gen_rtl returned 0; 0.009 sec.
+Execute       gen_rtl AES_Encrypt -istop -style xilinx -f -lang vhdl -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/vhdl/AES_Encrypt 
+Command       gen_rtl returned 0; 0.026 sec.
+Execute       gen_rtl AES_Encrypt -istop -style xilinx -f -lang vlog -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/verilog/AES_Encrypt 
+Command       gen_rtl returned 0; 0.019 sec.
+Execute       export_constraint_db -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.constraint.tcl -f -tool general 
+Command       export_constraint_db returned 0; 0 sec.
+Execute       report -model AES_Encrypt -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.design.xml -verbose -f -dv 
+Command       report returned 0; 0.062 sec.
+Execute       report -model AES_Encrypt -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.sdaccel.xml -verbose -f -sdaccel 
+Command       report returned 0; 0.035 sec.
+Execute       gen_tb_info AES_Encrypt -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt -p D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db 
+Command       gen_tb_info returned 0; 0.013 sec.
+Execute       report -model AES_Encrypt -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/report/AES_Encrypt_csynth.rpt -f 
+Command       report returned 0; 0.013 sec.
+Execute       report -model AES_Encrypt -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/syn/report/AES_Encrypt_csynth.xml -f -x 
+Command       report returned 0; 0.013 sec.
+Execute       report -model AES_Encrypt -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.verbose.rpt -verbose -f 
+Command       report returned 0; 0.105 sec.
+Execute       db_write -model AES_Encrypt -o D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.adb -f 
+Command       db_write returned 0; 0.069 sec.
+Execute       sc_get_clocks AES_Encrypt 
+Command       sc_get_clocks returned 0; 0 sec.
+Execute       sc_get_portdomain AES_Encrypt 
+Command       sc_get_portdomain returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for RTL component generation: AddRoundKey SubBytes ShiftRows MixColumns AES_Encrypt
+INFO: [HLS 200-0] Handling components in module [AddRoundKey] ... 
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.compgen.tcl 
+Command       ap_source returned 0; 0.002 sec.
+INFO: [HLS 200-0] Handling components in module [SubBytes] ... 
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.compgen.tcl 
+INFO: [HLS 200-0] Found component SubBytes_cipher.
+INFO: [HLS 200-0] Append model SubBytes_cipher
+Command       ap_source returned 0; 0.002 sec.
+INFO: [HLS 200-0] Handling components in module [ShiftRows] ... 
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.compgen.tcl 
+INFO: [HLS 200-0] Found component ShiftRows_tmp_state.
+INFO: [HLS 200-0] Append model ShiftRows_tmp_state
+Command       ap_source returned 0; 0.003 sec.
+INFO: [HLS 200-0] Handling components in module [MixColumns] ... 
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.compgen.tcl 
+INFO: [HLS 200-0] Found component MixColumns_cipher.
+INFO: [HLS 200-0] Append model MixColumns_cipher
+Command       ap_source returned 0; 0.003 sec.
+INFO: [HLS 200-0] Handling components in module [AES_Encrypt] ... 
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.compgen.tcl 
+INFO: [HLS 200-0] Found component AES_Encrypt_state.
+INFO: [HLS 200-0] Append model AES_Encrypt_state
+Command       ap_source returned 0; 0.002 sec.
+INFO: [HLS 200-0] Append model AddRoundKey
+INFO: [HLS 200-0] Append model SubBytes
+INFO: [HLS 200-0] Append model ShiftRows
+INFO: [HLS 200-0] Append model MixColumns
+INFO: [HLS 200-0] Append model AES_Encrypt
+INFO: [HLS 200-0] Generating RTL model list ...
+INFO: [HLS 200-0] All models in this session: SubBytes_cipher ShiftRows_tmp_state MixColumns_cipher AES_Encrypt_state AddRoundKey SubBytes ShiftRows MixColumns AES_Encrypt
+INFO: [HLS 200-0] To file: write model SubBytes_cipher
+INFO: [HLS 200-0] To file: write model ShiftRows_tmp_state
+INFO: [HLS 200-0] To file: write model MixColumns_cipher
+INFO: [HLS 200-0] To file: write model AES_Encrypt_state
+INFO: [HLS 200-0] To file: write model AddRoundKey
+INFO: [HLS 200-0] To file: write model SubBytes
+INFO: [HLS 200-0] To file: write model ShiftRows
+INFO: [HLS 200-0] To file: write model MixColumns
+INFO: [HLS 200-0] To file: write model AES_Encrypt
+INFO: [HLS 200-0] Finished generating RTL model list.
+
+
+INFO: [HLS 200-0] RTL Generation done.
+INFO: [HLS 200-0] CAS Generation done.
+INFO: [HLS 200-0] CBC Generation done.
+Execute       export_ssdm D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/a.export.ll 
+Command       export_ssdm returned 0; 0.004 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0.001 sec.
+Command       ap_source returned 0; 0.001 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0.001 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0.001 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0.002 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0.004 sec.
+Execute               source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.006 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.007 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0.003 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.086 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.121 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.123 sec.
+Command       ap_source returned 0; 0.124 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0.002 sec.
+Command       ap_source returned 0; 0.002 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'SubBytes_cipher_rom' using auto ROMs.
+Command       ap_source returned 0; 0.062 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'ShiftRows_tmp_state_ram (RAM)' using block RAMs.
+Command       ap_source returned 0; 0.031 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'MixColumns_cipher_rom' using block ROMs.
+Command       ap_source returned 0; 0.076 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'AES_Encrypt_state_ram (RAM)' using block RAMs.
+Command       ap_source returned 0; 0.022 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0.001 sec.
+Command       ap_source returned 0; 0.001 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0.001 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0.002 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0.003 sec.
+Execute               source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.007 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.007 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0.003 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.088 sec.
+Execute             source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0.001 sec.
+Command           ap_source returned 0; 0.125 sec.
+Execute           source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0.001 sec.
+Command         ap_source returned 0; 0.127 sec.
+Command       ap_source returned 0; 0.127 sec.
+Execute       source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source C:/Dev/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0.002 sec.
+Command       ap_source returned 0; 0.002 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.tbgen.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.compgen.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.compgen.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.compgen.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.compgen.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.compgen.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.compgen.tcl 
+Command       ap_source returned 0; 0.025 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0.012 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AddRoundKey.compgen.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/SubBytes.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/ShiftRows.compgen.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/MixColumns.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.constraint.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.tbgen.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.tbgen.tcl 
+Command       ap_source returned 0; 0.001 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/AES_Encrypt.constraint.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       sc_get_clocks AES_Encrypt 
+Command       sc_get_clocks returned 0; 0 sec.
+Execute       source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0.001 sec.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 187.629 ; gain = 132.695
+INFO: [SYSC 207-301] Generating SystemC RTL for AES_Encrypt.
+INFO: [VHDL 208-304] Generating VHDL RTL for AES_Encrypt.
+INFO: [VLOG 209-307] Generating Verilog RTL for AES_Encrypt.
+Command     autosyn returned 0; 4.494 sec.
+Command   csynth_design returned 0; 14.797 sec.
+Command ap_source returned 0; 15.134 sec.
+Execute cleanup_all 
+Command cleanup_all returned 0; 0.013 sec.

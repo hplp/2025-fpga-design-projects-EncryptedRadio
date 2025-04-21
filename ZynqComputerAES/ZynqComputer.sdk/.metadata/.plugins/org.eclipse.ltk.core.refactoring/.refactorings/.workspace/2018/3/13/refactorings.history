@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 10 resources" deleteContents="false" description="Delete 10 resources" element1="/hello_hls_rtl_m" element10="/Zynq_CPU_wrapper_hw_platform_3" element2="/hello_hls_rtl_m_bsp" element3="/hello_rtl_multiplier" element4="/hello_rtl_multiplier_bsp" element5="/hello_world" element6="/hello_world_bsp" element7="/Zynq_CPU_wrapper_hw_platform_0" element8="/Zynq_CPU_wrapper_hw_platform_1" element9="/Zynq_CPU_wrapper_hw_platform_2" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="10" stamp="1522287950002"/>
+</session>

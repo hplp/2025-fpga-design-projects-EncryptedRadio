@@ -1,0 +1,176 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="SubBytes" label="">
+<pragma name="INLINE">
+<option name="off" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="SubBytes" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="InvSubBytes" label="">
+<pragma name="INLINE">
+<option name="off" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="InvSubBytes" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="ShiftRows" label="">
+<pragma name="INLINE">
+<option name="off" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="InvShiftRows" label="">
+<pragma name="INLINE">
+<option name="off" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="MixColumns" label="">
+<pragma name="INLINE">
+<option name="off" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="InvMixColumns" label="">
+<pragma name="INLINE">
+<option name="off" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AddRoundKey" label="">
+<pragma name="INLINE">
+<option name="off" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AddRoundKey" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="AES_Encrypt" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="plaintext"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Encrypt" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="expandedKey"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Encrypt" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="ciphertext"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Encrypt" label="">
+<pragma name="INLINE">
+<option name="region" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Encrypt" label="">
+<pragma name="ALLOCATION">
+<option name="instances" positionalBoolean="4" value="AddRoundKey"/>
+<option name="limit" value="1"/>
+<option name="function" positionalBoolean="type" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Encrypt" label="">
+<pragma name="ARRAY_MAP">
+<option name="variable" positionalBoolean="4" value="s_box"/>
+<option name="instance" value="cipher"/>
+<option name="horizontal" positionalBoolean="mode" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Encrypt" label="">
+<pragma name="ARRAY_MAP">
+<option name="variable" positionalBoolean="4" value="mul02"/>
+<option name="instance" value="cipher"/>
+<option name="horizontal" positionalBoolean="mode" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Encrypt" label="">
+<pragma name="ARRAY_MAP">
+<option name="variable" positionalBoolean="4" value="mul03"/>
+<option name="instance" value="cipher"/>
+<option name="horizontal" positionalBoolean="mode" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Encrypt" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="AES_Encrypt" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="ciphertext"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="expandedKey"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="plaintext"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="INLINE">
+<option name="region" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="ALLOCATION">
+<option name="instances" positionalBoolean="4" value="AddRoundKey"/>
+<option name="limit" value="1"/>
+<option name="function" positionalBoolean="type" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="ARRAY_MAP">
+<option name="variable" positionalBoolean="4" value="inverted_s_box"/>
+<option name="instance" value="inverse_cipher"/>
+<option name="horizontal" positionalBoolean="mode" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="ARRAY_MAP">
+<option name="variable" positionalBoolean="4" value="mul09"/>
+<option name="instance" value="inverse_cipher"/>
+<option name="horizontal" positionalBoolean="mode" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="ARRAY_MAP">
+<option name="variable" positionalBoolean="4" value="mul11"/>
+<option name="instance" value="inverse_cipher"/>
+<option name="horizontal" positionalBoolean="mode" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="ARRAY_MAP">
+<option name="variable" positionalBoolean="4" value="mul13"/>
+<option name="instance" value="inverse_cipher"/>
+<option name="horizontal" positionalBoolean="mode" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="ARRAY_MAP">
+<option name="variable" positionalBoolean="4" value="mul14"/>
+<option name="instance" value="inverse_cipher"/>
+<option name="horizontal" positionalBoolean="mode" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="AES_Decrypt" label="">
+<pragma name="UNROLL"/>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

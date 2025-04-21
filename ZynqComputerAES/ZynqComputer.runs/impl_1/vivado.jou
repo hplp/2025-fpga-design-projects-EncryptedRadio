@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Apr 17 14:04:34 2025
+# Process ID: 23140
+# Current directory: C:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.runs/impl_1
+# Command line: vivado.exe -log Zynq_CPU_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Zynq_CPU_wrapper.tcl -notrace
+# Log file: C:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.runs/impl_1/Zynq_CPU_wrapper.vdi
+# Journal file: C:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.runs/impl_1\vivado.jou
+# Running On: ECE-EMBSYS16, OS: Windows, CPU Frequency: 3696 MHz, CPU Physical cores: 6, Host memory: 17104 MB
+#-----------------------------------------------------------
+source Zynq_CPU_wrapper.tcl -notrace

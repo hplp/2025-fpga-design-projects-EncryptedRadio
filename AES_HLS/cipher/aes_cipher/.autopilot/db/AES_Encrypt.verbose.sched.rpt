@@ -1,0 +1,511 @@
+
+
+================================================================
+== Vivado HLS Report for 'AES_Encrypt'
+================================================================
+* Date:           Wed Feb  7 17:52:40 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        cipher
+* Solution:       aes_cipher
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      6.67|        0.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------+-----+-----+----------+-----------+-----------+------+----------+
+        |            |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- L_copy    |   16|   16|         2|          1|          1|    16|    yes   |
+        |- L_rounds  |    ?|    ?| 78 ~ 122 |          -|          -|     ?|    no    |
+        +------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 30
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	4  / (tmp)
+	3  / (!tmp)
+3 --> 
+	2  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / (!exitcond)
+	14  / (exitcond)
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / (!tmp_19)
+	11  / (tmp_19)
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	6  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %plaintext) nounwind, !map !34"
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %expandedKey) nounwind, !map !40"
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %Nr) nounwind, !map !46"
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %ciphertext) nounwind, !map !52"
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([12 x i8]* @AES_Encrypt_str) nounwind"
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%Nr_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %Nr) nounwind"
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%state = alloca [16 x i8], align 16" [source/AESfunctions.cpp:167]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %plaintext, [5 x i8]* @p_str4, i32 1, i32 1, [5 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %expandedKey, [5 x i8]* @p_str4, i32 1, i32 1, [5 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %ciphertext, [5 x i8]* @p_str4, i32 1, i32 1, [5 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecResourceLimit(i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, [12 x i8]* @p_str6, [1 x i8]* @p_str) nounwind" [source/AESfunctions.cpp:161]
+ST_1 : Operation 42 [1/1] (1.76ns)   --->   "br label %1" [source/AESfunctions.cpp:168]
+
+ <State 2> : 2.46ns
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%i = phi i5 [ 0, %0 ], [ %i_3, %2 ]"
+ST_2 : Operation 44 [1/1] (1.36ns)   --->   "%tmp = icmp eq i5 %i, -16" [source/AESfunctions.cpp:168]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 45 [1/1] (1.78ns)   --->   "%i_3 = add i5 %i, 1" [source/AESfunctions.cpp:168]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "br i1 %tmp, label %3, label %2" [source/AESfunctions.cpp:168]
+ST_2 : Operation 47 [2/2] (0.00ns)   --->   "%plaintext_read = call i8 @_ssdm_op_Read.axis.volatile.i8P(i8* %plaintext) nounwind" [source/AESfunctions.cpp:170]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+ <State 3> : 2.32ns
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16) nounwind"
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str9) nounwind" [source/AESfunctions.cpp:168]
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([7 x i8]* @p_str9) nounwind" [source/AESfunctions.cpp:168]
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind" [source/AESfunctions.cpp:169]
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_18 = zext i5 %i to i64" [source/AESfunctions.cpp:170]
+ST_3 : Operation 53 [1/2] (0.00ns)   --->   "%plaintext_read = call i8 @_ssdm_op_Read.axis.volatile.i8P(i8* %plaintext) nounwind" [source/AESfunctions.cpp:170]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%state_addr_31 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 %tmp_18" [source/AESfunctions.cpp:170]
+ST_3 : Operation 55 [1/1] (2.32ns)   --->   "store i8 %plaintext_read, i8* %state_addr_31, align 1" [source/AESfunctions.cpp:170]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecRegionEnd([7 x i8]* @p_str9, i32 %tmp_1) nounwind" [source/AESfunctions.cpp:171]
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "br label %1" [source/AESfunctions.cpp:168]
+
+ <State 4> : 5.18ns
+ST_4 : Operation 58 [2/2] (5.18ns)   --->   "call fastcc void @AddRoundKey([16 x i8]* %state, i8* %expandedKey) nounwind" [source/AESfunctions.cpp:174]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 5> : 2.08ns
+ST_5 : Operation 59 [1/2] (0.00ns)   --->   "call fastcc void @AddRoundKey([16 x i8]* %state, i8* %expandedKey) nounwind" [source/AESfunctions.cpp:174]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_cast = zext i16 %Nr_read to i17" [source/AESfunctions.cpp:180]
+ST_5 : Operation 61 [1/1] (2.07ns)   --->   "%tmp_s = add i17 %tmp_cast, -1" [source/AESfunctions.cpp:180]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 62 [1/1] (1.76ns)   --->   "br label %4" [source/AESfunctions.cpp:176]
+
+ <State 6> : 3.52ns
+ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%i1 = phi i16 [ 0, %3 ], [ %i_4, %._crit_edge ]"
+ST_6 : Operation 64 [1/1] (2.42ns)   --->   "%exitcond = icmp eq i16 %i1, %Nr_read" [source/AESfunctions.cpp:176]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 65 [1/1] (2.07ns)   --->   "%i_4 = add i16 %i1, 1" [source/AESfunctions.cpp:176]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 66 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.preheader.0, label %5" [source/AESfunctions.cpp:176]
+ST_6 : Operation 67 [2/2] (0.00ns)   --->   "call fastcc void @SubBytes([16 x i8]* %state) nounwind" [source/AESfunctions.cpp:178]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_67_cast = zext i16 %i1 to i17" [source/AESfunctions.cpp:180]
+ST_6 : Operation 69 [1/1] (2.43ns)   --->   "%tmp_19 = icmp eq i17 %tmp_67_cast, %tmp_s" [source/AESfunctions.cpp:180]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%state_addr = getelementptr inbounds [16 x i8]* %state, i64 0, i64 0" [source/AESfunctions.cpp:189]
+ST_6 : Operation 71 [2/2] (2.32ns)   --->   "%state_load = load i8* %state_addr, align 16" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 7> : 0.00ns
+ST_7 : Operation 72 [1/2] (0.00ns)   --->   "call fastcc void @SubBytes([16 x i8]* %state) nounwind" [source/AESfunctions.cpp:178]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 8> : 0.00ns
+ST_8 : Operation 73 [2/2] (0.00ns)   --->   "call fastcc void @ShiftRows([16 x i8]* %state) nounwind" [source/AESfunctions.cpp:179]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 9> : 0.00ns
+ST_9 : Operation 74 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str10) nounwind" [source/AESfunctions.cpp:176]
+ST_9 : Operation 75 [1/2] (0.00ns)   --->   "call fastcc void @ShiftRows([16 x i8]* %state) nounwind" [source/AESfunctions.cpp:179]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 76 [1/1] (0.00ns)   --->   "br i1 %tmp_19, label %._crit_edge, label %6" [source/AESfunctions.cpp:180]
+
+ <State 10> : 0.00ns
+ST_10 : Operation 77 [2/2] (0.00ns)   --->   "call fastcc void @MixColumns([16 x i8]* %state) nounwind" [source/AESfunctions.cpp:181]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 11> : 0.00ns
+ST_11 : Operation 78 [1/2] (0.00ns)   --->   "call fastcc void @MixColumns([16 x i8]* %state) nounwind" [source/AESfunctions.cpp:181]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 79 [1/1] (0.00ns)   --->   "br label %._crit_edge" [source/AESfunctions.cpp:182]
+
+ <State 12> : 5.18ns
+ST_12 : Operation 80 [2/2] (5.18ns)   --->   "call fastcc void @AddRoundKey([16 x i8]* %state, i8* %expandedKey) nounwind" [source/AESfunctions.cpp:183]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 13> : 0.00ns
+ST_13 : Operation 81 [1/2] (0.00ns)   --->   "call fastcc void @AddRoundKey([16 x i8]* %state, i8* %expandedKey) nounwind" [source/AESfunctions.cpp:183]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 82 [1/1] (0.00ns)   --->   "br label %4" [source/AESfunctions.cpp:176]
+
+ <State 14> : 2.32ns
+ST_14 : Operation 83 [1/2] (2.32ns)   --->   "%state_load = load i8* %state_addr, align 16" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_14 : Operation 84 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_14 : Operation 85 [1/1] (0.00ns)   --->   "%state_addr_63 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 1" [source/AESfunctions.cpp:189]
+ST_14 : Operation 86 [2/2] (2.32ns)   --->   "%state_load_1 = load i8* %state_addr_63, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 15> : 2.32ns
+ST_15 : Operation 87 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_15 : Operation 88 [1/2] (2.32ns)   --->   "%state_load_1 = load i8* %state_addr_63, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_15 : Operation 89 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_1) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_15 : Operation 90 [1/1] (0.00ns)   --->   "%state_addr_64 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 2" [source/AESfunctions.cpp:189]
+ST_15 : Operation 91 [2/2] (2.32ns)   --->   "%state_load_2 = load i8* %state_addr_64, align 2" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 16> : 2.32ns
+ST_16 : Operation 92 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_1) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_16 : Operation 93 [1/2] (2.32ns)   --->   "%state_load_2 = load i8* %state_addr_64, align 2" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_16 : Operation 94 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_2) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_16 : Operation 95 [1/1] (0.00ns)   --->   "%state_addr_65 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 3" [source/AESfunctions.cpp:189]
+ST_16 : Operation 96 [2/2] (2.32ns)   --->   "%state_load_3 = load i8* %state_addr_65, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 17> : 2.32ns
+ST_17 : Operation 97 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_2) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_17 : Operation 98 [1/2] (2.32ns)   --->   "%state_load_3 = load i8* %state_addr_65, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_17 : Operation 99 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_3) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_17 : Operation 100 [1/1] (0.00ns)   --->   "%state_addr_66 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 4" [source/AESfunctions.cpp:189]
+ST_17 : Operation 101 [2/2] (2.32ns)   --->   "%state_load_4 = load i8* %state_addr_66, align 4" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 18> : 2.32ns
+ST_18 : Operation 102 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_3) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_18 : Operation 103 [1/2] (2.32ns)   --->   "%state_load_4 = load i8* %state_addr_66, align 4" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_18 : Operation 104 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_4) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_18 : Operation 105 [1/1] (0.00ns)   --->   "%state_addr_67 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 5" [source/AESfunctions.cpp:189]
+ST_18 : Operation 106 [2/2] (2.32ns)   --->   "%state_load_5 = load i8* %state_addr_67, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 19> : 2.32ns
+ST_19 : Operation 107 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_4) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_19 : Operation 108 [1/2] (2.32ns)   --->   "%state_load_5 = load i8* %state_addr_67, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_19 : Operation 109 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_5) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_19 : Operation 110 [1/1] (0.00ns)   --->   "%state_addr_68 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 6" [source/AESfunctions.cpp:189]
+ST_19 : Operation 111 [2/2] (2.32ns)   --->   "%state_load_6 = load i8* %state_addr_68, align 2" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 20> : 2.32ns
+ST_20 : Operation 112 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_5) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_20 : Operation 113 [1/2] (2.32ns)   --->   "%state_load_6 = load i8* %state_addr_68, align 2" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_20 : Operation 114 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_6) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_20 : Operation 115 [1/1] (0.00ns)   --->   "%state_addr_69 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 7" [source/AESfunctions.cpp:189]
+ST_20 : Operation 116 [2/2] (2.32ns)   --->   "%state_load_7 = load i8* %state_addr_69, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 21> : 2.32ns
+ST_21 : Operation 117 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_6) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_21 : Operation 118 [1/2] (2.32ns)   --->   "%state_load_7 = load i8* %state_addr_69, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_21 : Operation 119 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_7) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_21 : Operation 120 [1/1] (0.00ns)   --->   "%state_addr_70 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 8" [source/AESfunctions.cpp:189]
+ST_21 : Operation 121 [2/2] (2.32ns)   --->   "%state_load_8 = load i8* %state_addr_70, align 8" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 22> : 2.32ns
+ST_22 : Operation 122 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_7) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_22 : Operation 123 [1/2] (2.32ns)   --->   "%state_load_8 = load i8* %state_addr_70, align 8" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_22 : Operation 124 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_8) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_22 : Operation 125 [1/1] (0.00ns)   --->   "%state_addr_71 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 9" [source/AESfunctions.cpp:189]
+ST_22 : Operation 126 [2/2] (2.32ns)   --->   "%state_load_9 = load i8* %state_addr_71, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 23> : 2.32ns
+ST_23 : Operation 127 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_8) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_23 : Operation 128 [1/2] (2.32ns)   --->   "%state_load_9 = load i8* %state_addr_71, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_23 : Operation 129 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_9) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_23 : Operation 130 [1/1] (0.00ns)   --->   "%state_addr_72 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 10" [source/AESfunctions.cpp:189]
+ST_23 : Operation 131 [2/2] (2.32ns)   --->   "%state_load_10 = load i8* %state_addr_72, align 2" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 24> : 2.32ns
+ST_24 : Operation 132 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_9) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_24 : Operation 133 [1/2] (2.32ns)   --->   "%state_load_10 = load i8* %state_addr_72, align 2" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_24 : Operation 134 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_10) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_24 : Operation 135 [1/1] (0.00ns)   --->   "%state_addr_73 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 11" [source/AESfunctions.cpp:189]
+ST_24 : Operation 136 [2/2] (2.32ns)   --->   "%state_load_11 = load i8* %state_addr_73, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 25> : 2.32ns
+ST_25 : Operation 137 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_10) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_25 : Operation 138 [1/2] (2.32ns)   --->   "%state_load_11 = load i8* %state_addr_73, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_25 : Operation 139 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_11) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_25 : Operation 140 [1/1] (0.00ns)   --->   "%state_addr_74 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 12" [source/AESfunctions.cpp:189]
+ST_25 : Operation 141 [2/2] (2.32ns)   --->   "%state_load_12 = load i8* %state_addr_74, align 4" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 26> : 2.32ns
+ST_26 : Operation 142 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_11) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_26 : Operation 143 [1/2] (2.32ns)   --->   "%state_load_12 = load i8* %state_addr_74, align 4" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_26 : Operation 144 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_12) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_26 : Operation 145 [1/1] (0.00ns)   --->   "%state_addr_75 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 13" [source/AESfunctions.cpp:189]
+ST_26 : Operation 146 [2/2] (2.32ns)   --->   "%state_load_13 = load i8* %state_addr_75, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 27> : 2.32ns
+ST_27 : Operation 147 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_12) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_27 : Operation 148 [1/2] (2.32ns)   --->   "%state_load_13 = load i8* %state_addr_75, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_27 : Operation 149 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_13) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_27 : Operation 150 [1/1] (0.00ns)   --->   "%state_addr_76 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 14" [source/AESfunctions.cpp:189]
+ST_27 : Operation 151 [2/2] (2.32ns)   --->   "%state_load_14 = load i8* %state_addr_76, align 2" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 28> : 2.32ns
+ST_28 : Operation 152 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_13) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_28 : Operation 153 [1/2] (2.32ns)   --->   "%state_load_14 = load i8* %state_addr_76, align 2" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_28 : Operation 154 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_14) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_28 : Operation 155 [1/1] (0.00ns)   --->   "%state_addr_77 = getelementptr inbounds [16 x i8]* %state, i64 0, i64 15" [source/AESfunctions.cpp:189]
+ST_28 : Operation 156 [2/2] (2.32ns)   --->   "%state_load_15 = load i8* %state_addr_77, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 29> : 2.32ns
+ST_29 : Operation 157 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_14) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_29 : Operation 158 [1/2] (2.32ns)   --->   "%state_load_15 = load i8* %state_addr_77, align 1" [source/AESfunctions.cpp:189]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_29 : Operation 159 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_15) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+ <State 30> : 0.00ns
+ST_30 : Operation 160 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i8P(i8* %ciphertext, i8 %state_load_15) nounwind" [source/AESfunctions.cpp:189]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_30 : Operation 161 [1/1] (0.00ns)   --->   "ret void" [source/AESfunctions.cpp:191]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 0ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', source/AESfunctions.cpp:168) [19]  (1.77 ns)
+
+ <State 2>: 2.46ns
+The critical path consists of the following:
+	'icmp' operation ('tmp', source/AESfunctions.cpp:168) [20]  (1.36 ns)
+	blocking operation 1.09 ns on control path)
+
+ <State 3>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('state_addr_31', source/AESfunctions.cpp:170) [30]  (0 ns)
+	'store' operation (source/AESfunctions.cpp:170) of variable 'plaintext_read', source/AESfunctions.cpp:170 on array 'state', source/AESfunctions.cpp:167 [31]  (2.32 ns)
+
+ <State 4>: 5.18ns
+The critical path consists of the following:
+	'call' operation (source/AESfunctions.cpp:174) to 'AddRoundKey' [35]  (5.18 ns)
+
+ <State 5>: 2.08ns
+The critical path consists of the following:
+	'add' operation ('tmp_s', source/AESfunctions.cpp:180) [37]  (2.08 ns)
+
+ <State 6>: 3.52ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond', source/AESfunctions.cpp:176) [41]  (2.43 ns)
+	blocking operation 1.09 ns on control path)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 0ns
+The critical path consists of the following:
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+ <State 12>: 5.18ns
+The critical path consists of the following:
+	'call' operation (source/AESfunctions.cpp:183) to 'AddRoundKey' [55]  (5.18 ns)
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+ <State 14>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [59]  (2.32 ns)
+
+ <State 15>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_1', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [62]  (2.32 ns)
+	axis write on port 'ciphertext' (source/AESfunctions.cpp:189) [63]  (0 ns)
+
+ <State 16>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_2', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [65]  (2.32 ns)
+	axis write on port 'ciphertext' (source/AESfunctions.cpp:189) [66]  (0 ns)
+
+ <State 17>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_3', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [68]  (2.32 ns)
+
+ <State 18>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_4', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [71]  (2.32 ns)
+
+ <State 19>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_5', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [74]  (2.32 ns)
+	axis write on port 'ciphertext' (source/AESfunctions.cpp:189) [75]  (0 ns)
+
+ <State 20>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_6', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [77]  (2.32 ns)
+
+ <State 21>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_7', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [80]  (2.32 ns)
+	axis write on port 'ciphertext' (source/AESfunctions.cpp:189) [81]  (0 ns)
+
+ <State 22>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_8', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [83]  (2.32 ns)
+
+ <State 23>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_9', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [86]  (2.32 ns)
+	axis write on port 'ciphertext' (source/AESfunctions.cpp:189) [87]  (0 ns)
+
+ <State 24>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_10', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [89]  (2.32 ns)
+
+ <State 25>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_11', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [92]  (2.32 ns)
+
+ <State 26>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_12', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [95]  (2.32 ns)
+
+ <State 27>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_13', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [98]  (2.32 ns)
+
+ <State 28>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_14', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [101]  (2.32 ns)
+
+ <State 29>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load_15', source/AESfunctions.cpp:189) on array 'state', source/AESfunctions.cpp:167 [104]  (2.32 ns)
+	axis write on port 'ciphertext' (source/AESfunctions.cpp:189) [105]  (0 ns)
+
+ <State 30>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

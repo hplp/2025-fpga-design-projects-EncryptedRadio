@@ -1,0 +1,132 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "C:/Dev/Xilinx/Vivado/2017.4/msys/bin/g++.exe"
+   Compiling AESfunctions.cpp_pre.cpp.tb.cpp
+   Compiling apatb_AES_Encrypt.cpp
+   Compiling test_AES.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+INFO: [COSIM-333] Generating C post check test bench ...
+INFO: [COSIM-12] Generating RTL test bench ...
+INFO: [COSIM-323] Starting verilog simulation. 
+INFO: [COSIM-15] Starting XSIM ...
+INFO: [COSIM-316] Starting C post checking ...
+AES with Nb = 4 columns, Nk = 8 (32-bit) words i.e. CipherKeyLenghth = 32 bytes (or 256 bits), Nr = 14 rounds
+
+key = 0x0 0x1 0x2 0x3 0x4 0x5 0x6 0x7 0x8 0x9 0xA 0xB 0xC 0xD 0xE 0xF 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1A 0x1B 0x1C 0x1D 0x1E 0x1F 
+
+expandedKey = 0x0 0x1 0x2 0x3 0x4 0x5 0x6 0x7 0x8 0x9 0xA 0xB 0xC 0xD 0xE 0xF 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1A 0x1B 0x1C 0x1D 0x1E 0x1F 0xA5 0x73 0xC2 0x9F 0xA1 0x76 0xC4 0x98 0xA9 0x7F 0xCE 0x93 0xA5 0x72 0xC0 0x9C 0x16 0x51 0xA8 0xCD 0x2 0x44 0xBE 0xDA 0x1A 0x5D 0xA4 0xC1 0x6 0x40 0xBA 0xDE 0xAE 0x87 0xDF 0xF0 0xF 0xF1 0x1B 0x68 0xA6 0x8E 0xD5 0xFB 0x3 0xFC 0x15 0x67 0x6D 0xE1 0xF1 0x48 0x6F 0xA5 0x4F 0x92 0x75 0xF8 0xEB 0x53 0x73 0xB8 0x51 0x8D 0xC6 0x56 0x82 0x7F 0xC9 0xA7 0x99 0x17 0x6F 0x29 0x4C 0xEC 0x6C 0xD5 0x59 0x8B 0x3D 0xE2 0x3A 0x75 0x52 0x47 0x75 0xE7 0x27 0xBF 0x9E 0xB4 0x54 0x7 0xCF 0x39 0xB 0xDC 0x90 0x5F 0xC2 0x7B 0x9 0x48 0xAD 0x52 0x45 0xA4 0xC1 0x87 0x1C 0x2F 0x45 0xF5 0xA6 0x60 0x17 0xB2 0xD3 0x87 0x30 0xD 0x4D 0x33 0x64 0xA 0x82 0xA 0x7C 0xCF 0xF7 0x1C 0xBE 0xB4 0xFE 0x54 0x13 0xE6 0xBB 0xF0 0xD2 0x61 0xA7 0xDF 0xF0 0x1A 0xFA 0xFE 0xE7 0xA8 0x29 0x79 0xD7 0xA5 0x64 0x4A 0xB3 0xAF 0xE6 0x40 0x25 0x41 0xFE 0x71 0x9B 0xF5 0x0 0x25 0x88 0x13 0xBB 0xD5 0x5A 0x72 0x1C 0xA 0x4E 0x5A 0x66 0x99 0xA9 0xF2 0x4F 0xE0 0x7E 0x57 0x2B 0xAA 0xCD 0xF8 0xCD 0xEA 0x24 0xFC 0x79 0xCC 0xBF 0x9 0x79 0xE9 0x37 0x1A 0xC2 0x3C 0x6D 0x68 0xDE 0x36 
+
+plaintext = A B C D E F G H I J K L M N O P  <=> 41 42 43 44 45 46 47 48 49 4A 4B 4C 4D 4E 4F 50 
+
+ciphertext = 6F 1F 24 62 38 C9 FA 96 A3 6C 4E 2F 59 50 85 6  <=> 111 31 36 98 56 201 250 150 163 108 78 47 89 80 133 6 
+decrypted_plaintext = A B C D E F G H I J K L M N O P  <=> 41 42 43 44 45 46 47 48 49 4A 4B 4C 4D 4E 4F 50 
+
+
+D:\OneDrive\UVA\crypto\AES_code\VivadoHLS\cipher\aes_cipher\sim\verilog>call C:/Dev/Xilinx/Vivado/2017.4/bin/xelab xil_defaultlib.apatb_AES_Encrypt_top glbl -prj AES_Encrypt.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver --initfile "C:/Dev/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini" --lib "ieee_proposed=./ieee_proposed" -s AES_Encrypt  
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "C:/Dev/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Dev/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_AES_Encrypt_top glbl -prj AES_Encrypt.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver --initfile C:/Dev/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s AES_Encrypt 
+Multi-threading is on. Using 2 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/AddRoundKey.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AddRoundKey
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/AESL_axi_s_ciphertext.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_ciphertext
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/AESL_axi_s_expandedKey.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_expandedKey
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/AESL_axi_s_plaintext.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_plaintext
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/AESL_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/AES_Encrypt.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_AES_Encrypt_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/AES_Encrypt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Encrypt
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/AES_Encrypt_state.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_Encrypt_state_ram
+INFO: [VRFC 10-311] analyzing module AES_Encrypt_state
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/MixColumns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MixColumns
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/MixColumns_cipher.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MixColumns_cipher_rom
+INFO: [VRFC 10-311] analyzing module MixColumns_cipher
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/ShiftRows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShiftRows
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/SubBytes.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SubBytes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/SubBytes_cipher.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SubBytes_cipher_rom
+INFO: [VRFC 10-311] analyzing module SubBytes_cipher
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.AES_Encrypt_state_ram
+Compiling module xil_defaultlib.AES_Encrypt_state(DataWidth=8,Ad...
+Compiling module xil_defaultlib.AddRoundKey
+Compiling module xil_defaultlib.MixColumns_cipher_rom
+Compiling module xil_defaultlib.MixColumns_cipher(DataWidth=8,Ad...
+Compiling module xil_defaultlib.MixColumns
+Compiling module xil_defaultlib.SubBytes_cipher_rom
+Compiling module xil_defaultlib.SubBytes_cipher(DataWidth=8,Addr...
+Compiling module xil_defaultlib.SubBytes
+Compiling module xil_defaultlib.ShiftRows
+Compiling module xil_defaultlib.AES_Encrypt
+Compiling module xil_defaultlib.fifo
+Compiling module xil_defaultlib.AESL_axi_s_plaintext
+Compiling module xil_defaultlib.fifo(DEPTH=240)
+Compiling module xil_defaultlib.AESL_axi_s_expandedKey
+Compiling module xil_defaultlib.AESL_axi_s_ciphertext
+Compiling module xil_defaultlib.apatb_AES_Encrypt_top
+Compiling module work.glbl
+Built simulation snapshot AES_Encrypt
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/xsim.dir/AES_Encrypt/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/xsim.dir/AES_Encrypt/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Feb  7 17:37:27 2018. For additional details about this file, please refer to the WebTalk help file at C:/Dev/Xilinx/Vivado/2017.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Feb  7 17:37:27 2018...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/AES_Encrypt/xsim_script.tcl
+# xsim {AES_Encrypt} -autoloadwcfg -tclbatch {AES_Encrypt.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source AES_Encrypt.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "125000"
+// RTL Simulation : 1 / 1 [n/a] @ "9625000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 9665 ns : File "D:/OneDrive/UVA/crypto/AES_code/VivadoHLS/cipher/aes_cipher/sim/verilog/AES_Encrypt.autotb.v" Line 349
+## quit
+INFO: [Common 17-206] Exiting xsim at Wed Feb  7 17:37:34 2018...
+AES with Nb = 4 columns, Nk = 8 (32-bit) words i.e. CipherKeyLenghth = 32 bytes (or 256 bits), Nr = 14 rounds
+
+key = 0x0 0x1 0x2 0x3 0x4 0x5 0x6 0x7 0x8 0x9 0xA 0xB 0xC 0xD 0xE 0xF 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1A 0x1B 0x1C 0x1D 0x1E 0x1F 
+
+expandedKey = 0x0 0x1 0x2 0x3 0x4 0x5 0x6 0x7 0x8 0x9 0xA 0xB 0xC 0xD 0xE 0xF 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1A 0x1B 0x1C 0x1D 0x1E 0x1F 0xA5 0x73 0xC2 0x9F 0xA1 0x76 0xC4 0x98 0xA9 0x7F 0xCE 0x93 0xA5 0x72 0xC0 0x9C 0x16 0x51 0xA8 0xCD 0x2 0x44 0xBE 0xDA 0x1A 0x5D 0xA4 0xC1 0x6 0x40 0xBA 0xDE 0xAE 0x87 0xDF 0xF0 0xF 0xF1 0x1B 0x68 0xA6 0x8E 0xD5 0xFB 0x3 0xFC 0x15 0x67 0x6D 0xE1 0xF1 0x48 0x6F 0xA5 0x4F 0x92 0x75 0xF8 0xEB 0x53 0x73 0xB8 0x51 0x8D 0xC6 0x56 0x82 0x7F 0xC9 0xA7 0x99 0x17 0x6F 0x29 0x4C 0xEC 0x6C 0xD5 0x59 0x8B 0x3D 0xE2 0x3A 0x75 0x52 0x47 0x75 0xE7 0x27 0xBF 0x9E 0xB4 0x54 0x7 0xCF 0x39 0xB 0xDC 0x90 0x5F 0xC2 0x7B 0x9 0x48 0xAD 0x52 0x45 0xA4 0xC1 0x87 0x1C 0x2F 0x45 0xF5 0xA6 0x60 0x17 0xB2 0xD3 0x87 0x30 0xD 0x4D 0x33 0x64 0xA 0x82 0xA 0x7C 0xCF 0xF7 0x1C 0xBE 0xB4 0xFE 0x54 0x13 0xE6 0xBB 0xF0 0xD2 0x61 0xA7 0xDF 0xF0 0x1A 0xFA 0xFE 0xE7 0xA8 0x29 0x79 0xD7 0xA5 0x64 0x4A 0xB3 0xAF 0xE6 0x40 0x25 0x41 0xFE 0x71 0x9B 0xF5 0x0 0x25 0x88 0x13 0xBB 0xD5 0x5A 0x72 0x1C 0xA 0x4E 0x5A 0x66 0x99 0xA9 0xF2 0x4F 0xE0 0x7E 0x57 0x2B 0xAA 0xCD 0xF8 0xCD 0xEA 0x24 0xFC 0x79 0xCC 0xBF 0x9 0x79 0xE9 0x37 0x1A 0xC2 0x3C 0x6D 0x68 0xDE 0x36 
+
+plaintext = A B C D E F G H I J K L M N O P  <=> 41 42 43 44 45 46 47 48 49 4A 4B 4C 4D 4E 4F 50 
+
+ciphertext = 6F 1F 24 62 38 C9 FA 96 A3 6C 4E 2F 59 50 85 6  <=> 111 31 36 98 56 201 250 150 163 108 78 47 89 80 133 6 
+decrypted_plaintext = A B C D E F G H I J K L M N O P  <=> 41 42 43 44 45 46 47 48 49 4A 4B 4C 4D 4E 4F 50 
+
+INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

@@ -1,0 +1,174 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5524" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:162:26" msg_body="'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5551" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:163:24" msg_body="unexpected pragma argument 'instances', expects function/operation">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5503" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:164:9" msg_body="the pragma is not supported and will be ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5503" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:165:9" msg_body="the pragma is not supported and will be ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5503" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:166:9" msg_body="the pragma is not supported and will be ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5524" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:205:26" msg_body="'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5551" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:206:24" msg_body="unexpected pragma argument 'instances', expects function/operation">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5503" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:207:9" msg_body="the pragma is not supported and will be ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5503" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:208:9" msg_body="the pragma is not supported and will be ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5503" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:209:9" msg_body="the pragma is not supported and will be ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5503" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:210:9" msg_body="the pragma is not supported and will be ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5503" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:211:9" msg_body="the pragma is not supported and will be ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5524" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:252:26" msg_body="'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:5:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubBytes" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubBytes" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="InvSubBytes" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="InvSubBytes" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ShiftRows" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:48:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="InvShiftRows" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:75:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="MixColumns" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:102:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="InvMixColumns" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:145:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AddRoundKey" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:147:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AddRoundKey" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:156:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Encrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=plaintext bundle=CRTLSc" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:157:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Encrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=expandedKey bundle=CRTLSc" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:158:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Encrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=Nr bundle=CRTLSc" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:159:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Encrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=ciphertext bundle=CRTLSc" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:160:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Encrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=CRTLSc" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:162:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Encrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="region" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:163:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Encrypt" ARG_PragmaIsValid="0" ARG_PragmaOptions="instances" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:164:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Encrypt" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="array_map" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:165:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Encrypt" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="array_map" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:166:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Encrypt" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="array_map" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:199:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=ciphertext bundle=CRTLSic" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:200:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=expandedKey bundle=CRTLSic" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:201:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=Nr bundle=CRTLSic" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:202:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=plaintext bundle=CRTLSic" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:203:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=CRTLSic" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:205:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="1" ARG_PragmaOptions="region" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:206:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="0" ARG_PragmaOptions="instances" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:207:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="array_map" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:208:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="array_map" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:209:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="array_map" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:210:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="array_map" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:211:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Decrypt" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="array_map" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:244:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="AES_Full" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=AES_Full" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:244:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Full" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=mode_cipher bundle=CRTLS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:245:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Full" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=mode_inverse_cipher bundle=CRTLS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:246:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Full" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=data_in bundle=CRTLS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:247:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Full" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=expandedKey bundle=CRTLS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:248:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Full" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=Nr bundle=CRTLS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:249:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Full" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=data_out bundle=CRTLS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:250:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Full" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=CRTLS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="source/AESfunctions.cpp:252:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="AES_Full" ARG_PragmaIsValid="1" ARG_PragmaOptions="region" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="source/AESfunctions.cpp:12:0" msg_body="Unrolling loop 'VITIS_LOOP_14_1' (source/AESfunctions.cpp:14:19) in function 'InvSubBytes' completely with a factor of 16">
+        <args Factor="16" LoopLoc="source/AESfunctions.cpp:14:19" LoopName="VITIS_LOOP_14_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="source/AESfunctions.cpp:4:0" msg_body="Unrolling loop 'VITIS_LOOP_6_1' (source/AESfunctions.cpp:6:18) in function 'SubBytes' completely with a factor of 16">
+        <args Factor="16" LoopLoc="source/AESfunctions.cpp:6:18" LoopName="VITIS_LOOP_6_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="source/AESfunctions.cpp:144:0" msg_body="Unrolling loop 'VITIS_LOOP_146_1' (source/AESfunctions.cpp:146:20) in function 'AddRoundKey' completely with a factor of 16">
+        <args Factor="16" LoopLoc="source/AESfunctions.cpp:146:20" LoopName="VITIS_LOOP_146_1"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

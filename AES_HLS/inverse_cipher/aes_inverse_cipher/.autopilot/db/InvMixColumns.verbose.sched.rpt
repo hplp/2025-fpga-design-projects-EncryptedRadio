@@ -1,0 +1,642 @@
+
+
+================================================================
+== Vivado HLS Report for 'InvMixColumns'
+================================================================
+* Date:           Wed Feb  7 17:52:09 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        inverse_cipher
+* Solution:       aes_inverse_cipher
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      6.67|        0.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   43|   43|   43|   43|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   32|   32|         2|          -|          -|    16|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 13
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / (!tmp_16)
+13 --> 
+	12  / true
+
+* FSM state operations: 
+
+ <State 1> : 2.32ns
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%state_addr = getelementptr [16 x i8]* %state, i64 0, i64 0"
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%tmp_state = alloca [16 x i8], align 16" [source/AESfunctions.cpp:103]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_1 : Operation 16 [2/2] (2.32ns)   --->   "%state_load = load i8* %state_addr, align 1" [source/AESfunctions.cpp:104]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%state_addr_32 = getelementptr [16 x i8]* %state, i64 0, i64 1" [source/AESfunctions.cpp:104]
+ST_1 : Operation 18 [2/2] (2.32ns)   --->   "%state_load_16 = load i8* %state_addr_32, align 1" [source/AESfunctions.cpp:104]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 2> : 2.32ns
+ST_2 : Operation 19 [1/2] (2.32ns)   --->   "%state_load = load i8* %state_addr, align 1" [source/AESfunctions.cpp:104]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 20 [1/2] (2.32ns)   --->   "%state_load_16 = load i8* %state_addr_32, align 1" [source/AESfunctions.cpp:104]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%state_addr_33 = getelementptr [16 x i8]* %state, i64 0, i64 2" [source/AESfunctions.cpp:104]
+ST_2 : Operation 22 [2/2] (2.32ns)   --->   "%state_load_17 = load i8* %state_addr_33, align 1" [source/AESfunctions.cpp:104]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%state_addr_34 = getelementptr [16 x i8]* %state, i64 0, i64 3" [source/AESfunctions.cpp:104]
+ST_2 : Operation 24 [2/2] (2.32ns)   --->   "%state_load_18 = load i8* %state_addr_34, align 1" [source/AESfunctions.cpp:104]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 3> : 5.58ns
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%addr = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%inverse_cipher_addr = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr" [source/AESfunctions.cpp:104]
+ST_3 : Operation 27 [2/2] (3.25ns)   --->   "%inverse_cipher_load = load i8* %inverse_cipher_addr, align 1" [source/AESfunctions.cpp:104]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%addr1 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_16)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_16 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr1" [source/AESfunctions.cpp:104]
+ST_3 : Operation 30 [2/2] (3.25ns)   --->   "%inverse_cipher_load_16 = load i8* %inverse_cipher_addr_16, align 1" [source/AESfunctions.cpp:104]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 31 [1/2] (2.32ns)   --->   "%state_load_17 = load i8* %state_addr_33, align 1" [source/AESfunctions.cpp:104]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%addr2 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_17)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_17 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr2" [source/AESfunctions.cpp:104]
+ST_3 : Operation 34 [2/2] (3.25ns)   --->   "%inverse_cipher_load_17 = load i8* %inverse_cipher_addr_17, align 1" [source/AESfunctions.cpp:104]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 35 [1/2] (2.32ns)   --->   "%state_load_18 = load i8* %state_addr_34, align 1" [source/AESfunctions.cpp:104]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%addr3 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_18)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_18 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr3" [source/AESfunctions.cpp:104]
+ST_3 : Operation 38 [2/2] (3.25ns)   --->   "%inverse_cipher_load_18 = load i8* %inverse_cipher_addr_18, align 1" [source/AESfunctions.cpp:104]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%addr4 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_19 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr4" [source/AESfunctions.cpp:104]
+ST_3 : Operation 41 [2/2] (3.25ns)   --->   "%inverse_cipher_load_19 = load i8* %inverse_cipher_addr_19, align 1" [source/AESfunctions.cpp:106]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%addr5 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_16)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_20 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr5" [source/AESfunctions.cpp:104]
+ST_3 : Operation 44 [2/2] (3.25ns)   --->   "%inverse_cipher_load_20 = load i8* %inverse_cipher_addr_20, align 1" [source/AESfunctions.cpp:106]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%addr6 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_17)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_21 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr6" [source/AESfunctions.cpp:104]
+ST_3 : Operation 47 [2/2] (3.25ns)   --->   "%inverse_cipher_load_21 = load i8* %inverse_cipher_addr_21, align 1" [source/AESfunctions.cpp:106]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%addr7 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_18)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_22 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr7" [source/AESfunctions.cpp:104]
+ST_3 : Operation 50 [2/2] (3.25ns)   --->   "%inverse_cipher_load_22 = load i8* %inverse_cipher_addr_22, align 1" [source/AESfunctions.cpp:106]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%addr8 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_23 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr8" [source/AESfunctions.cpp:104]
+ST_3 : Operation 53 [2/2] (3.25ns)   --->   "%inverse_cipher_load_23 = load i8* %inverse_cipher_addr_23, align 1" [source/AESfunctions.cpp:108]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%addr9 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_16)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_24 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr9" [source/AESfunctions.cpp:104]
+ST_3 : Operation 56 [2/2] (3.25ns)   --->   "%inverse_cipher_load_24 = load i8* %inverse_cipher_addr_24, align 1" [source/AESfunctions.cpp:108]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%addr10 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_17)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_25 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr10" [source/AESfunctions.cpp:104]
+ST_3 : Operation 59 [2/2] (3.25ns)   --->   "%inverse_cipher_load_25 = load i8* %inverse_cipher_addr_25, align 1" [source/AESfunctions.cpp:108]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%addr11 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_18)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_26 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr11" [source/AESfunctions.cpp:104]
+ST_3 : Operation 62 [2/2] (3.25ns)   --->   "%inverse_cipher_load_26 = load i8* %inverse_cipher_addr_26, align 1" [source/AESfunctions.cpp:108]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%addr12 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_27 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr12" [source/AESfunctions.cpp:104]
+ST_3 : Operation 65 [2/2] (3.25ns)   --->   "%inverse_cipher_load_27 = load i8* %inverse_cipher_addr_27, align 1" [source/AESfunctions.cpp:110]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%addr13 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_16)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_28 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr13" [source/AESfunctions.cpp:104]
+ST_3 : Operation 68 [2/2] (3.25ns)   --->   "%inverse_cipher_load_28 = load i8* %inverse_cipher_addr_28, align 1" [source/AESfunctions.cpp:110]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 69 [1/1] (0.00ns)   --->   "%addr14 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_17)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 70 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_29 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr14" [source/AESfunctions.cpp:104]
+ST_3 : Operation 71 [2/2] (3.25ns)   --->   "%inverse_cipher_load_29 = load i8* %inverse_cipher_addr_29, align 1" [source/AESfunctions.cpp:110]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%addr15 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_18)" [source/AESfunctions.cpp:104]
+ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_30 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr15" [source/AESfunctions.cpp:104]
+ST_3 : Operation 74 [2/2] (3.25ns)   --->   "%inverse_cipher_load_30 = load i8* %inverse_cipher_addr_30, align 1" [source/AESfunctions.cpp:110]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%state_addr_35 = getelementptr [16 x i8]* %state, i64 0, i64 4" [source/AESfunctions.cpp:113]
+ST_3 : Operation 76 [2/2] (2.32ns)   --->   "%state_load_19 = load i8* %state_addr_35, align 1" [source/AESfunctions.cpp:113]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%state_addr_36 = getelementptr [16 x i8]* %state, i64 0, i64 5" [source/AESfunctions.cpp:113]
+ST_3 : Operation 78 [2/2] (2.32ns)   --->   "%state_load_20 = load i8* %state_addr_36, align 1" [source/AESfunctions.cpp:113]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 4> : 6.67ns
+ST_4 : Operation 79 [1/2] (3.25ns)   --->   "%inverse_cipher_load = load i8* %inverse_cipher_addr, align 1" [source/AESfunctions.cpp:104]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 80 [1/2] (3.25ns)   --->   "%inverse_cipher_load_16 = load i8* %inverse_cipher_addr_16, align 1" [source/AESfunctions.cpp:104]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 81 [1/2] (3.25ns)   --->   "%inverse_cipher_load_17 = load i8* %inverse_cipher_addr_17, align 1" [source/AESfunctions.cpp:104]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 82 [1/2] (3.25ns)   --->   "%inverse_cipher_load_18 = load i8* %inverse_cipher_addr_18, align 1" [source/AESfunctions.cpp:104]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 83 [1/1] (0.00ns) (grouped into LUT with out node tmp_1)   --->   "%tmp1 = xor i8 %inverse_cipher_load_16, %inverse_cipher_load" [source/AESfunctions.cpp:104]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 84 [1/1] (0.00ns) (grouped into LUT with out node tmp_1)   --->   "%tmp2 = xor i8 %inverse_cipher_load_17, %inverse_cipher_load_18" [source/AESfunctions.cpp:104]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 85 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_1 = xor i8 %tmp2, %tmp1" [source/AESfunctions.cpp:104]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_state_addr = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 0" [source/AESfunctions.cpp:104]
+ST_4 : Operation 87 [1/1] (2.32ns)   --->   "store i8 %tmp_1, i8* %tmp_state_addr, align 16" [source/AESfunctions.cpp:104]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 88 [1/2] (3.25ns)   --->   "%inverse_cipher_load_19 = load i8* %inverse_cipher_addr_19, align 1" [source/AESfunctions.cpp:106]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 89 [1/2] (3.25ns)   --->   "%inverse_cipher_load_20 = load i8* %inverse_cipher_addr_20, align 1" [source/AESfunctions.cpp:106]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 90 [1/2] (3.25ns)   --->   "%inverse_cipher_load_21 = load i8* %inverse_cipher_addr_21, align 1" [source/AESfunctions.cpp:106]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 91 [1/2] (3.25ns)   --->   "%inverse_cipher_load_22 = load i8* %inverse_cipher_addr_22, align 1" [source/AESfunctions.cpp:106]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 92 [1/1] (0.00ns) (grouped into LUT with out node tmp_4)   --->   "%tmp3 = xor i8 %inverse_cipher_load_20, %inverse_cipher_load_19" [source/AESfunctions.cpp:106]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 93 [1/1] (0.00ns) (grouped into LUT with out node tmp_4)   --->   "%tmp4 = xor i8 %inverse_cipher_load_21, %inverse_cipher_load_22" [source/AESfunctions.cpp:106]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 94 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_4 = xor i8 %tmp4, %tmp3" [source/AESfunctions.cpp:106]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_state_addr_17 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 1" [source/AESfunctions.cpp:106]
+ST_4 : Operation 96 [1/1] (2.32ns)   --->   "store i8 %tmp_4, i8* %tmp_state_addr_17, align 1" [source/AESfunctions.cpp:106]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 97 [1/2] (3.25ns)   --->   "%inverse_cipher_load_23 = load i8* %inverse_cipher_addr_23, align 1" [source/AESfunctions.cpp:108]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 98 [1/2] (3.25ns)   --->   "%inverse_cipher_load_24 = load i8* %inverse_cipher_addr_24, align 1" [source/AESfunctions.cpp:108]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 99 [1/2] (3.25ns)   --->   "%inverse_cipher_load_25 = load i8* %inverse_cipher_addr_25, align 1" [source/AESfunctions.cpp:108]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 100 [1/2] (3.25ns)   --->   "%inverse_cipher_load_26 = load i8* %inverse_cipher_addr_26, align 1" [source/AESfunctions.cpp:108]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node tmp_s)   --->   "%tmp5 = xor i8 %inverse_cipher_load_24, %inverse_cipher_load_23" [source/AESfunctions.cpp:108]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 102 [1/1] (0.00ns) (grouped into LUT with out node tmp_s)   --->   "%tmp6 = xor i8 %inverse_cipher_load_25, %inverse_cipher_load_26" [source/AESfunctions.cpp:108]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 103 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_s = xor i8 %tmp6, %tmp5" [source/AESfunctions.cpp:108]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 104 [1/2] (3.25ns)   --->   "%inverse_cipher_load_27 = load i8* %inverse_cipher_addr_27, align 1" [source/AESfunctions.cpp:110]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 105 [1/2] (3.25ns)   --->   "%inverse_cipher_load_28 = load i8* %inverse_cipher_addr_28, align 1" [source/AESfunctions.cpp:110]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 106 [1/2] (3.25ns)   --->   "%inverse_cipher_load_29 = load i8* %inverse_cipher_addr_29, align 1" [source/AESfunctions.cpp:110]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 107 [1/2] (3.25ns)   --->   "%inverse_cipher_load_30 = load i8* %inverse_cipher_addr_30, align 1" [source/AESfunctions.cpp:110]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_4 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node tmp_2)   --->   "%tmp7 = xor i8 %inverse_cipher_load_28, %inverse_cipher_load_27" [source/AESfunctions.cpp:110]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node tmp_2)   --->   "%tmp8 = xor i8 %inverse_cipher_load_29, %inverse_cipher_load_30" [source/AESfunctions.cpp:110]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 110 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_2 = xor i8 %tmp8, %tmp7" [source/AESfunctions.cpp:110]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 111 [1/2] (2.32ns)   --->   "%state_load_19 = load i8* %state_addr_35, align 1" [source/AESfunctions.cpp:113]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 112 [1/2] (2.32ns)   --->   "%state_load_20 = load i8* %state_addr_36, align 1" [source/AESfunctions.cpp:113]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 113 [1/1] (0.00ns)   --->   "%state_addr_37 = getelementptr [16 x i8]* %state, i64 0, i64 6" [source/AESfunctions.cpp:113]
+ST_4 : Operation 114 [2/2] (2.32ns)   --->   "%state_load_21 = load i8* %state_addr_37, align 1" [source/AESfunctions.cpp:113]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 115 [1/1] (0.00ns)   --->   "%state_addr_38 = getelementptr [16 x i8]* %state, i64 0, i64 7" [source/AESfunctions.cpp:113]
+ST_4 : Operation 116 [2/2] (2.32ns)   --->   "%state_load_22 = load i8* %state_addr_38, align 1" [source/AESfunctions.cpp:113]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 5> : 5.58ns
+ST_5 : Operation 117 [1/1] (0.00ns)   --->   "%tmp_state_addr_18 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 2" [source/AESfunctions.cpp:108]
+ST_5 : Operation 118 [1/1] (2.32ns)   --->   "store i8 %tmp_s, i8* %tmp_state_addr_18, align 2" [source/AESfunctions.cpp:108]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_5 : Operation 119 [1/1] (0.00ns)   --->   "%tmp_state_addr_19 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 3" [source/AESfunctions.cpp:110]
+ST_5 : Operation 120 [1/1] (2.32ns)   --->   "store i8 %tmp_2, i8* %tmp_state_addr_19, align 1" [source/AESfunctions.cpp:110]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_5 : Operation 121 [1/1] (0.00ns)   --->   "%addr16 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_19)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 122 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_31 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr16" [source/AESfunctions.cpp:113]
+ST_5 : Operation 123 [2/2] (3.25ns)   --->   "%inverse_cipher_load_31 = load i8* %inverse_cipher_addr_31, align 1" [source/AESfunctions.cpp:113]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 124 [1/1] (0.00ns)   --->   "%addr17 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_20)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 125 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_32 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr17" [source/AESfunctions.cpp:113]
+ST_5 : Operation 126 [2/2] (3.25ns)   --->   "%inverse_cipher_load_32 = load i8* %inverse_cipher_addr_32, align 1" [source/AESfunctions.cpp:113]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 127 [1/2] (2.32ns)   --->   "%state_load_21 = load i8* %state_addr_37, align 1" [source/AESfunctions.cpp:113]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_5 : Operation 128 [1/1] (0.00ns)   --->   "%addr18 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_21)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 129 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_33 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr18" [source/AESfunctions.cpp:113]
+ST_5 : Operation 130 [2/2] (3.25ns)   --->   "%inverse_cipher_load_33 = load i8* %inverse_cipher_addr_33, align 1" [source/AESfunctions.cpp:113]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 131 [1/2] (2.32ns)   --->   "%state_load_22 = load i8* %state_addr_38, align 1" [source/AESfunctions.cpp:113]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_5 : Operation 132 [1/1] (0.00ns)   --->   "%addr19 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_22)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 133 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_34 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr19" [source/AESfunctions.cpp:113]
+ST_5 : Operation 134 [2/2] (3.25ns)   --->   "%inverse_cipher_load_34 = load i8* %inverse_cipher_addr_34, align 1" [source/AESfunctions.cpp:113]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 135 [1/1] (0.00ns)   --->   "%addr20 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_19)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 136 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_35 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr20" [source/AESfunctions.cpp:113]
+ST_5 : Operation 137 [2/2] (3.25ns)   --->   "%inverse_cipher_load_35 = load i8* %inverse_cipher_addr_35, align 1" [source/AESfunctions.cpp:115]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 138 [1/1] (0.00ns)   --->   "%addr21 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_20)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 139 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_36 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr21" [source/AESfunctions.cpp:113]
+ST_5 : Operation 140 [2/2] (3.25ns)   --->   "%inverse_cipher_load_36 = load i8* %inverse_cipher_addr_36, align 1" [source/AESfunctions.cpp:115]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 141 [1/1] (0.00ns)   --->   "%addr22 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_21)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 142 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_37 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr22" [source/AESfunctions.cpp:113]
+ST_5 : Operation 143 [2/2] (3.25ns)   --->   "%inverse_cipher_load_37 = load i8* %inverse_cipher_addr_37, align 1" [source/AESfunctions.cpp:115]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 144 [1/1] (0.00ns)   --->   "%addr23 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_22)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 145 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_38 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr23" [source/AESfunctions.cpp:113]
+ST_5 : Operation 146 [2/2] (3.25ns)   --->   "%inverse_cipher_load_38 = load i8* %inverse_cipher_addr_38, align 1" [source/AESfunctions.cpp:115]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 147 [1/1] (0.00ns)   --->   "%addr24 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_19)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 148 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_39 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr24" [source/AESfunctions.cpp:113]
+ST_5 : Operation 149 [2/2] (3.25ns)   --->   "%inverse_cipher_load_39 = load i8* %inverse_cipher_addr_39, align 1" [source/AESfunctions.cpp:117]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 150 [1/1] (0.00ns)   --->   "%addr25 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_20)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 151 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_40 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr25" [source/AESfunctions.cpp:113]
+ST_5 : Operation 152 [2/2] (3.25ns)   --->   "%inverse_cipher_load_40 = load i8* %inverse_cipher_addr_40, align 1" [source/AESfunctions.cpp:117]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 153 [1/1] (0.00ns)   --->   "%addr26 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_21)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 154 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_41 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr26" [source/AESfunctions.cpp:113]
+ST_5 : Operation 155 [2/2] (3.25ns)   --->   "%inverse_cipher_load_41 = load i8* %inverse_cipher_addr_41, align 1" [source/AESfunctions.cpp:117]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 156 [1/1] (0.00ns)   --->   "%addr27 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_22)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 157 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_42 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr27" [source/AESfunctions.cpp:113]
+ST_5 : Operation 158 [2/2] (3.25ns)   --->   "%inverse_cipher_load_42 = load i8* %inverse_cipher_addr_42, align 1" [source/AESfunctions.cpp:117]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 159 [1/1] (0.00ns)   --->   "%addr28 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_19)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 160 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_43 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr28" [source/AESfunctions.cpp:113]
+ST_5 : Operation 161 [2/2] (3.25ns)   --->   "%inverse_cipher_load_43 = load i8* %inverse_cipher_addr_43, align 1" [source/AESfunctions.cpp:119]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 162 [1/1] (0.00ns)   --->   "%addr29 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_20)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 163 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_44 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr29" [source/AESfunctions.cpp:113]
+ST_5 : Operation 164 [2/2] (3.25ns)   --->   "%inverse_cipher_load_44 = load i8* %inverse_cipher_addr_44, align 1" [source/AESfunctions.cpp:119]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 165 [1/1] (0.00ns)   --->   "%addr30 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_21)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 166 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_45 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr30" [source/AESfunctions.cpp:113]
+ST_5 : Operation 167 [2/2] (3.25ns)   --->   "%inverse_cipher_load_45 = load i8* %inverse_cipher_addr_45, align 1" [source/AESfunctions.cpp:119]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 168 [1/1] (0.00ns)   --->   "%addr31 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_22)" [source/AESfunctions.cpp:113]
+ST_5 : Operation 169 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_46 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr31" [source/AESfunctions.cpp:113]
+ST_5 : Operation 170 [2/2] (3.25ns)   --->   "%inverse_cipher_load_46 = load i8* %inverse_cipher_addr_46, align 1" [source/AESfunctions.cpp:119]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_5 : Operation 171 [1/1] (0.00ns)   --->   "%state_addr_39 = getelementptr [16 x i8]* %state, i64 0, i64 8" [source/AESfunctions.cpp:122]
+ST_5 : Operation 172 [2/2] (2.32ns)   --->   "%state_load_23 = load i8* %state_addr_39, align 1" [source/AESfunctions.cpp:122]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_5 : Operation 173 [1/1] (0.00ns)   --->   "%state_addr_40 = getelementptr [16 x i8]* %state, i64 0, i64 9" [source/AESfunctions.cpp:122]
+ST_5 : Operation 174 [2/2] (2.32ns)   --->   "%state_load_24 = load i8* %state_addr_40, align 1" [source/AESfunctions.cpp:122]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 6> : 6.67ns
+ST_6 : Operation 175 [1/2] (3.25ns)   --->   "%inverse_cipher_load_31 = load i8* %inverse_cipher_addr_31, align 1" [source/AESfunctions.cpp:113]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 176 [1/2] (3.25ns)   --->   "%inverse_cipher_load_32 = load i8* %inverse_cipher_addr_32, align 1" [source/AESfunctions.cpp:113]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 177 [1/2] (3.25ns)   --->   "%inverse_cipher_load_33 = load i8* %inverse_cipher_addr_33, align 1" [source/AESfunctions.cpp:113]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 178 [1/2] (3.25ns)   --->   "%inverse_cipher_load_34 = load i8* %inverse_cipher_addr_34, align 1" [source/AESfunctions.cpp:113]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 179 [1/1] (0.00ns) (grouped into LUT with out node tmp_3)   --->   "%tmp9 = xor i8 %inverse_cipher_load_32, %inverse_cipher_load_31" [source/AESfunctions.cpp:113]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 180 [1/1] (0.00ns) (grouped into LUT with out node tmp_3)   --->   "%tmp = xor i8 %inverse_cipher_load_33, %inverse_cipher_load_34" [source/AESfunctions.cpp:113]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 181 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_3 = xor i8 %tmp, %tmp9" [source/AESfunctions.cpp:113]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 182 [1/1] (0.00ns)   --->   "%tmp_state_addr_20 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 4" [source/AESfunctions.cpp:113]
+ST_6 : Operation 183 [1/1] (2.32ns)   --->   "store i8 %tmp_3, i8* %tmp_state_addr_20, align 4" [source/AESfunctions.cpp:113]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 184 [1/2] (3.25ns)   --->   "%inverse_cipher_load_35 = load i8* %inverse_cipher_addr_35, align 1" [source/AESfunctions.cpp:115]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 185 [1/2] (3.25ns)   --->   "%inverse_cipher_load_36 = load i8* %inverse_cipher_addr_36, align 1" [source/AESfunctions.cpp:115]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 186 [1/2] (3.25ns)   --->   "%inverse_cipher_load_37 = load i8* %inverse_cipher_addr_37, align 1" [source/AESfunctions.cpp:115]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 187 [1/2] (3.25ns)   --->   "%inverse_cipher_load_38 = load i8* %inverse_cipher_addr_38, align 1" [source/AESfunctions.cpp:115]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 188 [1/1] (0.00ns) (grouped into LUT with out node tmp_5)   --->   "%tmp10 = xor i8 %inverse_cipher_load_36, %inverse_cipher_load_35" [source/AESfunctions.cpp:115]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 189 [1/1] (0.00ns) (grouped into LUT with out node tmp_5)   --->   "%tmp11 = xor i8 %inverse_cipher_load_37, %inverse_cipher_load_38" [source/AESfunctions.cpp:115]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 190 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_5 = xor i8 %tmp11, %tmp10" [source/AESfunctions.cpp:115]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 191 [1/1] (0.00ns)   --->   "%tmp_state_addr_21 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 5" [source/AESfunctions.cpp:115]
+ST_6 : Operation 192 [1/1] (2.32ns)   --->   "store i8 %tmp_5, i8* %tmp_state_addr_21, align 1" [source/AESfunctions.cpp:115]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 193 [1/2] (3.25ns)   --->   "%inverse_cipher_load_39 = load i8* %inverse_cipher_addr_39, align 1" [source/AESfunctions.cpp:117]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 194 [1/2] (3.25ns)   --->   "%inverse_cipher_load_40 = load i8* %inverse_cipher_addr_40, align 1" [source/AESfunctions.cpp:117]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 195 [1/2] (3.25ns)   --->   "%inverse_cipher_load_41 = load i8* %inverse_cipher_addr_41, align 1" [source/AESfunctions.cpp:117]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 196 [1/2] (3.25ns)   --->   "%inverse_cipher_load_42 = load i8* %inverse_cipher_addr_42, align 1" [source/AESfunctions.cpp:117]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 197 [1/1] (0.00ns) (grouped into LUT with out node tmp_6)   --->   "%tmp12 = xor i8 %inverse_cipher_load_40, %inverse_cipher_load_39" [source/AESfunctions.cpp:117]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 198 [1/1] (0.00ns) (grouped into LUT with out node tmp_6)   --->   "%tmp13 = xor i8 %inverse_cipher_load_41, %inverse_cipher_load_42" [source/AESfunctions.cpp:117]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 199 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_6 = xor i8 %tmp13, %tmp12" [source/AESfunctions.cpp:117]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 200 [1/2] (3.25ns)   --->   "%inverse_cipher_load_43 = load i8* %inverse_cipher_addr_43, align 1" [source/AESfunctions.cpp:119]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 201 [1/2] (3.25ns)   --->   "%inverse_cipher_load_44 = load i8* %inverse_cipher_addr_44, align 1" [source/AESfunctions.cpp:119]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 202 [1/2] (3.25ns)   --->   "%inverse_cipher_load_45 = load i8* %inverse_cipher_addr_45, align 1" [source/AESfunctions.cpp:119]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 203 [1/2] (3.25ns)   --->   "%inverse_cipher_load_46 = load i8* %inverse_cipher_addr_46, align 1" [source/AESfunctions.cpp:119]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_6 : Operation 204 [1/1] (0.00ns) (grouped into LUT with out node tmp_7)   --->   "%tmp14 = xor i8 %inverse_cipher_load_44, %inverse_cipher_load_43" [source/AESfunctions.cpp:119]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 205 [1/1] (0.00ns) (grouped into LUT with out node tmp_7)   --->   "%tmp15 = xor i8 %inverse_cipher_load_45, %inverse_cipher_load_46" [source/AESfunctions.cpp:119]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 206 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_7 = xor i8 %tmp15, %tmp14" [source/AESfunctions.cpp:119]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 207 [1/2] (2.32ns)   --->   "%state_load_23 = load i8* %state_addr_39, align 1" [source/AESfunctions.cpp:122]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 208 [1/2] (2.32ns)   --->   "%state_load_24 = load i8* %state_addr_40, align 1" [source/AESfunctions.cpp:122]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 209 [1/1] (0.00ns)   --->   "%state_addr_41 = getelementptr [16 x i8]* %state, i64 0, i64 10" [source/AESfunctions.cpp:122]
+ST_6 : Operation 210 [2/2] (2.32ns)   --->   "%state_load_25 = load i8* %state_addr_41, align 1" [source/AESfunctions.cpp:122]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 211 [1/1] (0.00ns)   --->   "%state_addr_42 = getelementptr [16 x i8]* %state, i64 0, i64 11" [source/AESfunctions.cpp:122]
+ST_6 : Operation 212 [2/2] (2.32ns)   --->   "%state_load_26 = load i8* %state_addr_42, align 1" [source/AESfunctions.cpp:122]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 7> : 5.58ns
+ST_7 : Operation 213 [1/1] (0.00ns)   --->   "%tmp_state_addr_22 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 6" [source/AESfunctions.cpp:117]
+ST_7 : Operation 214 [1/1] (2.32ns)   --->   "store i8 %tmp_6, i8* %tmp_state_addr_22, align 2" [source/AESfunctions.cpp:117]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 215 [1/1] (0.00ns)   --->   "%tmp_state_addr_23 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 7" [source/AESfunctions.cpp:119]
+ST_7 : Operation 216 [1/1] (2.32ns)   --->   "store i8 %tmp_7, i8* %tmp_state_addr_23, align 1" [source/AESfunctions.cpp:119]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 217 [1/1] (0.00ns)   --->   "%addr32 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_23)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 218 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_47 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr32" [source/AESfunctions.cpp:122]
+ST_7 : Operation 219 [2/2] (3.25ns)   --->   "%inverse_cipher_load_47 = load i8* %inverse_cipher_addr_47, align 1" [source/AESfunctions.cpp:122]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 220 [1/1] (0.00ns)   --->   "%addr33 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_24)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 221 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_48 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr33" [source/AESfunctions.cpp:122]
+ST_7 : Operation 222 [2/2] (3.25ns)   --->   "%inverse_cipher_load_48 = load i8* %inverse_cipher_addr_48, align 1" [source/AESfunctions.cpp:122]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 223 [1/2] (2.32ns)   --->   "%state_load_25 = load i8* %state_addr_41, align 1" [source/AESfunctions.cpp:122]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 224 [1/1] (0.00ns)   --->   "%addr34 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_25)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 225 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_49 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr34" [source/AESfunctions.cpp:122]
+ST_7 : Operation 226 [2/2] (3.25ns)   --->   "%inverse_cipher_load_49 = load i8* %inverse_cipher_addr_49, align 1" [source/AESfunctions.cpp:122]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 227 [1/2] (2.32ns)   --->   "%state_load_26 = load i8* %state_addr_42, align 1" [source/AESfunctions.cpp:122]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 228 [1/1] (0.00ns)   --->   "%addr35 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_26)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 229 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_50 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr35" [source/AESfunctions.cpp:122]
+ST_7 : Operation 230 [2/2] (3.25ns)   --->   "%inverse_cipher_load_50 = load i8* %inverse_cipher_addr_50, align 1" [source/AESfunctions.cpp:122]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 231 [1/1] (0.00ns)   --->   "%addr36 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_23)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 232 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_51 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr36" [source/AESfunctions.cpp:122]
+ST_7 : Operation 233 [2/2] (3.25ns)   --->   "%inverse_cipher_load_51 = load i8* %inverse_cipher_addr_51, align 1" [source/AESfunctions.cpp:124]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 234 [1/1] (0.00ns)   --->   "%addr37 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_24)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 235 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_52 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr37" [source/AESfunctions.cpp:122]
+ST_7 : Operation 236 [2/2] (3.25ns)   --->   "%inverse_cipher_load_52 = load i8* %inverse_cipher_addr_52, align 1" [source/AESfunctions.cpp:124]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 237 [1/1] (0.00ns)   --->   "%addr38 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_25)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 238 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_53 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr38" [source/AESfunctions.cpp:122]
+ST_7 : Operation 239 [2/2] (3.25ns)   --->   "%inverse_cipher_load_53 = load i8* %inverse_cipher_addr_53, align 1" [source/AESfunctions.cpp:124]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 240 [1/1] (0.00ns)   --->   "%addr39 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_26)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 241 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_54 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr39" [source/AESfunctions.cpp:122]
+ST_7 : Operation 242 [2/2] (3.25ns)   --->   "%inverse_cipher_load_54 = load i8* %inverse_cipher_addr_54, align 1" [source/AESfunctions.cpp:124]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 243 [1/1] (0.00ns)   --->   "%addr40 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_23)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 244 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_55 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr40" [source/AESfunctions.cpp:122]
+ST_7 : Operation 245 [2/2] (3.25ns)   --->   "%inverse_cipher_load_55 = load i8* %inverse_cipher_addr_55, align 1" [source/AESfunctions.cpp:126]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 246 [1/1] (0.00ns)   --->   "%addr41 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_24)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 247 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_56 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr41" [source/AESfunctions.cpp:122]
+ST_7 : Operation 248 [2/2] (3.25ns)   --->   "%inverse_cipher_load_56 = load i8* %inverse_cipher_addr_56, align 1" [source/AESfunctions.cpp:126]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 249 [1/1] (0.00ns)   --->   "%addr42 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_25)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 250 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_57 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr42" [source/AESfunctions.cpp:122]
+ST_7 : Operation 251 [2/2] (3.25ns)   --->   "%inverse_cipher_load_57 = load i8* %inverse_cipher_addr_57, align 1" [source/AESfunctions.cpp:126]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 252 [1/1] (0.00ns)   --->   "%addr43 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_26)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 253 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_58 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr43" [source/AESfunctions.cpp:122]
+ST_7 : Operation 254 [2/2] (3.25ns)   --->   "%inverse_cipher_load_58 = load i8* %inverse_cipher_addr_58, align 1" [source/AESfunctions.cpp:126]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 255 [1/1] (0.00ns)   --->   "%addr44 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_23)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 256 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_59 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr44" [source/AESfunctions.cpp:122]
+ST_7 : Operation 257 [2/2] (3.25ns)   --->   "%inverse_cipher_load_59 = load i8* %inverse_cipher_addr_59, align 1" [source/AESfunctions.cpp:128]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 258 [1/1] (0.00ns)   --->   "%addr45 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_24)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 259 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_60 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr45" [source/AESfunctions.cpp:122]
+ST_7 : Operation 260 [2/2] (3.25ns)   --->   "%inverse_cipher_load_60 = load i8* %inverse_cipher_addr_60, align 1" [source/AESfunctions.cpp:128]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 261 [1/1] (0.00ns)   --->   "%addr46 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_25)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 262 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_61 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr46" [source/AESfunctions.cpp:122]
+ST_7 : Operation 263 [2/2] (3.25ns)   --->   "%inverse_cipher_load_61 = load i8* %inverse_cipher_addr_61, align 1" [source/AESfunctions.cpp:128]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 264 [1/1] (0.00ns)   --->   "%addr47 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_26)" [source/AESfunctions.cpp:122]
+ST_7 : Operation 265 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_62 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr47" [source/AESfunctions.cpp:122]
+ST_7 : Operation 266 [2/2] (3.25ns)   --->   "%inverse_cipher_load_62 = load i8* %inverse_cipher_addr_62, align 1" [source/AESfunctions.cpp:128]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_7 : Operation 267 [1/1] (0.00ns)   --->   "%state_addr_43 = getelementptr [16 x i8]* %state, i64 0, i64 12" [source/AESfunctions.cpp:131]
+ST_7 : Operation 268 [2/2] (2.32ns)   --->   "%state_load_27 = load i8* %state_addr_43, align 1" [source/AESfunctions.cpp:131]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 269 [1/1] (0.00ns)   --->   "%state_addr_44 = getelementptr [16 x i8]* %state, i64 0, i64 13" [source/AESfunctions.cpp:131]
+ST_7 : Operation 270 [2/2] (2.32ns)   --->   "%state_load_28 = load i8* %state_addr_44, align 1" [source/AESfunctions.cpp:131]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 8> : 6.67ns
+ST_8 : Operation 271 [1/2] (3.25ns)   --->   "%inverse_cipher_load_47 = load i8* %inverse_cipher_addr_47, align 1" [source/AESfunctions.cpp:122]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 272 [1/2] (3.25ns)   --->   "%inverse_cipher_load_48 = load i8* %inverse_cipher_addr_48, align 1" [source/AESfunctions.cpp:122]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 273 [1/2] (3.25ns)   --->   "%inverse_cipher_load_49 = load i8* %inverse_cipher_addr_49, align 1" [source/AESfunctions.cpp:122]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 274 [1/2] (3.25ns)   --->   "%inverse_cipher_load_50 = load i8* %inverse_cipher_addr_50, align 1" [source/AESfunctions.cpp:122]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 275 [1/1] (0.00ns) (grouped into LUT with out node tmp_8)   --->   "%tmp16 = xor i8 %inverse_cipher_load_48, %inverse_cipher_load_47" [source/AESfunctions.cpp:122]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 276 [1/1] (0.00ns) (grouped into LUT with out node tmp_8)   --->   "%tmp17 = xor i8 %inverse_cipher_load_49, %inverse_cipher_load_50" [source/AESfunctions.cpp:122]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 277 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_8 = xor i8 %tmp17, %tmp16" [source/AESfunctions.cpp:122]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 278 [1/1] (0.00ns)   --->   "%tmp_state_addr_24 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 8" [source/AESfunctions.cpp:122]
+ST_8 : Operation 279 [1/1] (2.32ns)   --->   "store i8 %tmp_8, i8* %tmp_state_addr_24, align 8" [source/AESfunctions.cpp:122]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 280 [1/2] (3.25ns)   --->   "%inverse_cipher_load_51 = load i8* %inverse_cipher_addr_51, align 1" [source/AESfunctions.cpp:124]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 281 [1/2] (3.25ns)   --->   "%inverse_cipher_load_52 = load i8* %inverse_cipher_addr_52, align 1" [source/AESfunctions.cpp:124]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 282 [1/2] (3.25ns)   --->   "%inverse_cipher_load_53 = load i8* %inverse_cipher_addr_53, align 1" [source/AESfunctions.cpp:124]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 283 [1/2] (3.25ns)   --->   "%inverse_cipher_load_54 = load i8* %inverse_cipher_addr_54, align 1" [source/AESfunctions.cpp:124]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 284 [1/1] (0.00ns) (grouped into LUT with out node tmp_9)   --->   "%tmp18 = xor i8 %inverse_cipher_load_52, %inverse_cipher_load_51" [source/AESfunctions.cpp:124]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 285 [1/1] (0.00ns) (grouped into LUT with out node tmp_9)   --->   "%tmp19 = xor i8 %inverse_cipher_load_53, %inverse_cipher_load_54" [source/AESfunctions.cpp:124]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 286 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_9 = xor i8 %tmp19, %tmp18" [source/AESfunctions.cpp:124]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 287 [1/1] (0.00ns)   --->   "%tmp_state_addr_25 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 9" [source/AESfunctions.cpp:124]
+ST_8 : Operation 288 [1/1] (2.32ns)   --->   "store i8 %tmp_9, i8* %tmp_state_addr_25, align 1" [source/AESfunctions.cpp:124]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 289 [1/2] (3.25ns)   --->   "%inverse_cipher_load_55 = load i8* %inverse_cipher_addr_55, align 1" [source/AESfunctions.cpp:126]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 290 [1/2] (3.25ns)   --->   "%inverse_cipher_load_56 = load i8* %inverse_cipher_addr_56, align 1" [source/AESfunctions.cpp:126]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 291 [1/2] (3.25ns)   --->   "%inverse_cipher_load_57 = load i8* %inverse_cipher_addr_57, align 1" [source/AESfunctions.cpp:126]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 292 [1/2] (3.25ns)   --->   "%inverse_cipher_load_58 = load i8* %inverse_cipher_addr_58, align 1" [source/AESfunctions.cpp:126]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 293 [1/1] (0.00ns) (grouped into LUT with out node tmp_10)   --->   "%tmp20 = xor i8 %inverse_cipher_load_56, %inverse_cipher_load_55" [source/AESfunctions.cpp:126]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 294 [1/1] (0.00ns) (grouped into LUT with out node tmp_10)   --->   "%tmp21 = xor i8 %inverse_cipher_load_57, %inverse_cipher_load_58" [source/AESfunctions.cpp:126]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 295 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_10 = xor i8 %tmp21, %tmp20" [source/AESfunctions.cpp:126]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 296 [1/2] (3.25ns)   --->   "%inverse_cipher_load_59 = load i8* %inverse_cipher_addr_59, align 1" [source/AESfunctions.cpp:128]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 297 [1/2] (3.25ns)   --->   "%inverse_cipher_load_60 = load i8* %inverse_cipher_addr_60, align 1" [source/AESfunctions.cpp:128]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 298 [1/2] (3.25ns)   --->   "%inverse_cipher_load_61 = load i8* %inverse_cipher_addr_61, align 1" [source/AESfunctions.cpp:128]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 299 [1/2] (3.25ns)   --->   "%inverse_cipher_load_62 = load i8* %inverse_cipher_addr_62, align 1" [source/AESfunctions.cpp:128]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_8 : Operation 300 [1/1] (0.00ns) (grouped into LUT with out node tmp_11)   --->   "%tmp22 = xor i8 %inverse_cipher_load_60, %inverse_cipher_load_59" [source/AESfunctions.cpp:128]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 301 [1/1] (0.00ns) (grouped into LUT with out node tmp_11)   --->   "%tmp23 = xor i8 %inverse_cipher_load_61, %inverse_cipher_load_62" [source/AESfunctions.cpp:128]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 302 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_11 = xor i8 %tmp23, %tmp22" [source/AESfunctions.cpp:128]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 303 [1/2] (2.32ns)   --->   "%state_load_27 = load i8* %state_addr_43, align 1" [source/AESfunctions.cpp:131]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 304 [1/2] (2.32ns)   --->   "%state_load_28 = load i8* %state_addr_44, align 1" [source/AESfunctions.cpp:131]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 305 [1/1] (0.00ns)   --->   "%state_addr_45 = getelementptr [16 x i8]* %state, i64 0, i64 14" [source/AESfunctions.cpp:131]
+ST_8 : Operation 306 [2/2] (2.32ns)   --->   "%state_load_29 = load i8* %state_addr_45, align 1" [source/AESfunctions.cpp:131]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 307 [1/1] (0.00ns)   --->   "%state_addr_46 = getelementptr [16 x i8]* %state, i64 0, i64 15" [source/AESfunctions.cpp:131]
+ST_8 : Operation 308 [2/2] (2.32ns)   --->   "%state_load_30 = load i8* %state_addr_46, align 1" [source/AESfunctions.cpp:131]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+ <State 9> : 5.58ns
+ST_9 : Operation 309 [1/1] (0.00ns)   --->   "%tmp_state_addr_26 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 10" [source/AESfunctions.cpp:126]
+ST_9 : Operation 310 [1/1] (2.32ns)   --->   "store i8 %tmp_10, i8* %tmp_state_addr_26, align 2" [source/AESfunctions.cpp:126]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 311 [1/1] (0.00ns)   --->   "%tmp_state_addr_27 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 11" [source/AESfunctions.cpp:128]
+ST_9 : Operation 312 [1/1] (2.32ns)   --->   "store i8 %tmp_11, i8* %tmp_state_addr_27, align 1" [source/AESfunctions.cpp:128]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 313 [1/1] (0.00ns)   --->   "%addr48 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_27)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 314 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_63 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr48" [source/AESfunctions.cpp:131]
+ST_9 : Operation 315 [2/2] (3.25ns)   --->   "%inverse_cipher_load_63 = load i8* %inverse_cipher_addr_63, align 1" [source/AESfunctions.cpp:131]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 316 [1/1] (0.00ns)   --->   "%addr49 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_28)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 317 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_64 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr49" [source/AESfunctions.cpp:131]
+ST_9 : Operation 318 [2/2] (3.25ns)   --->   "%inverse_cipher_load_64 = load i8* %inverse_cipher_addr_64, align 1" [source/AESfunctions.cpp:131]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 319 [1/2] (2.32ns)   --->   "%state_load_29 = load i8* %state_addr_45, align 1" [source/AESfunctions.cpp:131]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 320 [1/1] (0.00ns)   --->   "%addr50 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_29)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 321 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_65 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr50" [source/AESfunctions.cpp:131]
+ST_9 : Operation 322 [2/2] (3.25ns)   --->   "%inverse_cipher_load_65 = load i8* %inverse_cipher_addr_65, align 1" [source/AESfunctions.cpp:131]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 323 [1/2] (2.32ns)   --->   "%state_load_30 = load i8* %state_addr_46, align 1" [source/AESfunctions.cpp:131]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 324 [1/1] (0.00ns)   --->   "%addr51 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_30)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 325 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_66 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr51" [source/AESfunctions.cpp:131]
+ST_9 : Operation 326 [2/2] (3.25ns)   --->   "%inverse_cipher_load_66 = load i8* %inverse_cipher_addr_66, align 1" [source/AESfunctions.cpp:131]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 327 [1/1] (0.00ns)   --->   "%addr52 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_27)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 328 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_67 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr52" [source/AESfunctions.cpp:131]
+ST_9 : Operation 329 [2/2] (3.25ns)   --->   "%inverse_cipher_load_67 = load i8* %inverse_cipher_addr_67, align 1" [source/AESfunctions.cpp:133]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 330 [1/1] (0.00ns)   --->   "%addr53 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_28)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 331 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_68 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr53" [source/AESfunctions.cpp:131]
+ST_9 : Operation 332 [2/2] (3.25ns)   --->   "%inverse_cipher_load_68 = load i8* %inverse_cipher_addr_68, align 1" [source/AESfunctions.cpp:133]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 333 [1/1] (0.00ns)   --->   "%addr54 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_29)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 334 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_69 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr54" [source/AESfunctions.cpp:131]
+ST_9 : Operation 335 [2/2] (3.25ns)   --->   "%inverse_cipher_load_69 = load i8* %inverse_cipher_addr_69, align 1" [source/AESfunctions.cpp:133]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 336 [1/1] (0.00ns)   --->   "%addr55 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_30)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 337 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_70 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr55" [source/AESfunctions.cpp:131]
+ST_9 : Operation 338 [2/2] (3.25ns)   --->   "%inverse_cipher_load_70 = load i8* %inverse_cipher_addr_70, align 1" [source/AESfunctions.cpp:133]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 339 [1/1] (0.00ns)   --->   "%addr56 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_27)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 340 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_71 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr56" [source/AESfunctions.cpp:131]
+ST_9 : Operation 341 [2/2] (3.25ns)   --->   "%inverse_cipher_load_71 = load i8* %inverse_cipher_addr_71, align 1" [source/AESfunctions.cpp:135]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 342 [1/1] (0.00ns)   --->   "%addr57 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_28)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 343 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_72 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr57" [source/AESfunctions.cpp:131]
+ST_9 : Operation 344 [2/2] (3.25ns)   --->   "%inverse_cipher_load_72 = load i8* %inverse_cipher_addr_72, align 1" [source/AESfunctions.cpp:135]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 345 [1/1] (0.00ns)   --->   "%addr58 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_29)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 346 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_73 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr58" [source/AESfunctions.cpp:131]
+ST_9 : Operation 347 [2/2] (3.25ns)   --->   "%inverse_cipher_load_73 = load i8* %inverse_cipher_addr_73, align 1" [source/AESfunctions.cpp:135]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 348 [1/1] (0.00ns)   --->   "%addr59 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_30)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 349 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_74 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr59" [source/AESfunctions.cpp:131]
+ST_9 : Operation 350 [2/2] (3.25ns)   --->   "%inverse_cipher_load_74 = load i8* %inverse_cipher_addr_74, align 1" [source/AESfunctions.cpp:135]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 351 [1/1] (0.00ns)   --->   "%addr60 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 2, i8 %state_load_27)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 352 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_75 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr60" [source/AESfunctions.cpp:131]
+ST_9 : Operation 353 [2/2] (3.25ns)   --->   "%inverse_cipher_load_75 = load i8* %inverse_cipher_addr_75, align 1" [source/AESfunctions.cpp:137]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 354 [1/1] (0.00ns)   --->   "%addr61 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 3, i8 %state_load_28)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 355 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_76 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr61" [source/AESfunctions.cpp:131]
+ST_9 : Operation 356 [2/2] (3.25ns)   --->   "%inverse_cipher_load_76 = load i8* %inverse_cipher_addr_76, align 1" [source/AESfunctions.cpp:137]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 357 [1/1] (0.00ns)   --->   "%addr62 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 1, i8 %state_load_29)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 358 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_77 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr62" [source/AESfunctions.cpp:131]
+ST_9 : Operation 359 [2/2] (3.25ns)   --->   "%inverse_cipher_load_77 = load i8* %inverse_cipher_addr_77, align 1" [source/AESfunctions.cpp:137]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_9 : Operation 360 [1/1] (0.00ns)   --->   "%addr63 = call i64 @_ssdm_op_BitConcatenate.i64.i56.i8(i56 4, i8 %state_load_30)" [source/AESfunctions.cpp:131]
+ST_9 : Operation 361 [1/1] (0.00ns)   --->   "%inverse_cipher_addr_78 = getelementptr [1280 x i8]* @inverse_cipher, i64 0, i64 %addr63" [source/AESfunctions.cpp:131]
+ST_9 : Operation 362 [2/2] (3.25ns)   --->   "%inverse_cipher_load_78 = load i8* %inverse_cipher_addr_78, align 1" [source/AESfunctions.cpp:137]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+
+ <State 10> : 6.67ns
+ST_10 : Operation 363 [1/2] (3.25ns)   --->   "%inverse_cipher_load_63 = load i8* %inverse_cipher_addr_63, align 1" [source/AESfunctions.cpp:131]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 364 [1/2] (3.25ns)   --->   "%inverse_cipher_load_64 = load i8* %inverse_cipher_addr_64, align 1" [source/AESfunctions.cpp:131]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 365 [1/2] (3.25ns)   --->   "%inverse_cipher_load_65 = load i8* %inverse_cipher_addr_65, align 1" [source/AESfunctions.cpp:131]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 366 [1/2] (3.25ns)   --->   "%inverse_cipher_load_66 = load i8* %inverse_cipher_addr_66, align 1" [source/AESfunctions.cpp:131]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 367 [1/1] (0.00ns) (grouped into LUT with out node tmp_12)   --->   "%tmp24 = xor i8 %inverse_cipher_load_64, %inverse_cipher_load_63" [source/AESfunctions.cpp:131]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 368 [1/1] (0.00ns) (grouped into LUT with out node tmp_12)   --->   "%tmp25 = xor i8 %inverse_cipher_load_65, %inverse_cipher_load_66" [source/AESfunctions.cpp:131]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 369 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_12 = xor i8 %tmp25, %tmp24" [source/AESfunctions.cpp:131]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 370 [1/1] (0.00ns)   --->   "%tmp_state_addr_28 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 12" [source/AESfunctions.cpp:131]
+ST_10 : Operation 371 [1/1] (2.32ns)   --->   "store i8 %tmp_12, i8* %tmp_state_addr_28, align 4" [source/AESfunctions.cpp:131]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_10 : Operation 372 [1/2] (3.25ns)   --->   "%inverse_cipher_load_67 = load i8* %inverse_cipher_addr_67, align 1" [source/AESfunctions.cpp:133]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 373 [1/2] (3.25ns)   --->   "%inverse_cipher_load_68 = load i8* %inverse_cipher_addr_68, align 1" [source/AESfunctions.cpp:133]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 374 [1/2] (3.25ns)   --->   "%inverse_cipher_load_69 = load i8* %inverse_cipher_addr_69, align 1" [source/AESfunctions.cpp:133]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 375 [1/2] (3.25ns)   --->   "%inverse_cipher_load_70 = load i8* %inverse_cipher_addr_70, align 1" [source/AESfunctions.cpp:133]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 376 [1/1] (0.00ns) (grouped into LUT with out node tmp_13)   --->   "%tmp26 = xor i8 %inverse_cipher_load_68, %inverse_cipher_load_67" [source/AESfunctions.cpp:133]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 377 [1/1] (0.00ns) (grouped into LUT with out node tmp_13)   --->   "%tmp27 = xor i8 %inverse_cipher_load_69, %inverse_cipher_load_70" [source/AESfunctions.cpp:133]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 378 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_13 = xor i8 %tmp27, %tmp26" [source/AESfunctions.cpp:133]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 379 [1/1] (0.00ns)   --->   "%tmp_state_addr_29 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 13" [source/AESfunctions.cpp:133]
+ST_10 : Operation 380 [1/1] (2.32ns)   --->   "store i8 %tmp_13, i8* %tmp_state_addr_29, align 1" [source/AESfunctions.cpp:133]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_10 : Operation 381 [1/2] (3.25ns)   --->   "%inverse_cipher_load_71 = load i8* %inverse_cipher_addr_71, align 1" [source/AESfunctions.cpp:135]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 382 [1/2] (3.25ns)   --->   "%inverse_cipher_load_72 = load i8* %inverse_cipher_addr_72, align 1" [source/AESfunctions.cpp:135]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 383 [1/2] (3.25ns)   --->   "%inverse_cipher_load_73 = load i8* %inverse_cipher_addr_73, align 1" [source/AESfunctions.cpp:135]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 384 [1/2] (3.25ns)   --->   "%inverse_cipher_load_74 = load i8* %inverse_cipher_addr_74, align 1" [source/AESfunctions.cpp:135]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 385 [1/1] (0.00ns) (grouped into LUT with out node tmp_14)   --->   "%tmp28 = xor i8 %inverse_cipher_load_72, %inverse_cipher_load_71" [source/AESfunctions.cpp:135]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 386 [1/1] (0.00ns) (grouped into LUT with out node tmp_14)   --->   "%tmp29 = xor i8 %inverse_cipher_load_73, %inverse_cipher_load_74" [source/AESfunctions.cpp:135]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 387 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_14 = xor i8 %tmp29, %tmp28" [source/AESfunctions.cpp:135]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 388 [1/2] (3.25ns)   --->   "%inverse_cipher_load_75 = load i8* %inverse_cipher_addr_75, align 1" [source/AESfunctions.cpp:137]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 389 [1/2] (3.25ns)   --->   "%inverse_cipher_load_76 = load i8* %inverse_cipher_addr_76, align 1" [source/AESfunctions.cpp:137]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 390 [1/2] (3.25ns)   --->   "%inverse_cipher_load_77 = load i8* %inverse_cipher_addr_77, align 1" [source/AESfunctions.cpp:137]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 391 [1/2] (3.25ns)   --->   "%inverse_cipher_load_78 = load i8* %inverse_cipher_addr_78, align 1" [source/AESfunctions.cpp:137]   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 1280> <ROM>
+ST_10 : Operation 392 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%tmp30 = xor i8 %inverse_cipher_load_76, %inverse_cipher_load_75" [source/AESfunctions.cpp:137]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 393 [1/1] (0.00ns) (grouped into LUT with out node tmp_15)   --->   "%tmp31 = xor i8 %inverse_cipher_load_77, %inverse_cipher_load_78" [source/AESfunctions.cpp:137]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 394 [1/1] (1.09ns) (out node of the LUT)   --->   "%tmp_15 = xor i8 %tmp31, %tmp30" [source/AESfunctions.cpp:137]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+ <State 11> : 2.32ns
+ST_11 : Operation 395 [1/1] (0.00ns)   --->   "%tmp_state_addr_30 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 14" [source/AESfunctions.cpp:135]
+ST_11 : Operation 396 [1/1] (2.32ns)   --->   "store i8 %tmp_14, i8* %tmp_state_addr_30, align 2" [source/AESfunctions.cpp:135]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_11 : Operation 397 [1/1] (0.00ns)   --->   "%tmp_state_addr_31 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 15" [source/AESfunctions.cpp:137]
+ST_11 : Operation 398 [1/1] (2.32ns)   --->   "store i8 %tmp_15, i8* %tmp_state_addr_31, align 1" [source/AESfunctions.cpp:137]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_11 : Operation 399 [1/1] (1.76ns)   --->   "br label %1" [source/AESfunctions.cpp:139]
+
+ <State 12> : 2.32ns
+ST_12 : Operation 400 [1/1] (0.00ns)   --->   "%i = phi i5 [ 0, %0 ], [ %i_2, %2 ]"
+ST_12 : Operation 401 [1/1] (1.36ns)   --->   "%tmp_16 = icmp eq i5 %i, -16" [source/AESfunctions.cpp:139]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 402 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"
+ST_12 : Operation 403 [1/1] (1.78ns)   --->   "%i_2 = add i5 %i, 1" [source/AESfunctions.cpp:139]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 404 [1/1] (0.00ns)   --->   "br i1 %tmp_16, label %3, label %2" [source/AESfunctions.cpp:139]
+ST_12 : Operation 405 [1/1] (0.00ns)   --->   "%tmp_17 = zext i5 %i to i64" [source/AESfunctions.cpp:140]
+ST_12 : Operation 406 [1/1] (0.00ns)   --->   "%tmp_state_addr_32 = getelementptr inbounds [16 x i8]* %tmp_state, i64 0, i64 %tmp_17" [source/AESfunctions.cpp:140]
+ST_12 : Operation 407 [2/2] (2.32ns)   --->   "%tmp_state_load = load i8* %tmp_state_addr_32, align 1" [source/AESfunctions.cpp:140]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_12 : Operation 408 [1/1] (0.00ns)   --->   "ret void" [source/AESfunctions.cpp:142]
+
+ <State 13> : 4.64ns
+ST_13 : Operation 409 [1/2] (2.32ns)   --->   "%tmp_state_load = load i8* %tmp_state_addr_32, align 1" [source/AESfunctions.cpp:140]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_13 : Operation 410 [1/1] (0.00ns)   --->   "%state_addr_47 = getelementptr [16 x i8]* %state, i64 0, i64 %tmp_17" [source/AESfunctions.cpp:140]
+ST_13 : Operation 411 [1/1] (2.32ns)   --->   "store i8 %tmp_state_load, i8* %state_addr_47, align 1" [source/AESfunctions.cpp:140]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_13 : Operation 412 [1/1] (0.00ns)   --->   "br label %1" [source/AESfunctions.cpp:139]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 0ns.
+
+ <State 1>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('state_addr') [3]  (0 ns)
+	'load' operation ('state_load', source/AESfunctions.cpp:104) on array 'state' [5]  (2.32 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('state_load', source/AESfunctions.cpp:104) on array 'state' [5]  (2.32 ns)
+
+ <State 3>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('state_load_17', source/AESfunctions.cpp:104) on array 'state' [15]  (2.32 ns)
+	'getelementptr' operation ('inverse_cipher_addr_29', source/AESfunctions.cpp:104) [70]  (0 ns)
+	'load' operation ('inverse_cipher_load_29', source/AESfunctions.cpp:110) on array 'inverse_cipher' [71]  (3.25 ns)
+
+ <State 4>: 6.67ns
+The critical path consists of the following:
+	'load' operation ('inverse_cipher_load', source/AESfunctions.cpp:104) on array 'inverse_cipher' [8]  (3.25 ns)
+	'xor' operation ('tmp1', source/AESfunctions.cpp:104) [24]  (0 ns)
+	'xor' operation ('tmp_1', source/AESfunctions.cpp:104) [26]  (1.09 ns)
+	'store' operation (source/AESfunctions.cpp:104) of variable 'tmp_1', source/AESfunctions.cpp:104 on array 'tmp_state', source/AESfunctions.cpp:103 [28]  (2.32 ns)
+
+ <State 5>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('state_load_21', source/AESfunctions.cpp:113) on array 'state' [91]  (2.32 ns)
+	'getelementptr' operation ('inverse_cipher_addr_33', source/AESfunctions.cpp:113) [93]  (0 ns)
+	'load' operation ('inverse_cipher_load_33', source/AESfunctions.cpp:113) on array 'inverse_cipher' [94]  (3.25 ns)
+
+ <State 6>: 6.67ns
+The critical path consists of the following:
+	'load' operation ('inverse_cipher_load_31', source/AESfunctions.cpp:113) on array 'inverse_cipher' [84]  (3.25 ns)
+	'xor' operation ('tmp9', source/AESfunctions.cpp:113) [100]  (0 ns)
+	'xor' operation ('tmp_3', source/AESfunctions.cpp:113) [102]  (1.09 ns)
+	'store' operation (source/AESfunctions.cpp:113) of variable 'tmp_3', source/AESfunctions.cpp:113 on array 'tmp_state', source/AESfunctions.cpp:103 [104]  (2.32 ns)
+
+ <State 7>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('state_load_25', source/AESfunctions.cpp:122) on array 'state' [167]  (2.32 ns)
+	'getelementptr' operation ('inverse_cipher_addr_49', source/AESfunctions.cpp:122) [169]  (0 ns)
+	'load' operation ('inverse_cipher_load_49', source/AESfunctions.cpp:122) on array 'inverse_cipher' [170]  (3.25 ns)
+
+ <State 8>: 6.67ns
+The critical path consists of the following:
+	'load' operation ('inverse_cipher_load_47', source/AESfunctions.cpp:122) on array 'inverse_cipher' [160]  (3.25 ns)
+	'xor' operation ('tmp16', source/AESfunctions.cpp:122) [176]  (0 ns)
+	'xor' operation ('tmp_8', source/AESfunctions.cpp:122) [178]  (1.09 ns)
+	'store' operation (source/AESfunctions.cpp:122) of variable 'tmp_8', source/AESfunctions.cpp:122 on array 'tmp_state', source/AESfunctions.cpp:103 [180]  (2.32 ns)
+
+ <State 9>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('state_load_29', source/AESfunctions.cpp:131) on array 'state' [243]  (2.32 ns)
+	'getelementptr' operation ('inverse_cipher_addr_65', source/AESfunctions.cpp:131) [245]  (0 ns)
+	'load' operation ('inverse_cipher_load_65', source/AESfunctions.cpp:131) on array 'inverse_cipher' [246]  (3.25 ns)
+
+ <State 10>: 6.67ns
+The critical path consists of the following:
+	'load' operation ('inverse_cipher_load_63', source/AESfunctions.cpp:131) on array 'inverse_cipher' [236]  (3.25 ns)
+	'xor' operation ('tmp24', source/AESfunctions.cpp:131) [252]  (0 ns)
+	'xor' operation ('tmp_12', source/AESfunctions.cpp:131) [254]  (1.09 ns)
+	'store' operation (source/AESfunctions.cpp:131) of variable 'tmp_12', source/AESfunctions.cpp:131 on array 'tmp_state', source/AESfunctions.cpp:103 [256]  (2.32 ns)
+
+ <State 11>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('tmp_state_addr_30', source/AESfunctions.cpp:135) [289]  (0 ns)
+	'store' operation (source/AESfunctions.cpp:135) of variable 'tmp_14', source/AESfunctions.cpp:135 on array 'tmp_state', source/AESfunctions.cpp:103 [290]  (2.32 ns)
+
+ <State 12>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', source/AESfunctions.cpp:139) [310]  (0 ns)
+	'getelementptr' operation ('tmp_state_addr_32', source/AESfunctions.cpp:140) [317]  (0 ns)
+	'load' operation ('tmp_state_load', source/AESfunctions.cpp:140) on array 'tmp_state', source/AESfunctions.cpp:103 [318]  (2.32 ns)
+
+ <State 13>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('tmp_state_load', source/AESfunctions.cpp:140) on array 'tmp_state', source/AESfunctions.cpp:103 [318]  (2.32 ns)
+	'store' operation (source/AESfunctions.cpp:140) of variable 'tmp_state_load', source/AESfunctions.cpp:140 on array 'state' [320]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

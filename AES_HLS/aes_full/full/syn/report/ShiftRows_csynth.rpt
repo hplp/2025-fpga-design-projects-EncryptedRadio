@@ -1,0 +1,137 @@
+
+
+================================================================
+== Vitis HLS Report for 'ShiftRows'
+================================================================
+* Date:           Thu Apr 17 13:41:48 2025
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+* Project:        aes_full
+* Solution:       full (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.644 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        8|        8|  80.000 ns|  80.000 ns|    9|    9|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       -|      -|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    248|    -|
+|Register         |        -|    -|      41|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|      41|    248|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +----------------+----+-----------+-----+-----------+
+    |      Name      | LUT| Input Size| Bits| Total Bits|
+    +----------------+----+-----------+-----+-----------+
+    |ap_NS_fsm       |  53|         10|    1|         10|
+    |reg_147         |   9|          2|    8|         16|
+    |reg_154         |   9|          2|    8|         16|
+    |reg_167         |   9|          2|    8|         16|
+    |state_address0  |  53|         10|    4|         40|
+    |state_address1  |  53|         10|    4|         40|
+    |state_d0        |  37|          7|    8|         56|
+    |state_d1        |  25|          5|    8|         40|
+    +----------------+----+-----------+-----+-----------+
+    |Total           | 248|         48|   49|        234|
+    +----------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------+---+----+-----+-----------+
+    |    Name   | FF| LUT| Bits| Const Bits|
+    +-----------+---+----+-----+-----------+
+    |ap_CS_fsm  |  9|   0|    9|          0|
+    |reg_147    |  8|   0|    8|          0|
+    |reg_154    |  8|   0|    8|          0|
+    |reg_161    |  8|   0|    8|          0|
+    |reg_167    |  8|   0|    8|          0|
+    +-----------+---+----+-----+-----------+
+    |Total      | 41|   0|   41|          0|
+    +-----------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------+-----+-----+------------+--------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  | Source Object|    C Type    |
++----------------+-----+-----+------------+--------------+--------------+
+|ap_clk          |   in|    1|  ap_ctrl_hs|     ShiftRows|  return value|
+|ap_rst          |   in|    1|  ap_ctrl_hs|     ShiftRows|  return value|
+|ap_start        |   in|    1|  ap_ctrl_hs|     ShiftRows|  return value|
+|ap_done         |  out|    1|  ap_ctrl_hs|     ShiftRows|  return value|
+|ap_idle         |  out|    1|  ap_ctrl_hs|     ShiftRows|  return value|
+|ap_ready        |  out|    1|  ap_ctrl_hs|     ShiftRows|  return value|
+|state_address0  |  out|    4|   ap_memory|         state|         array|
+|state_ce0       |  out|    1|   ap_memory|         state|         array|
+|state_we0       |  out|    1|   ap_memory|         state|         array|
+|state_d0        |  out|    8|   ap_memory|         state|         array|
+|state_q0        |   in|    8|   ap_memory|         state|         array|
+|state_address1  |  out|    4|   ap_memory|         state|         array|
+|state_ce1       |  out|    1|   ap_memory|         state|         array|
+|state_we1       |  out|    1|   ap_memory|         state|         array|
+|state_d1        |  out|    8|   ap_memory|         state|         array|
+|state_q1        |   in|    8|   ap_memory|         state|         array|
++----------------+-----+-----+------------+--------------+--------------+
+

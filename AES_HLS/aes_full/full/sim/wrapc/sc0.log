@@ -1,0 +1,6 @@
+   Build using "C:/Xilinx/Vitis_HLS/2021.2/tps/win64/msys64/mingw64/bin/g++"
+   Compiling AESfunctions.cpp_pre.cpp.tb.cpp
+   Compiling test_AES_full.cpp_pre.cpp.tb.cpp
+   Compiling apatb_AES_Full.cpp
+   Compiling apatb_AES_Full_ir.ll
+   Generating cosim.tv.exe

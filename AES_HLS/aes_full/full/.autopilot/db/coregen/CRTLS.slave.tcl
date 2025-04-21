@@ -1,0 +1,2 @@
+dict set slaves CRTLS {ports {mode_cipher {type i_ap_none width 1} mode_inverse_cipher {type i_ap_none width 1} data_in {type i_ap_memory width 8} Nr {type i_ap_none width 16} data_out {type o_ap_memory width 8} expandedKey {type i_ap_memory width 8} ap_start {type ap_ctrl width 1} ap_done {type ap_ctrl width 1} ap_ready {type ap_ctrl width 1} ap_idle {type ap_ctrl width 1}} mems {data_in {width 8} data_out {width 8} expandedKey {width 8}} has_ctrl 1}
+set datawidth 32

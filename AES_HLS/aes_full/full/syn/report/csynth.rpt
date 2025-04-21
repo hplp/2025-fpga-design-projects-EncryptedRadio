@@ -1,0 +1,271 @@
+
+
+================================================================
+== Synthesis Summary Report of 'AES_Full'
+================================================================
++ General Information: 
+    * Date:           Thu Apr 17 13:41:53 2025
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+    * Project:        aes_full
+    * Solution:       full (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------+--------+-------+---------+---------+----------+---------+------+----------+---------+----+-----------+------------+-----+
+    |             Modules            |  Issue |       | Latency | Latency | Iteration|         | Trip |          |         |    |           |            |     |
+    |             & Loops            |  Type  | Slack | (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |     LUT    | URAM|
+    +--------------------------------+--------+-------+---------+---------+----------+---------+------+----------+---------+----+-----------+------------+-----+
+    |+ AES_Full                      |  Timing|  -0.00|        -|        -|         -|        -|     -|        no|   9 (3%)|   -|  2186 (2%)|  8042 (15%)|    -|
+    | + AES_Full_Pipeline_L_copy     |       -|   2.66|       18|  180.000|         -|       18|     -|        no|        -|   -|   13 (~0%)|    61 (~0%)|    -|
+    |  o L_copy                      |       -|   7.30|       16|  160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    | + AddRoundKey                  |      II|   0.73|       16|  160.000|         -|       17|     -|       yes|        -|   -|  169 (~0%)|    759 (1%)|    -|
+    | + AES_Full_Pipeline_L_rounds   |       -|   0.73|        -|        -|         -|        -|     -|        no|   3 (1%)|   -|  745 (~0%)|   2959 (5%)|    -|
+    |  o L_rounds                    |      II|   7.30|        -|        -|        63|       62|     -|       yes|        -|   -|          -|           -|    -|
+    |   + SubBytes                   |      II|   1.72|       17|  170.000|         -|       18|     -|       yes|  1 (~0%)|   -|  130 (~0%)|   428 (~0%)|    -|
+    |   + ShiftRows                  |      II|   2.66|        8|   80.000|         -|        9|     -|       yes|        -|   -|   41 (~0%)|   248 (~0%)|    -|
+    |   + MixColumns                 |      II|   0.73|       17|  170.000|         -|       18|     -|       yes|  2 (~0%)|   -|  314 (~0%)|    933 (1%)|    -|
+    |   + AddRoundKey                |      II|   0.73|       16|  160.000|         -|       17|     -|       yes|        -|   -|  169 (~0%)|    759 (1%)|    -|
+    | + AES_Full_Pipeline_L_copy_o   |       -|   2.66|       18|  180.000|         -|       18|     -|        no|        -|   -|   13 (~0%)|    61 (~0%)|    -|
+    |  o L_copy_o                    |       -|   7.30|       16|  160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    | + AES_Full_Pipeline_L_copy1    |       -|   2.66|       18|  180.000|         -|       18|     -|        no|        -|   -|   13 (~0%)|    61 (~0%)|    -|
+    |  o L_copy                      |       -|   7.30|       16|  160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    | + AES_Full_Pipeline_L_rounds2  |       -|   0.73|        -|        -|         -|        -|     -|        no|   5 (1%)|   -|  761 (~0%)|   3077 (5%)|    -|
+    |  o L_rounds                    |      II|   7.30|        -|        -|        63|       62|     -|       yes|        -|   -|          -|           -|    -|
+    |   + InvShiftRows               |      II|   2.66|        8|   80.000|         -|        9|     -|       yes|        -|   -|   41 (~0%)|   227 (~0%)|    -|
+    |   + InvSubBytes                |      II|   1.72|       17|  170.000|         -|       18|     -|       yes|  1 (~0%)|   -|  130 (~0%)|   428 (~0%)|    -|
+    |   + AddRoundKey                |      II|   0.73|       16|  160.000|         -|       17|     -|       yes|        -|   -|  169 (~0%)|    759 (1%)|    -|
+    |   + InvMixColumns              |      II|   0.73|       17|  170.000|         -|       18|     -|       yes|   4 (1%)|   -|  330 (~0%)|   1059 (1%)|    -|
+    | + AES_Full_Pipeline_L_copy_o3  |       -|   2.66|       18|  180.000|         -|       18|     -|        no|        -|   -|   13 (~0%)|    61 (~0%)|    -|
+    |  o L_copy_o                    |       -|   7.30|       16|  160.000|         2|        1|    16|       yes|        -|   -|          -|           -|    -|
+    +--------------------------------+--------+-------+---------+---------+----------+---------+------+----------+---------+----+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++-------------+------------+---------------+--------+----------+-------------------+
+| Interface   | Data Width | Address Width | Offset | Register | Resource Estimate |
++-------------+------------+---------------+--------+----------+-------------------+
+| s_axi_CRTLS | 32         | 9             | 16     | 0        | BRAM=1            |
++-------------+------------+---------------+--------+----------+-------------------+
+
+* S_AXILITE Registers
++-------------+---------------------+--------+-------+--------+------------------------------------+----------------------------------------------------------+
+| Interface   | Register            | Offset | Width | Access | Description                        | Bit Fields                                               |
++-------------+---------------------+--------+-------+--------+------------------------------------+----------------------------------------------------------+
+| s_axi_CRTLS | CTRL                | 0x00   | 32    | RW     | Control signals                    | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART |
+| s_axi_CRTLS | GIER                | 0x04   | 32    | RW     | Global Interrupt Enable Register   | 0=Enable                                                 |
+| s_axi_CRTLS | IP_IER              | 0x08   | 32    | RW     | IP Interrupt Enable Register       | 0=CHAN0_INT_EN 1=CHAN1_INT_EN 5=CHAN2_INT_EN             |
+| s_axi_CRTLS | IP_ISR              | 0x0c   | 32    | RW     | IP Interrupt Status Register       | 0=CHAN0_INT_ST 1=CHAN1_INT_ST 5=CHAN2_INT_ST             |
+| s_axi_CRTLS | mode_cipher         | 0x10   | 32    | W      | Data signal of mode_cipher         |                                                          |
+| s_axi_CRTLS | mode_inverse_cipher | 0x18   | 32    | W      | Data signal of mode_inverse_cipher |                                                          |
+| s_axi_CRTLS | Nr                  | 0x30   | 32    | W      | Data signal of Nr                  |                                                          |
++-------------+---------------------+--------+-------+--------+------------------------------------+----------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++---------------------+-----------+----------------+
+| Argument            | Direction | Datatype       |
++---------------------+-----------+----------------+
+| mode_cipher         | in        | bool           |
+| mode_inverse_cipher | in        | bool           |
+| data_in             | in        | unsigned char* |
+| expandedKey         | in        | unsigned char* |
+| Nr                  | in        | unsigned short |
+| data_out            | out       | unsigned char* |
++---------------------+-----------+----------------+
+
+* SW-to-HW Mapping
++---------------------+--------------+----------+-----------------------------------------------+
+| Argument            | HW Interface | HW Type  | HW Info                                       |
++---------------------+--------------+----------+-----------------------------------------------+
+| mode_cipher         | s_axi_CRTLS  | register | name=mode_cipher offset=0x10 range=32         |
+| mode_inverse_cipher | s_axi_CRTLS  | register | name=mode_inverse_cipher offset=0x18 range=32 |
+| data_in             | s_axi_CRTLS  | memory   | name=data_in offset=32 range=16               |
+| expandedKey         | s_axi_CRTLS  | memory   | name=expandedKey offset=256 range=256         |
+| Nr                  | s_axi_CRTLS  | register | name=Nr offset=0x30 range=32                  |
+| data_out            | s_axi_CRTLS  | memory   | name=data_out offset=64 range=16              |
++---------------------+--------------+----------+-----------------------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------+-----+--------+--------------+-----+--------+---------+
+| Name                               | DSP | Pragma | Variable     | Op  | Impl   | Latency |
++------------------------------------+-----+--------+--------------+-----+--------+---------+
+| + AES_Full                         | 0   |        |              |     |        |         |
+|   sub_i_fu_198_p2                  | -   |        | sub_i        | add | fabric | 0       |
+|   sub19_i_fu_220_p2                | -   |        | sub19_i      | add | fabric | 0       |
+|  + AES_Full_Pipeline_L_copy        | 0   |        |              |     |        |         |
+|    add_ln170_fu_89_p2              | -   |        | add_ln170    | add | fabric | 0       |
+|   + AddRoundKey                    | 0   |        |              |     |        |         |
+|     add_ln148_fu_452_p2            | -   |        | add_ln148    | add | fabric | 0       |
+|     add_ln148_1_fu_462_p2          | -   |        | add_ln148_1  | add | fabric | 0       |
+|     add_ln148_2_fu_472_p2          | -   |        | add_ln148_2  | add | fabric | 0       |
+|     add_ln148_3_fu_482_p2          | -   |        | add_ln148_3  | add | fabric | 0       |
+|     add_ln148_4_fu_492_p2          | -   |        | add_ln148_4  | add | fabric | 0       |
+|     add_ln148_5_fu_502_p2          | -   |        | add_ln148_5  | add | fabric | 0       |
+|     add_ln148_6_fu_512_p2          | -   |        | add_ln148_6  | add | fabric | 0       |
+|     add_ln148_7_fu_522_p2          | -   |        | add_ln148_7  | add | fabric | 0       |
+|     add_ln148_8_fu_532_p2          | -   |        | add_ln148_8  | add | fabric | 0       |
+|     add_ln148_9_fu_547_p2          | -   |        | add_ln148_9  | add | fabric | 0       |
+|     add_ln148_10_fu_557_p2         | -   |        | add_ln148_10 | add | fabric | 0       |
+|     add_ln148_11_fu_572_p2         | -   |        | add_ln148_11 | add | fabric | 0       |
+|     add_ln148_12_fu_582_p2         | -   |        | add_ln148_12 | add | fabric | 0       |
+|     add_ln148_13_fu_598_p2         | -   |        | add_ln148_13 | add | fabric | 0       |
+|     add_ln148_14_fu_608_p2         | -   |        | add_ln148_14 | add | fabric | 0       |
+|  + AES_Full_Pipeline_L_rounds      | 0   |        |              |     |        |         |
+|    i_3_fu_127_p2                   | -   |        | i_3          | add | fabric | 0       |
+|    grp_AddRoundKey_fu_104_roundKey | -   |        | add_ln185    | add | fabric | 0       |
+|   + AddRoundKey                    | 0   |        |              |     |        |         |
+|     add_ln148_fu_452_p2            | -   |        | add_ln148    | add | fabric | 0       |
+|     add_ln148_1_fu_462_p2          | -   |        | add_ln148_1  | add | fabric | 0       |
+|     add_ln148_2_fu_472_p2          | -   |        | add_ln148_2  | add | fabric | 0       |
+|     add_ln148_3_fu_482_p2          | -   |        | add_ln148_3  | add | fabric | 0       |
+|     add_ln148_4_fu_492_p2          | -   |        | add_ln148_4  | add | fabric | 0       |
+|     add_ln148_5_fu_502_p2          | -   |        | add_ln148_5  | add | fabric | 0       |
+|     add_ln148_6_fu_512_p2          | -   |        | add_ln148_6  | add | fabric | 0       |
+|     add_ln148_7_fu_522_p2          | -   |        | add_ln148_7  | add | fabric | 0       |
+|     add_ln148_8_fu_532_p2          | -   |        | add_ln148_8  | add | fabric | 0       |
+|     add_ln148_9_fu_547_p2          | -   |        | add_ln148_9  | add | fabric | 0       |
+|     add_ln148_10_fu_557_p2         | -   |        | add_ln148_10 | add | fabric | 0       |
+|     add_ln148_11_fu_572_p2         | -   |        | add_ln148_11 | add | fabric | 0       |
+|     add_ln148_12_fu_582_p2         | -   |        | add_ln148_12 | add | fabric | 0       |
+|     add_ln148_13_fu_598_p2         | -   |        | add_ln148_13 | add | fabric | 0       |
+|     add_ln148_14_fu_608_p2         | -   |        | add_ln148_14 | add | fabric | 0       |
+|  + AES_Full_Pipeline_L_copy_o      | 0   |        |              |     |        |         |
+|    add_ln189_fu_89_p2              | -   |        | add_ln189    | add | fabric | 0       |
+|  + AES_Full_Pipeline_L_copy1       | 0   |        |              |     |        |         |
+|    add_ln215_fu_89_p2              | -   |        | add_ln215    | add | fabric | 0       |
+|  + AES_Full_Pipeline_L_rounds2     | 0   |        |              |     |        |         |
+|    i_2_fu_145_p2                   | -   |        | i_2          | add | fabric | 0       |
+|    sub_ln226_fu_159_p2             | -   |        | sub_ln226    | sub | fabric | 0       |
+|    grp_AddRoundKey_fu_108_roundKey | -   |        | add_ln226    | add | fabric | 0       |
+|   + AddRoundKey                    | 0   |        |              |     |        |         |
+|     add_ln148_fu_452_p2            | -   |        | add_ln148    | add | fabric | 0       |
+|     add_ln148_1_fu_462_p2          | -   |        | add_ln148_1  | add | fabric | 0       |
+|     add_ln148_2_fu_472_p2          | -   |        | add_ln148_2  | add | fabric | 0       |
+|     add_ln148_3_fu_482_p2          | -   |        | add_ln148_3  | add | fabric | 0       |
+|     add_ln148_4_fu_492_p2          | -   |        | add_ln148_4  | add | fabric | 0       |
+|     add_ln148_5_fu_502_p2          | -   |        | add_ln148_5  | add | fabric | 0       |
+|     add_ln148_6_fu_512_p2          | -   |        | add_ln148_6  | add | fabric | 0       |
+|     add_ln148_7_fu_522_p2          | -   |        | add_ln148_7  | add | fabric | 0       |
+|     add_ln148_8_fu_532_p2          | -   |        | add_ln148_8  | add | fabric | 0       |
+|     add_ln148_9_fu_547_p2          | -   |        | add_ln148_9  | add | fabric | 0       |
+|     add_ln148_10_fu_557_p2         | -   |        | add_ln148_10 | add | fabric | 0       |
+|     add_ln148_11_fu_572_p2         | -   |        | add_ln148_11 | add | fabric | 0       |
+|     add_ln148_12_fu_582_p2         | -   |        | add_ln148_12 | add | fabric | 0       |
+|     add_ln148_13_fu_598_p2         | -   |        | add_ln148_13 | add | fabric | 0       |
+|     add_ln148_14_fu_608_p2         | -   |        | add_ln148_14 | add | fabric | 0       |
+|  + AES_Full_Pipeline_L_copy_o3     | 0   |        |              |     |        |         |
+|    add_ln233_fu_89_p2              | -   |        | add_ln233    | add | fabric | 0       |
++------------------------------------+-----+--------+--------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++--------------------------------+------+------+--------+----------------+---------+------+---------+
+| Name                           | BRAM | URAM | Pragma | Variable       | Storage | Impl | Latency |
++--------------------------------+------+------+--------+----------------+---------+------+---------+
+| + AES_Full                     | 9    | 0    |        |                |         |      |         |
+|   state_1_U                    | -    | -    |        | state_1        | ram_t2p | auto | 1       |
+|   state_U                      | -    | -    |        | state          | ram_t2p | auto | 1       |
+|  + AES_Full_Pipeline_L_rounds  | 3    | 0    |        |                |         |      |         |
+|   + SubBytes                   | 1    | 0    |        |                |         |      |         |
+|     s_box_U                    | 1    | -    |        | s_box          | rom_1p  | auto | 1       |
+|   + MixColumns                 | 2    | 0    |        |                |         |      |         |
+|     mul02_U                    | 1    | -    |        | mul02          | rom_1p  | auto | 1       |
+|     mul03_U                    | 1    | -    |        | mul03          | rom_1p  | auto | 1       |
+|  + AES_Full_Pipeline_L_rounds2 | 5    | 0    |        |                |         |      |         |
+|   + InvSubBytes                | 1    | 0    |        |                |         |      |         |
+|     inverted_s_box_U           | 1    | -    |        | inverted_s_box | rom_1p  | auto | 1       |
+|   + InvMixColumns              | 4    | 0    |        |                |         |      |         |
+|     mul14_U                    | 1    | -    |        | mul14          | rom_1p  | auto | 1       |
+|     mul11_U                    | 1    | -    |        | mul11          | rom_1p  | auto | 1       |
+|     mul13_U                    | 1    | -    |        | mul13          | rom_1p  | auto | 1       |
+|     mul09_U                    | 1    | -    |        | mul09          | rom_1p  | auto | 1       |
++--------------------------------+------+------+--------+----------------+---------+------+---------+
+
+
+================================================================
+== User Pragma Report
+================================================================
+* Ignored Pragmas
++------------+-----------+--------------------------------------------+--------------------------------------------------------------------+
+| Type       | Options   | Location                                   | Messages                                                           |
++------------+-----------+--------------------------------------------+--------------------------------------------------------------------+
+| allocation | instances | source/AESfunctions.cpp:163 in aes_encrypt | unexpected pragma argument 'instances', expects function/operation |
+| array_map  | variable  | source/AESfunctions.cpp:164 in aes_encrypt | the pragma is not supported and will be ignored                    |
+| array_map  | variable  | source/AESfunctions.cpp:165 in aes_encrypt | the pragma is not supported and will be ignored                    |
+| array_map  | variable  | source/AESfunctions.cpp:166 in aes_encrypt | the pragma is not supported and will be ignored                    |
+| allocation | instances | source/AESfunctions.cpp:206 in aes_decrypt | unexpected pragma argument 'instances', expects function/operation |
+| array_map  | variable  | source/AESfunctions.cpp:207 in aes_decrypt | the pragma is not supported and will be ignored                    |
+| array_map  | variable  | source/AESfunctions.cpp:208 in aes_decrypt | the pragma is not supported and will be ignored                    |
+| array_map  | variable  | source/AESfunctions.cpp:209 in aes_decrypt | the pragma is not supported and will be ignored                    |
+| array_map  | variable  | source/AESfunctions.cpp:210 in aes_decrypt | the pragma is not supported and will be ignored                    |
+| array_map  | variable  | source/AESfunctions.cpp:211 in aes_decrypt | the pragma is not supported and will be ignored                    |
++------------+-----------+--------------------------------------------+--------------------------------------------------------------------+
+
+* Pragmas with Warnings
++--------+---------+--------------------------------------------+-----------------------------------------------------------------------------+
+| Type   | Options | Location                                   | Messages                                                                    |
++--------+---------+--------------------------------------------+-----------------------------------------------------------------------------+
+| inline | region  | source/AESfunctions.cpp:162 in aes_encrypt | 'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead |
+| inline | region  | source/AESfunctions.cpp:205 in aes_decrypt | 'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead |
+| inline | region  | source/AESfunctions.cpp:252 in aes_full    | 'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead |
++--------+---------+--------------------------------------------+-----------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------+-------------------------------------------------+--------------------------------------------------------------+
+| Type      | Options                                         | Location                                                     |
++-----------+-------------------------------------------------+--------------------------------------------------------------+
+| inline    | off                                             | source/AESfunctions.cpp:5 in subbytes                        |
+| unroll    |                                                 | source/AESfunctions.cpp:7 in subbytes                        |
+| inline    | off                                             | source/AESfunctions.cpp:13 in invsubbytes                    |
+| unroll    |                                                 | source/AESfunctions.cpp:15 in invsubbytes                    |
+| inline    | off                                             | source/AESfunctions.cpp:21 in shiftrows                      |
+| inline    | off                                             | source/AESfunctions.cpp:48 in invshiftrows                   |
+| inline    | off                                             | source/AESfunctions.cpp:75 in mixcolumns                     |
+| inline    | off                                             | source/AESfunctions.cpp:102 in invmixcolumns                 |
+| inline    | off                                             | source/AESfunctions.cpp:145 in addroundkey                   |
+| unroll    |                                                 | source/AESfunctions.cpp:147 in addroundkey                   |
+| interface | s_axilite port=plaintext bundle=CRTLSc          | source/AESfunctions.cpp:156 in aes_encrypt, plaintext        |
+| interface | s_axilite port=expandedKey bundle=CRTLSc        | source/AESfunctions.cpp:157 in aes_encrypt, expandedKey      |
+| interface | s_axilite port=Nr bundle=CRTLSc                 | source/AESfunctions.cpp:158 in aes_encrypt, Nr               |
+| interface | s_axilite port=ciphertext bundle=CRTLSc         | source/AESfunctions.cpp:159 in aes_encrypt, ciphertext       |
+| interface | s_axilite port=return bundle=CRTLSc             | source/AESfunctions.cpp:160 in aes_encrypt, return           |
+| interface | s_axilite port=ciphertext bundle=CRTLSic        | source/AESfunctions.cpp:199 in aes_decrypt, ciphertext       |
+| interface | s_axilite port=expandedKey bundle=CRTLSic       | source/AESfunctions.cpp:200 in aes_decrypt, expandedKey      |
+| interface | s_axilite port=Nr bundle=CRTLSic                | source/AESfunctions.cpp:201 in aes_decrypt, Nr               |
+| interface | s_axilite port=plaintext bundle=CRTLSic         | source/AESfunctions.cpp:202 in aes_decrypt, plaintext        |
+| interface | s_axilite port=return bundle=CRTLSic            | source/AESfunctions.cpp:203 in aes_decrypt, return           |
+| interface | s_axilite port=mode_cipher bundle=CRTLS         | source/AESfunctions.cpp:244 in aes_full, mode_cipher         |
+| interface | s_axilite port=mode_inverse_cipher bundle=CRTLS | source/AESfunctions.cpp:245 in aes_full, mode_inverse_cipher |
+| interface | s_axilite port=data_in bundle=CRTLS             | source/AESfunctions.cpp:246 in aes_full, data_in             |
+| interface | s_axilite port=expandedKey bundle=CRTLS         | source/AESfunctions.cpp:247 in aes_full, expandedKey         |
+| interface | s_axilite port=Nr bundle=CRTLS                  | source/AESfunctions.cpp:248 in aes_full, Nr                  |
+| interface | s_axilite port=data_out bundle=CRTLS            | source/AESfunctions.cpp:249 in aes_full, data_out            |
+| interface | s_axilite port=return bundle=CRTLS              | source/AESfunctions.cpp:250 in aes_full, return              |
++-----------+-------------------------------------------------+--------------------------------------------------------------+
+
+

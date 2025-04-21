@@ -1,0 +1,561 @@
+
+*** Running vivado
+    with args -log Zynq_CPU_AES_Full_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Zynq_CPU_AES_Full_0_1.tcl
+
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source Zynq_CPU_AES_Full_0_1.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ip_repo/custom_accelerator_xyz_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/kuh4bd/Documents/FPGALab/Project_UART/AES_HLS/aes_full/full/impl/ip'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ip_repo/rtl_multiplier_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/kuh4bd/Documents/FPGALab/Project_UART/hls_multiplier/solution1/impl/ip'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.cache/ip 
+Command: synth_design -top Zynq_CPU_AES_Full_0_1 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 12784
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1419.348 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Zynq_CPU_AES_Full_0_1' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.srcs/sources_1/bd/Zynq_CPU/ip/Zynq_CPU_AES_Full_0_1/synth/Zynq_CPU_AES_Full_0_1.v:58]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full.v:12]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_state_1_RAM_AUTO_1R1W' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_state_1_RAM_AUTO_1R1W.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_state_1_RAM_AUTO_1R1W' (1#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_state_1_RAM_AUTO_1R1W.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_AES_Full_Pipeline_L_copy' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_flow_control_loop_pipe_sequential_init' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_flow_control_loop_pipe_sequential_init.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_flow_control_loop_pipe_sequential_init' (2#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_flow_control_loop_pipe_sequential_init.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_AES_Full_Pipeline_L_copy' (3#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_AddRoundKey' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AddRoundKey.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_AddRoundKey' (4#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AddRoundKey.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_AES_Full_Pipeline_L_rounds' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_rounds.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_SubBytes' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_SubBytes.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_SubBytes_s_box_ROM_AUTO_1R' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_SubBytes_s_box_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-3876] $readmem data file './AES_Full_SubBytes_s_box_ROM_AUTO_1R.dat' is read successfully [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_SubBytes_s_box_ROM_AUTO_1R.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_SubBytes_s_box_ROM_AUTO_1R' (5#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_SubBytes_s_box_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_SubBytes' (6#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_SubBytes.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_ShiftRows' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_ShiftRows.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_ShiftRows' (7#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_ShiftRows.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_MixColumns' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_MixColumns.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_MixColumns_mul02_ROM_AUTO_1R' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_MixColumns_mul02_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-3876] $readmem data file './AES_Full_MixColumns_mul02_ROM_AUTO_1R.dat' is read successfully [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_MixColumns_mul02_ROM_AUTO_1R.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_MixColumns_mul02_ROM_AUTO_1R' (8#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_MixColumns_mul02_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_MixColumns_mul03_ROM_AUTO_1R' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_MixColumns_mul03_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-3876] $readmem data file './AES_Full_MixColumns_mul03_ROM_AUTO_1R.dat' is read successfully [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_MixColumns_mul03_ROM_AUTO_1R.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_MixColumns_mul03_ROM_AUTO_1R' (9#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_MixColumns_mul03_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_MixColumns' (10#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_MixColumns.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_AES_Full_Pipeline_L_rounds' (11#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_rounds.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_AES_Full_Pipeline_L_copy_o' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy_o.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_AES_Full_Pipeline_L_copy_o' (12#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy_o.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_AES_Full_Pipeline_L_copy1' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy1.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_AES_Full_Pipeline_L_copy1' (13#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_AES_Full_Pipeline_L_rounds2' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_rounds2.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_InvShiftRows' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvShiftRows.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_InvShiftRows' (14#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvShiftRows.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_InvSubBytes' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvSubBytes.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_InvSubBytes_inverted_s_box_ROM_AUTO_1R' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvSubBytes_inverted_s_box_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-3876] $readmem data file './AES_Full_InvSubBytes_inverted_s_box_ROM_AUTO_1R.dat' is read successfully [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvSubBytes_inverted_s_box_ROM_AUTO_1R.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_InvSubBytes_inverted_s_box_ROM_AUTO_1R' (15#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvSubBytes_inverted_s_box_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_InvSubBytes' (16#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvSubBytes.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_InvMixColumns' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_InvMixColumns_mul14_ROM_AUTO_1R' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul14_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-3876] $readmem data file './AES_Full_InvMixColumns_mul14_ROM_AUTO_1R.dat' is read successfully [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul14_ROM_AUTO_1R.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_InvMixColumns_mul14_ROM_AUTO_1R' (17#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul14_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_InvMixColumns_mul11_ROM_AUTO_1R' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul11_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-3876] $readmem data file './AES_Full_InvMixColumns_mul11_ROM_AUTO_1R.dat' is read successfully [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul11_ROM_AUTO_1R.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_InvMixColumns_mul11_ROM_AUTO_1R' (18#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul11_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_InvMixColumns_mul13_ROM_AUTO_1R' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul13_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-3876] $readmem data file './AES_Full_InvMixColumns_mul13_ROM_AUTO_1R.dat' is read successfully [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul13_ROM_AUTO_1R.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_InvMixColumns_mul13_ROM_AUTO_1R' (19#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul13_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_InvMixColumns_mul09_ROM_AUTO_1R' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul09_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-3876] $readmem data file './AES_Full_InvMixColumns_mul09_ROM_AUTO_1R.dat' is read successfully [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul09_ROM_AUTO_1R.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_InvMixColumns_mul09_ROM_AUTO_1R' (20#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns_mul09_ROM_AUTO_1R.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_InvMixColumns' (21#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_InvMixColumns.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_AES_Full_Pipeline_L_rounds2' (22#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_rounds2.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_AES_Full_Pipeline_L_copy_o3' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy_o3.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_AES_Full_Pipeline_L_copy_o3' (23#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy_o3.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_CRTLS_s_axi' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_CRTLS_s_axi_ram' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:681]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_CRTLS_s_axi_ram' (24#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:681]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_CRTLS_s_axi_ram__parameterized0' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:681]
+WARNING: [Synth 8-3848] Net q0 in module/entity AES_Full_CRTLS_s_axi_ram__parameterized0 does not have driver. [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:694]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_CRTLS_s_axi_ram__parameterized0' (24#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:681]
+INFO: [Synth 8-6157] synthesizing module 'AES_Full_CRTLS_s_axi_ram__parameterized1' [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:681]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_CRTLS_s_axi_ram__parameterized1' (24#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:681]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:346]
+WARNING: [Synth 8-6014] Unused sequential element int_ap_done_reg was removed.  [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:411]
+WARNING: [Synth 8-6014] Unused sequential element int_data_out_shift0_reg was removed.  [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:634]
+WARNING: [Synth 8-3848] Net int_data_out_write in module/entity AES_Full_CRTLS_s_axi does not have driver. [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:181]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full_CRTLS_s_axi' (25#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_CRTLS_s_axi.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_Full' (26#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'Zynq_CPU_AES_Full_0_1' (27#1) [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.srcs/sources_1/bd/Zynq_CPU/ip/Zynq_CPU_AES_Full_0_1/synth/Zynq_CPU_AES_Full_0_1.v:58]
+WARNING: [Synth 8-7129] Port we0[3] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port we0[2] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port we0[1] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port we0[0] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[31] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[30] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[29] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[28] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[27] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[26] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[25] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[24] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[23] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[22] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[21] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[20] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[19] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[18] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[17] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[16] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[15] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[14] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[13] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[12] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[11] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[10] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[9] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[8] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[7] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[6] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[5] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[4] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[3] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[2] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[1] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0[0] in module AES_Full_CRTLS_s_axi_ram__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[31] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[30] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[29] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[28] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[27] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[26] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[25] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[24] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[23] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[22] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[21] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[20] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[19] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[18] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[17] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[16] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[15] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[14] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[13] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[12] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[11] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[10] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[9] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[8] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[7] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[6] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[5] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[4] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[3] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[2] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[1] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port q0[0] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port we1[3] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port we1[2] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port we1[1] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port we1[0] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[31] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[30] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[29] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[28] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[27] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[26] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[25] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[24] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[23] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[22] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[21] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[20] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[19] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[18] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[17] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[16] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[15] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[14] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[13] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[12] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[11] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[10] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[9] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[8] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[7] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[6] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[5] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d1[4] in module AES_Full_CRTLS_s_axi_ram__parameterized0 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1419.348 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 1419.348 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 1419.348 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.102 . Memory (MB): peak = 1419.348 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.srcs/sources_1/bd/Zynq_CPU/ip/Zynq_CPU_AES_Full_0_1/constraints/AES_Full_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.srcs/sources_1/bd/Zynq_CPU/ip/Zynq_CPU_AES_Full_0_1/constraints/AES_Full_ooc.xdc] for cell 'inst'
+Parsing XDC File [C:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.runs/Zynq_CPU_AES_Full_0_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.runs/Zynq_CPU_AES_Full_0_1_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1515.391 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.100 . Memory (MB): peak = 1520.047 ; gain = 4.656
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1520.047 ; gain = 100.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1520.047 ; gain = 100.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.runs/Zynq_CPU_AES_Full_0_1_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1520.047 ; gain = 100.699
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'i_cast_reg_115_reg' and it is trimmed from '5' to '4' bits. [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy.v:141]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+WARNING: [Synth 8-3936] Found unconnected internal register 'i_2_cast_reg_115_reg' and it is trimmed from '5' to '4' bits. [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy_o.v:141]
+WARNING: [Synth 8-3936] Found unconnected internal register 'i_4_cast_reg_115_reg' and it is trimmed from '5' to '4' bits. [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy1.v:141]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+WARNING: [Synth 8-3936] Found unconnected internal register 'i_6_cast_reg_115_reg' and it is trimmed from '5' to '4' bits. [c:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.gen/sources_1/bd/Zynq_CPU/ipshared/f82b/hdl/verilog/AES_Full_AES_Full_Pipeline_L_copy_o3.v:141]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-3971] The signal "AES_Full_state_1_RAM_AUTO_1R1W:/ram_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 1520.047 ; gain = 100.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   17 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 47    
+	   2 Input    5 Bit       Adders := 4     
+	   3 Input    4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 33    
+	   3 Input      8 Bit         XORs := 17    
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	               62 Bit    Registers := 2     
+	               45 Bit    Registers := 1     
+	               32 Bit    Registers := 6     
+	               18 Bit    Registers := 4     
+	               17 Bit    Registers := 5     
+	               16 Bit    Registers := 4     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 181   
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 7     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 68    
++---RAMs : 
+	               1K Bit	(44 X 32 bit)          RAMs := 1     
+	              128 Bit	(16 X 8 bit)          RAMs := 2     
+	              128 Bit	(4 X 32 bit)          RAMs := 2     
++---ROMs : 
+	                    ROMs := 8     
++---Muxes : 
+	  63 Input   62 Bit        Muxes := 2     
+	   2 Input   45 Bit        Muxes := 2     
+	  46 Input   45 Bit        Muxes := 1     
+	   2 Input   44 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 22    
+	   8 Input   32 Bit        Muxes := 1     
+	   2 Input   25 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 1     
+	   2 Input   23 Bit        Muxes := 1     
+	   2 Input   22 Bit        Muxes := 1     
+	  19 Input   18 Bit        Muxes := 4     
+	   2 Input   17 Bit        Muxes := 6     
+	   2 Input   16 Bit        Muxes := 3     
+	   2 Input   15 Bit        Muxes := 3     
+	   2 Input   14 Bit        Muxes := 3     
+	   2 Input   13 Bit        Muxes := 3     
+	   2 Input   12 Bit        Muxes := 3     
+	   2 Input   11 Bit        Muxes := 3     
+	   2 Input   10 Bit        Muxes := 3     
+	   2 Input    9 Bit        Muxes := 3     
+	  10 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 74    
+	   2 Input    7 Bit        Muxes := 3     
+	   2 Input    6 Bit        Muxes := 4     
+	   2 Input    5 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 27    
+	  16 Input    4 Bit        Muxes := 7     
+	   9 Input    4 Bit        Muxes := 4     
+	   2 Input    3 Bit        Muxes := 4     
+	   2 Input    2 Bit        Muxes := 11    
+	   3 Input    2 Bit        Muxes := 2     
+	   6 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 135   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3971] The signal "inst/state_1_U/ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "inst/state_U/ram_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:41 . Memory (MB): peak = 1520.047 ; gain = 100.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-----------------------+-------------------------+---------------+----------------+
+|Module Name            | RTL Object              | Depth x Width | Implemented As | 
++-----------------------+-------------------------+---------------+----------------+
+|AES_Full_SubBytes      | s_box_U/q0_reg          | 256x8         | Block RAM      | 
+|AES_Full_MixColumns    | mul02_U/q0_reg          | 256x8         | Block RAM      | 
+|AES_Full_MixColumns    | mul03_U/q0_reg          | 256x8         | Block RAM      | 
+|AES_Full_InvSubBytes   | inverted_s_box_U/q0_reg | 256x8         | Block RAM      | 
+|AES_Full_InvMixColumns | mul14_U/q0_reg          | 256x8         | Block RAM      | 
+|AES_Full_InvMixColumns | mul11_U/q0_reg          | 256x8         | Block RAM      | 
+|AES_Full_InvMixColumns | mul13_U/q0_reg          | 256x8         | Block RAM      | 
+|AES_Full_InvMixColumns | mul09_U/q0_reg          | 256x8         | Block RAM      | 
++-----------------------+-------------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+---------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                            | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|inst        | state_1_U/ram_reg                     | 16 x 8(READ_FIRST)     | W | R | 16 x 8(READ_FIRST)     | W | R | Port A and B     | 1      | 0      | 
+|inst        | state_U/ram_reg                       | 16 x 8(READ_FIRST)     | W | R | 16 x 8(READ_FIRST)     | W | R | Port A and B     | 1      | 0      | 
+|inst        | CRTLS_s_axi_U/int_expandedKey/mem_reg | 44 x 32(READ_FIRST)    | W | R | 44 x 32(WRITE_FIRST)   |   | R | Port A and B     | 0      | 1      | 
++------------+---------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+------------------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                         | Inference | Size (Depth x Width) | Primitives     | 
++------------+------------------------------------+-----------+----------------------+----------------+
+|inst        | CRTLS_s_axi_U/int_data_out/mem_reg | Implied   | 4 x 32               | RAM16X1D x 32  | 
+|inst        | CRTLS_s_axi_U/int_data_in/mem_reg  | Implied   | 4 x 32               | RAM16X1D x 32  | 
++------------+------------------------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:47 . Memory (MB): peak = 1520.047 ; gain = 100.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:52 . Memory (MB): peak = 1551.051 ; gain = 131.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+---------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                            | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|inst        | state_1_U/ram_reg                     | 16 x 8(READ_FIRST)     | W | R | 16 x 8(READ_FIRST)     | W | R | Port A and B     | 1      | 0      | 
+|inst        | state_U/ram_reg                       | 16 x 8(READ_FIRST)     | W | R | 16 x 8(READ_FIRST)     | W | R | Port A and B     | 1      | 0      | 
+|inst        | CRTLS_s_axi_U/int_expandedKey/mem_reg | 44 x 32(READ_FIRST)    | W | R | 44 x 32(WRITE_FIRST)   |   | R | Port A and B     | 0      | 1      | 
++------------+---------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++------------+------------------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                         | Inference | Size (Depth x Width) | Primitives     | 
++------------+------------------------------------+-----------+----------------------+----------------+
+|inst        | CRTLS_s_axi_U/int_data_out/mem_reg | Implied   | 4 x 32               | RAM16X1D x 32  | 
+|inst        | CRTLS_s_axi_U/int_data_in/mem_reg  | Implied   | 4 x 32               | RAM16X1D x 32  | 
++------------+------------------------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance inst/state_1_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/state_1_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/state_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/state_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/grp_AES_Full_Pipeline_L_rounds_fu_139/grp_SubBytes_fu_80/s_box_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/grp_AES_Full_Pipeline_L_rounds_fu_139/grp_MixColumns_fu_94/mul02_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/grp_AES_Full_Pipeline_L_rounds_fu_139/grp_MixColumns_fu_94/mul03_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/grp_AES_Full_Pipeline_L_rounds2_fu_168/grp_InvSubBytes_fu_100/inverted_s_box_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/grp_AES_Full_Pipeline_L_rounds2_fu_168/grp_InvMixColumns_fu_117/mul14_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/grp_AES_Full_Pipeline_L_rounds2_fu_168/grp_InvMixColumns_fu_117/mul11_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/grp_AES_Full_Pipeline_L_rounds2_fu_168/grp_InvMixColumns_fu_117/mul13_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/grp_AES_Full_Pipeline_L_rounds2_fu_168/grp_InvMixColumns_fu_117/mul09_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/CRTLS_s_axi_U/int_expandedKey/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/CRTLS_s_axi_U/int_expandedKey/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:54 . Memory (MB): peak = 1591.750 ; gain = 172.402
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:58 . Memory (MB): peak = 1605.562 ; gain = 186.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:58 . Memory (MB): peak = 1605.562 ; gain = 186.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:59 . Memory (MB): peak = 1605.562 ; gain = 186.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:59 . Memory (MB): peak = 1605.562 ; gain = 186.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:59 . Memory (MB): peak = 1605.586 ; gain = 186.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:00:59 . Memory (MB): peak = 1605.586 ; gain = 186.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    20|
+|2     |LUT1     |    19|
+|3     |LUT2     |   305|
+|4     |LUT3     |   279|
+|5     |LUT4     |   380|
+|6     |LUT5     |   378|
+|7     |LUT6     |  1097|
+|8     |MUXF7    |     4|
+|9     |RAM16X1D |    64|
+|10    |RAMB18E1 |    10|
+|19    |RAMB36E1 |     1|
+|20    |FDRE     |  1990|
+|21    |FDSE     |    15|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:00:59 . Memory (MB): peak = 1605.586 ; gain = 186.238
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:55 . Memory (MB): peak = 1605.586 ; gain = 85.539
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:59 . Memory (MB): peak = 1605.586 ; gain = 186.238
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 1617.582 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 99 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1621.266 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 64 instances were transformed.
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 64 instances
+
+Synth Design complete, checksum: add0137d
+INFO: [Common 17-83] Releasing license: Synthesis
+112 Infos, 113 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:01:05 . Memory (MB): peak = 1621.266 ; gain = 201.918
+INFO: [Common 17-1381] The checkpoint 'C:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.runs/Zynq_CPU_AES_Full_0_1_synth_1/Zynq_CPU_AES_Full_0_1.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP Zynq_CPU_AES_Full_0_1, cache-ID = 0d1a5d2a85d2acfd
+INFO: [Coretcl 2-1174] Renamed 36 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/kuh4bd/Documents/FPGALab/Project_UART/ZynqComputerAES/ZynqComputer.runs/Zynq_CPU_AES_Full_0_1_synth_1/Zynq_CPU_AES_Full_0_1.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Zynq_CPU_AES_Full_0_1_utilization_synth.rpt -pb Zynq_CPU_AES_Full_0_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 17 13:48:13 2025...
