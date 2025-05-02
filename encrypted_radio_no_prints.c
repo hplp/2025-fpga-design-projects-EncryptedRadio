@@ -231,7 +231,6 @@ while(1) {
 // receive data
 receive_status = receive_and_decrypt(decrypted, Nr, 16);
 if(receive_status == 1) {
-//xil_printf("Received Message: ");
 for (int i = 0; i < 16; i++) {
 xil_printf("%c", decrypted[i]);
 }
