@@ -1,46 +1,158 @@
-## Team Name: 
-Bitstream Bandits
+# Encrypted Radio Communication Using FPGAs
 
-## Team Members:
-- Bobby Downey
-- Alex Clunan
+## Table of Contents
+- [Objective & Motivation](#objective--motivation)  
+- [Introduction](#introduction)  
+  - [Background](#background)  
+  - [AES Encryption Overview](#aes-encryption-overview)  
+  - [Serial Communication Flow](#serial-communication-flow)  
+- [Implementation Details](#implementation-details)  
+  - [Vitis HLS Design](#vitis-hls-design)  
+  - [Vivado Block Integration](#vivado-block-integration)  
+  - [SoC Implementation](#soc-implementation)  
+  - [Software (C Application)](#software-c-application)  
+  - [FPGA Hardware Testing](#fpga-hardware-testing)  
+- [Actions to be Completed](#actions-to-be-completed)  
+- [References](#references)
 
-## Project Title:
-Radio Encryption
+---
 
-## Project Description:
-We are implementing encrypted radio communication between two FPGA SoCs. A software defined radio (SDR) will be connected to each SoC, each SoC wil send and receive encrypted data from the other. Each SoC will be able to encrypt and decrypt messages that it sends/receives.
+## Objective & Motivation
 
-## Key Objectives:
-- Design of a custom IP block that accelerates the AES encryption algorithm
-- Interfacing with the IP block on the PYNQ board using the Python Overlay class via Visual Studio’s RemoteSSH extension
-- Using Python radio libraries, interface with the radio module to transmit the encrypted messages from keyboard input to a receiver radio
-- Have the computer with the receiver radio ensure that the encrypted message was transmitted successfully by decrypting and displaying the message
-- Expand this model to allow for real-time 2-way communication where two computers can transmit and receive messages via keyboard input in real time, encrypted using AES on two PYQN boards
-- If time permits, expand this to audio communication using ADCs to sample input from microphones and transmit the encrypted audio
+The goal of this project is to create a secure data transmission system using FPGAs. By combining AES encryption with UART serial communication and HC-12 transceiver modules, we built a functional encrypted radio communication pipeline using the PYNQ-Z1 FPGA board.
 
+This project explores the intersection of hardware cryptography and embedded wireless communication.
 
-## Technology Stack:
-(List the hardware platform, software tools, language(s), etc. you plan to use)
-- Verilog HDL in Xilinx 
-- Python in Visual Studio Code
-- HC-12 Radio
+### 📡 Hardware Setup
 
-## Expected Outcomes:
-(Describe what you expect to deliver at the end of the project)
-This project will consist of several interconnected components, including logic and signal processing modules for AES encryption, radio communication modules in Python, and modules for interfacing between the FPGA SoCs and the SDR. The AES encryption module will be a custom IP block designed for the FPGA that we will use to accelerate the encryption and decryption processes. This block will handle AES cipher operations in hardware, minimizing latency compared to software implementations. Signal processing and communication between the two FPGAs will be driven by Python SDR modules. These SDR modules will be used for transmission and reception of radio signals. Publicly accessible reference code for the HC-12 will be used for transmission and reception of the encrypted data. Links to the articles used in research for this configuration are shown below. We will connect the PYNQ Z-1 to the HC-12 via a UART connection and pinouts. This will allow the SoC to configure and send signals to the HC-12. The intended process is as follows: receive input data ⇒ send data to PL to be encrypted ⇒ PL returns encrypted data ⇒ PYNQ board sends encrypted data to HC-12 ⇒ HC-12 sends encrypted radio signal => Second HC-12 receives encrypted data ⇒ Second HC-12 sends encrypted data to second PYNQ board via UART ⇒ PYNQ receives encrypted data and sends it to the PL for decryption ⇒ PL decrypts data and sends it back to the processor ⇒ data is displayed on the python terminal. The encryption key is pre-shared between devices.
+![Radio and PYNQ Setup](images/radio_pynq_setup.jpg)  
+*Figure: PYNQ-Z1 connected to HC-12 radio module.*
 
-## Tasks:
-(Describe the tasks that need to be completed. Assign students to tasks)
-- Design of a custom IP block that accelerates the AES encryption algorithm (Alex)
-- Interfacing with the IP block on the PYNQ board using the Python Overlay class via Visual Studio’s RemoteSSH extension (Alex and Bobby)
-- Using Python radio libraries, interface with the radio module to transmit the encrypted messages from keyboard input to a receiver radio (Bobby)
-- Have the computer with the receiver radio ensure that the encrypted message was transmitted successfully by decrypting and displaying the message (Bobby)
-- Expand this model to allow for real-time 2-way communication where two computers can transmit and receive messages via keyboard input in real time, encrypted using AES on two PYQN boards (Alex and Bobby)
-- If time permits, expand this to audio communication using ADCs to sample input from microphones and transmit the encrypted audio (Alex and Bobby)
+---
 
-## Timeline:
-(Provide a timeline or milestones for the project)
-- Having AES IP block generated (April 10, 2025)
-- Ensure that two-way radio communication is successful without encryption (April 13, 2025)
-- Complete working two-way encrypted communication (April 29, 2025)
+## Introduction
+
+### Background
+
+AES (Advanced Encryption Standard) is a fast and secure symmetric-key encryption algorithm. UART is a widely-used, reliable communication protocol for serial data exchange. Together, they enable secure wireless communication over constrained embedded systems.
+
+We utilized AES for data encryption/decryption and UART for interfacing with the HC-12 radio module. Communication is handled by hardware IP blocks and a custom C application running on the ZYNQ PS.
+
+---
+
+### AES Encryption Overview
+
+AES operates on 128-bit blocks and performs the following sequence:
+
+1. **AddRoundKey** — XOR plaintext with round key  
+2. **SubBytes** — Apply S-box substitution  
+3. **ShiftRows** — Cyclically shift rows of the state  
+4. **MixColumns** — Matrix multiplication in GF(2^8) *(skipped in final round)*  
+5. **AddRoundKey** — Apply another round key
+
+This is repeated for a total of 10 rounds for AES-128.
+
+![AES Encryption Flow](images/AES.jpg)  
+*Figure: High-level AES encryption round structure.*
+
+---
+
+### Serial Communication Flow
+
+#### Transmit Pipeline
+- User inputs text in PC serial terminal
+- Data is buffered (16-byte blocks)
+- Each block is encrypted via AES-128 hardware IP
+- Transmitted to HC-12 radio module via UART
+
+#### Receive Pipeline
+- Encrypted block is received over UART from HC-12
+- Decrypted using AES hardware peripheral
+- Plaintext is displayed on the terminal
+
+---
+
+## Implementation Details
+
+### Vitis HLS Design
+
+- C implementation of AES verified in HLS
+- Exported to custom IP using AXI4-Lite interface
+- Hardcoded expanded key from HLS tests
+- Included MMIO-ready data input/output registers
+
+![HLS Simulation](images/hls.jpg)  
+*Figure: AES logic verification using Vitis HLS.*
+
+---
+
+### Vivado Block Integration
+
+- Integrated AES IP and UARTLite IP into Vivado block design
+- Connected to ZYNQ PS via AXI interconnect
+- Configured UARTLite TX/RX pins for HC-12 communication
+- Ensured proper memory mapping
+
+![Vivado Block Design](images/block.jpg)  
+*Figure: Vivado design with ZYNQ PS, AES IP, and UARTLite.*
+
+---
+
+### SoC Implementation
+
+- Exported .xsa hardware definition to Vitis IDE
+- Used xparameters.h to determine AES and UART base addresses
+- Accessed hardware via MMIO using xil_io.h
+
+---
+
+### Software (C Application)
+
+- Buffered text input from UART terminal
+- Performed encryption and transmission via AES IP
+- Received encrypted data, performed decryption
+- Printed decrypted message to UART terminal
+
+Key headers:
+- xil_io.h — MMIO access  
+- xparameters.h — Peripheral address mapping  
+- xuartlite.h — UART communication functions
+
+---
+
+### FPGA Hardware Testing
+
+- Connected HC-12 radio modules to UARTLite TX/RX
+- Verified round-trip encryption and decryption using terminal
+- Observed accurate transmission of plaintext to encrypted buffer and back
+
+![Terminal Output](images/sent.png)  
+![Terminal Output](images/received.png)  
+*Figure: Verified encrypted UART communication over HC-12 using terminal.*
+
+---
+
+## Actions to be Completed
+
+- [x] Review AES implementation in HLS  
+- [x] Export and integrate IP into Vivado  
+- [x] Create block design with UART and AXI interconnect  
+- [x] Write and test C application  
+- [x] Verify encrypted transmission via HC-12  
+- [ ] Optimize performance and test larger payloads  
+- [ ] Submit GDSII layout for ASIC fabrication (optional)
+
+---
+
+## References
+
+- [Digilent PYNQ-Z1 Manual](https://digilent.com/reference/programmable-logic/pynq-z1/reference-manual)  
+- [AMD Vitis HLS Documentation](https://docs.amd.com/r/2024.1-English/ug1399-vitis-hls/pragma-HLS-expression_balance)  
+- [UVA HLS/IP Labs Wiki](http://venividiwiki.ee.virginia.edu/mediawiki/index.php/ToolsXilinxLabsRTLHLSAES)  
+- [GitHub Repository](https://github.com/hplp/2025-fpga-design-projects-EncryptedRadio)  
+- [Xilinx PYNQ GitHub Resources](https://github.com/Xilinx/PYNQ)  
+- [AES Calculator](https://testprotect.com/appendix/AEScalc)
+
+---
+
+*Contributors: Alex Clunan, Bobby Downey*
