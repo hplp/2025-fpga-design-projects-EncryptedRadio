@@ -139,8 +139,6 @@ Key headers:
 - [x] Create block design with UART and AXI interconnect  
 - [x] Write and test C application  
 - [x] Verify encrypted transmission via HC-12  
-- [ ] Optimize performance and test larger payloads  
-- [ ] Submit GDSII layout for ASIC fabrication (optional)
 
 ---
 
