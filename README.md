@@ -25,7 +25,7 @@ This project explores the intersection of hardware cryptography and embedded wir
 
 ### 📡 Hardware Setup
 
-![Radio and PYNQ Setup](images/radio_pynq_setup.jpg)  
+![Radio and PYNQ Setup](images/board_with_radio.jpg)  
 *Figure: PYNQ-Z1 connected to HC-12 radio module.*
 
 ---
